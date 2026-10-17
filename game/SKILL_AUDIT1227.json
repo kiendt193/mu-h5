@@ -1,0 +1,411 @@
+{
+  "counts": {
+    "knight": 10,
+    "wizard": 16,
+    "elf": 6,
+    "gladiator": 26,
+    "darklord": 13,
+    "summoner": 17,
+    "fighter": 9
+  },
+  "added": [
+    {
+      "class": "knight",
+      "id": "native232_knight",
+      "sourceId": 232,
+      "name": "Chém băng",
+      "effect": "ice",
+      "icon": "ice",
+      "animation": 64
+    },
+    {
+      "class": "wizard",
+      "id": "native7_wizard",
+      "sourceId": 7,
+      "name": "Băng công",
+      "effect": "ice",
+      "icon": "ice",
+      "animation": 149
+    },
+    {
+      "class": "wizard",
+      "id": "native10_wizard",
+      "sourceId": 10,
+      "name": "Lửa địa ngục",
+      "effect": "fire",
+      "icon": "fire",
+      "animation": 148
+    },
+    {
+      "class": "wizard",
+      "id": "native11_wizard",
+      "sourceId": 11,
+      "name": "Sóng năng lượng",
+      "effect": "aqua",
+      "icon": "aqua",
+      "animation": 152
+    },
+    {
+      "class": "wizard",
+      "id": "native38_wizard",
+      "sourceId": 38,
+      "name": "Mưa độc tố",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "wizard",
+      "id": "native40_wizard",
+      "sourceId": 40,
+      "name": "Bùng nổ năng lượng",
+      "effect": "inferno",
+      "icon": "inferno",
+      "animation": 153
+    },
+    {
+      "class": "gladiator",
+      "id": "native1_gladiator",
+      "sourceId": 1,
+      "name": "Độc",
+      "effect": "poison",
+      "icon": "poison",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native2_gladiator",
+      "sourceId": 2,
+      "name": "Lôi thạch",
+      "effect": "meteor",
+      "icon": "meteor",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native3_gladiator",
+      "sourceId": 3,
+      "name": "Sấm sét",
+      "effect": "lightning",
+      "icon": "lightning",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native5_gladiator",
+      "sourceId": 5,
+      "name": "Cột lửa",
+      "effect": "fire",
+      "icon": "fire",
+      "animation": 148
+    },
+    {
+      "class": "gladiator",
+      "id": "native7_gladiator",
+      "sourceId": 7,
+      "name": "Băng công",
+      "effect": "ice",
+      "icon": "ice",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native10_gladiator",
+      "sourceId": 10,
+      "name": "Lửa địa ngục",
+      "effect": "fire",
+      "icon": "fire",
+      "animation": 148
+    },
+    {
+      "class": "gladiator",
+      "id": "native11_gladiator",
+      "sourceId": 11,
+      "name": "Sóng năng lượng",
+      "effect": "aqua",
+      "icon": "aqua",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native12_gladiator",
+      "sourceId": 12,
+      "name": "Lượng nước xoáy",
+      "effect": "aqua",
+      "icon": "aqua",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native14_gladiator",
+      "sourceId": 14,
+      "name": "Vòng tròn lửa",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native19_gladiator",
+      "sourceId": 19,
+      "name": "Chém xuống",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native20_gladiator",
+      "sourceId": 20,
+      "name": "Đâm",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native21_gladiator",
+      "sourceId": 21,
+      "name": "Chém xoáy lên",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native22_gladiator",
+      "sourceId": 22,
+      "name": "Chém xoáy ngang",
+      "effect": "spin",
+      "icon": "twisting",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native23_gladiator",
+      "sourceId": 23,
+      "name": "Chém ánh sáng",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native39_gladiator",
+      "sourceId": 39,
+      "name": "Mưa băng tuyết",
+      "effect": "ice",
+      "icon": "ice",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native41_gladiator",
+      "sourceId": 41,
+      "name": "Chém xoáy",
+      "effect": "spin",
+      "icon": "twisting",
+      "animation": 64
+    },
+    {
+      "class": "gladiator",
+      "id": "native237_gladiator",
+      "sourceId": 237,
+      "name": "Bão điện",
+      "effect": "lightning",
+      "icon": "lightning",
+      "animation": 64
+    },
+    {
+      "class": "darklord",
+      "id": "native19_darklord",
+      "sourceId": 19,
+      "name": "Chém xuống",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 77
+    },
+    {
+      "class": "darklord",
+      "id": "native20_darklord",
+      "sourceId": 20,
+      "name": "Đâm",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 77
+    },
+    {
+      "class": "darklord",
+      "id": "native21_darklord",
+      "sourceId": 21,
+      "name": "Chém xoáy lên",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 77
+    },
+    {
+      "class": "darklord",
+      "id": "native22_darklord",
+      "sourceId": 22,
+      "name": "Chém xoáy ngang",
+      "effect": "spin",
+      "icon": "twisting",
+      "animation": 77
+    },
+    {
+      "class": "darklord",
+      "id": "native23_darklord",
+      "sourceId": 23,
+      "name": "Chém ánh sáng",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 77
+    },
+    {
+      "class": "darklord",
+      "id": "native238_darklord",
+      "sourceId": 238,
+      "name": "Hỗn loạn",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 77
+    },
+    {
+      "class": "summoner",
+      "id": "native2_summoner",
+      "sourceId": 2,
+      "name": "Lôi thạch",
+      "effect": "meteor",
+      "icon": "meteor",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native7_summoner",
+      "sourceId": 7,
+      "name": "Băng công",
+      "effect": "ice",
+      "icon": "ice",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native9_summoner",
+      "sourceId": 9,
+      "name": "Linh hồn",
+      "effect": "spirit",
+      "icon": "evil",
+      "animation": 168
+    },
+    {
+      "class": "summoner",
+      "id": "native11_summoner",
+      "sourceId": 11,
+      "name": "Sóng năng lượng",
+      "effect": "aqua",
+      "icon": "aqua",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native19_summoner",
+      "sourceId": 19,
+      "name": "Chém xuống",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native20_summoner",
+      "sourceId": 20,
+      "name": "Đâm",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native21_summoner",
+      "sourceId": 21,
+      "name": "Chém xoáy lên",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native22_summoner",
+      "sourceId": 22,
+      "name": "Chém xoáy ngang",
+      "effect": "spin",
+      "icon": "twisting",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native23_summoner",
+      "sourceId": 23,
+      "name": "Chém ánh sáng",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native223_summoner",
+      "sourceId": 223,
+      "name": "Gọi hỏa kỳ lân",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native224_summoner",
+      "sourceId": 224,
+      "name": "Gọi quỷ",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "summoner",
+      "id": "native225_summoner",
+      "sourceId": 225,
+      "name": "Gọi ma công",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 148
+    },
+    {
+      "class": "fighter",
+      "id": "native265_fighter",
+      "sourceId": 265,
+      "name": "Hơi thở rồng",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 248
+    },
+    {
+      "class": "fighter",
+      "id": "native269_fighter",
+      "sourceId": 269,
+      "name": "Charge",
+      "effect": "slash",
+      "icon": "slash",
+      "animation": 248
+    },
+    {
+      "class": "fighter",
+      "id": "native270_fighter",
+      "sourceId": 270,
+      "name": "Phượng hoàng tung cánh",
+      "effect": "fire",
+      "icon": "fire",
+      "animation": 248
+    }
+  ],
+  "source": "SourceAssets/NewServerReference/Skill.txt",
+  "scope": "Base active attack skills; non-attack/master/command/summon entries are not converted into attacks."
+}

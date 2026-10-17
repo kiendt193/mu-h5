@@ -1,0 +1,136 @@
+{
+  "source": "User supplied server/client archive 1TRjNRL2AErVrmWePTY43eW0Gd_rAJ5q1",
+  "music": {
+    "0": {
+      "source": "Music/MuTheme.mp3",
+      "file": "map0.mp3",
+      "duration": 209.528,
+      "sha256": "23683c2512c8b1404bd15ddc4214c19eff613ca93c902ef42ac5200a0e0ba4cb"
+    },
+    "1": {
+      "source": "Music/Noria.mp3",
+      "file": "map1.mp3",
+      "duration": 283.559,
+      "sha256": "6159e696ef05f017ccc8e01397302e592b766e10273009d9c7cc52fead127417"
+    },
+    "2": {
+      "source": "Music/Dungeon.mp3",
+      "file": "map2.mp3",
+      "duration": 242.939,
+      "sha256": "6c8e31d1fa3313cfcfeec1076f82cbe44250a4a9d0f535182e0bd999951a319f"
+    },
+    "3": {
+      "source": "Music/Devias.mp3",
+      "file": "map3.mp3",
+      "duration": 262.087,
+      "sha256": "91951e0199f99c2659133bfb8d4f59f5e154393f76a2f67d3074dcc29a5c8a92"
+    },
+    "4": {
+      "source": "Music/lost_tower_a.mp3",
+      "file": "map4.mp3",
+      "duration": 252.134,
+      "sha256": "9063acdb16e1daa6dacc0436bbe3b37622acbe470e3aa46632e194e6c1355d7d"
+    },
+    "5": {
+      "source": "Music/atlans.mp3",
+      "file": "map5.mp3",
+      "duration": 282.854,
+      "sha256": "2579a1ed051cf0d0991f08f3b7d2117126b569026631fd0d1f06f042334a723f"
+    },
+    "6": {
+      "source": "Music/tarkan.mp3",
+      "file": "map6.mp3",
+      "duration": 190.537,
+      "sha256": "7a3e202e27b2c8074111cb2d8656e092ffd8e55a6e9382c4c555a0bb86a32a39"
+    },
+    "7": {
+      "source": "Music/icarus.mp3",
+      "file": "map7.mp3",
+      "duration": 205.767,
+      "sha256": "6cc8e03a3f3c2f626dc9513b74cc1d9fc3e5ed39dee92760dfa9073d110101a5"
+    },
+    "8": {
+      "source": "Music/kanturu_1st.mp3",
+      "file": "map8.mp3",
+      "duration": 116.924,
+      "sha256": "78ac4927ff2a3a340bf0f52d5701045a8489c7a6cd6a59b964620e0165daeae8"
+    }
+  },
+  "sounds": {
+    "attack-knight": {
+      "source": "Sound/eSwingWeapon1.wav",
+      "file": "attack-knight.wav",
+      "sha256": "a43b85c1c53c39db64f990f85d6b4e265ae12f4a1ca1d780d0809ac5900b1a0e"
+    },
+    "attack-wizard": {
+      "source": "Sound/sMagic.wav",
+      "file": "attack-wizard.wav",
+      "sha256": "f8c549bf85ce0bd953da0991a149ac490aafb771b7a942ed17f0c9d7db8e1fa5"
+    },
+    "attack-elf": {
+      "source": "Sound/eBow.wav",
+      "file": "attack-elf.wav",
+      "sha256": "aa037394f370bffe219d641978b0aebde2f341d5e8ef82a9537a0fb90f80bfff"
+    },
+    "hit": {
+      "source": "Sound/eMeleeHit1.wav",
+      "file": "hit.wav",
+      "sha256": "9c573d68119eb539acf70e58d81c533d04e7c9eaa741a3d449e588f036e6c176"
+    },
+    "skill-slash": {
+      "source": "Sound/sKnightSkill1.wav",
+      "file": "skill-slash.wav",
+      "sha256": "0b7bdf54ecc3fc3f3539aac85bfd20444eae13f3e8fd45af02c8f23c4532b905"
+    },
+    "skill-spin": {
+      "source": "Sound/sKnightSkill2.wav",
+      "file": "skill-spin.wav",
+      "sha256": "d0ef2b4af919bd900525f507e5e3790c0f011ef83fba568fdd7c6c6d5fbfe1f5"
+    },
+    "skill-quake": {
+      "source": "Sound/eRageBlow_1.wav",
+      "file": "skill-quake.wav",
+      "sha256": "6acaf9d6e0c67458f772c6d25b3b4572601aadfcf6504f5f5ad81fb416091911"
+    },
+    "skill-fire": {
+      "source": "Sound/sFlame.wav",
+      "file": "skill-fire.wav",
+      "sha256": "dd6f8682cfd4c50ad3bea33ef20704de71c679881e374de36300978303e020db"
+    },
+    "skill-ice": {
+      "source": "Sound/sIce.wav",
+      "file": "skill-ice.wav",
+      "sha256": "85d9690c1f33573529051152d61f4c913ac039f387f9a2b93e23a581f4be3982"
+    },
+    "skill-spirit": {
+      "source": "Sound/sEvil.wav",
+      "file": "skill-spirit.wav",
+      "sha256": "ed16deb5f47c86af9979bc9c787e342ed54365e66ae0fe373ccf4092aebc6d74"
+    },
+    "skill-arrow": {
+      "source": "Sound/eBow.wav",
+      "file": "skill-arrow.wav",
+      "sha256": "aa037394f370bffe219d641978b0aebde2f341d5e8ef82a9537a0fb90f80bfff"
+    },
+    "skill-multi": {
+      "source": "Sound/eRaidShoot.wav",
+      "file": "skill-multi.wav",
+      "sha256": "6928860c5d3bb472325d20d98dcad80341d7274386e59ac336d37ad6c621e611"
+    },
+    "skill-icearrow": {
+      "source": "Sound/eIceArrow.wav",
+      "file": "skill-icearrow.wav",
+      "sha256": "8961811bc179e72dbe366bf731a162ae24fe90df4446008defb0deb1e0237fe9"
+    },
+    "attack": {
+      "source": "Sound/eSwingWeapon1.wav",
+      "file": "attack.wav",
+      "sha256": "a43b85c1c53c39db64f990f85d6b4e265ae12f4a1ca1d780d0809ac5900b1a0e"
+    },
+    "skill": {
+      "source": "Sound/sKnightSkill1.wav",
+      "file": "skill.wav",
+      "sha256": "0b7bdf54ecc3fc3f3539aac85bfd20444eae13f3e8fd45af02c8f23c4532b905"
+    }
+  }
+}

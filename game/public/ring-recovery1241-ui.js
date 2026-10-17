@@ -1,0 +1,2 @@
+'use strict';
+(()=>{const previous=itemView;itemView=function(it,...args){const html=previous(it,...args);if(it?.rarity!=='ancient'||!['ring1','ring2'].includes(it.slot))return html;return html+'<div class="life90card" style="color:#a7dcff"><p>Hồi HP khi hạ quái: +2% HP tối đa</p><p>Hồi MP khi hạ quái: +2% MP tối đa</p><small>Có tác dụng khi đeo nhẫn Thần đúng hệ. Hai nhẫn cộng thành 4%; không phải hồi mỗi giây.</small></div>';};})();

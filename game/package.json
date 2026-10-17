@@ -1,0 +1,11 @@
+{
+  "name": "mu2d-web-prototype",
+  "version": "2.8.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

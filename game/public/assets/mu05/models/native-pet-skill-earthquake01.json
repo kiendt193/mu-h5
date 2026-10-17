@@ -1,0 +1,1 @@
+{"file":"models/native-pet-skill-earthquake01.bin","meshes":[{"offset":0,"count":6,"texture":"textures/native-d63ab510a6288c3dadc9-fx.webp"}],"bones":1,"bind":[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]],"animation":{"parents":[-1],"clips":{"0":{"frames":1,"lock":false,"bones":[[[1.0135400295257568,2.12453293800354,0.0,0.0,0.0,0.785398006439209]]]}}},"source":"Skill/EarthQuake01.bmd"}

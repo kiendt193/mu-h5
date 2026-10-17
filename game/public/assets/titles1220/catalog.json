@@ -1,0 +1,286 @@
+[
+  {
+    "id": "title1220-1",
+    "name": "Thủ Hộ",
+    "min": 0,
+    "art1220": {
+      "url": "assets/titles1220/title-1.webp",
+      "frames": 1,
+      "cols": 1,
+      "width": 199,
+      "height": 83,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-1-preview.webp",
+      "pulseMs": 2000
+    }
+  },
+  {
+    "id": "title1220-2",
+    "name": "Tiên Phong",
+    "min": 51,
+    "art1220": {
+      "url": "assets/titles1220/title-2.webp",
+      "frames": 1,
+      "cols": 1,
+      "width": 224,
+      "height": 58,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-2-preview.webp",
+      "pulseMs": 2000
+    }
+  },
+  {
+    "id": "title1220-3",
+    "name": "Vô Úy",
+    "min": 101,
+    "art1220": {
+      "url": "assets/titles1220/title-3.webp",
+      "frames": 1,
+      "cols": 1,
+      "width": 173,
+      "height": 86,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-3-preview.webp",
+      "pulseMs": 2000
+    }
+  },
+  {
+    "id": "title1220-4",
+    "name": "Thảo Phạt",
+    "min": 151,
+    "art1220": {
+      "url": "assets/titles1220/title-4.webp",
+      "frames": 1,
+      "cols": 1,
+      "width": 224,
+      "height": 63,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-4-preview.webp",
+      "pulseMs": 2000
+    }
+  },
+  {
+    "id": "title1220-5",
+    "name": "Bất Bại",
+    "min": 201,
+    "art1220": {
+      "url": "assets/titles1220/title-5.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 63,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-5-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-6",
+    "name": "Chí Cao",
+    "min": 251,
+    "art1220": {
+      "url": "assets/titles1220/title-6.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 56,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-6-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-7",
+    "name": "Đồ Lục",
+    "min": 301,
+    "art1220": {
+      "url": "assets/titles1220/title-7.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 58,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-7-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-8",
+    "name": "Tận Diệt",
+    "min": 351,
+    "art1220": {
+      "url": "assets/titles1220/title-8.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 49,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-8-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-9",
+    "name": "Hủy Diệt",
+    "min": 401,
+    "art1220": {
+      "url": "assets/titles1220/title-9.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 82,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-9-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-10",
+    "name": "Chinh Phục",
+    "min": 451,
+    "art1220": {
+      "url": "assets/titles1220/title-10.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 75,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-10-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-11",
+    "name": "Thống Trị",
+    "min": 501,
+    "art1220": {
+      "url": "assets/titles1220/title-11.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 87,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-11-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-12",
+    "name": "Cứu Thế",
+    "min": 551,
+    "art1220": {
+      "url": "assets/titles1220/title-12.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 76,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-12-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-13",
+    "name": "Phá Quân Giả",
+    "min": 601,
+    "art1220": {
+      "url": "assets/titles1220/title-13.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 78,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-13-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-14",
+    "name": "Tiêm Diệt Giả",
+    "min": 651,
+    "art1220": {
+      "url": "assets/titles1220/title-14.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 80,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-14-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-15",
+    "name": "Bất Diệt Giả",
+    "min": 701,
+    "art1220": {
+      "url": "assets/titles1220/title-15.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 80,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-15-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-16",
+    "name": "Sáng Thế Giả",
+    "min": 751,
+    "art1220": {
+      "url": "assets/titles1220/title-16.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 78,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-16-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-17",
+    "name": "Nghịch Thiên Vương",
+    "min": 801,
+    "art1220": {
+      "url": "assets/titles1220/title-17.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 80,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-17-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-18",
+    "name": "Bách Chiến Vương",
+    "min": 851,
+    "art1220": {
+      "url": "assets/titles1220/title-18.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 79,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-18-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-19",
+    "name": "Hư Không Vương",
+    "min": 901,
+    "art1220": {
+      "url": "assets/titles1220/title-19.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 80,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-19-preview.webp"
+    }
+  },
+  {
+    "id": "title1220-20",
+    "name": "Vạn Kiếp Vương",
+    "min": 951,
+    "art1220": {
+      "url": "assets/titles1220/title-20.webp",
+      "frames": 60,
+      "cols": 8,
+      "width": 224,
+      "height": 82,
+      "frameMs": 60,
+      "preview": "assets/titles1220/title-20-preview.webp"
+    }
+  }
+]

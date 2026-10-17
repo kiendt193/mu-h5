@@ -1,0 +1,117 @@
+{
+ "sourceModels": 1910,
+ "imported": 1884,
+ "animated": 1201,
+ "failed": [
+  {
+   "source": "Item/Itemtest.bmd",
+   "reason": ""
+  },
+  {
+   "source": "Item/dark_05.bmd",
+   "reason": "Model không có mesh"
+  },
+  {
+   "source": "Item/item.bmd",
+   "reason": ""
+  },
+  {
+   "source": "Item/sword49.bmd",
+   "reason": "unpack_from requires a buffer of at least 187252 bytes for unpacking 20 bytes at offset 187232 (actual buffer size is 187236)"
+  },
+  {
+   "source": "Item/waterring.bmd",
+   "reason": "waterring.JPG"
+  },
+  {
+   "source": "Player/ArmorClass15.bmd",
+   "reason": "unpack_from requires a buffer of at least 125244 bytes for unpacking 8 bytes at offset 125236 (actual buffer size is 125236)"
+  },
+  {
+   "source": "Player/ArmorClass215.bmd",
+   "reason": "unpack_from requires a buffer of at least 125244 bytes for unpacking 8 bytes at offset 125236 (actual buffer size is 125236)"
+  },
+  {
+   "source": "Player/ArmorClass315.bmd",
+   "reason": "unpack_from requires a buffer of at least 124852 bytes for unpacking 16 bytes at offset 124836 (actual buffer size is 124836)"
+  },
+  {
+   "source": "Player/ArmorClass415.bmd",
+   "reason": "unpack_from requires a buffer of at least 121942 bytes for unpacking 8 bytes at offset 121934 (actual buffer size is 121940)"
+  },
+  {
+   "source": "Player/BootClass15.bmd",
+   "reason": "index out of range"
+  },
+  {
+   "source": "Player/BootClass215.bmd",
+   "reason": "unpack_from requires a buffer of at least 43180 bytes for unpacking 8 bytes at offset 43172 (actual buffer size is 43172)"
+  },
+  {
+   "source": "Player/BootClass315.bmd",
+   "reason": "unpack_from requires a buffer of at least 48252 bytes for unpacking 8 bytes at offset 48244 (actual buffer size is 48244)"
+  },
+  {
+   "source": "Player/BootClass415.bmd",
+   "reason": "unpack_from requires a buffer of at least 48252 bytes for unpacking 20 bytes at offset 48232 (actual buffer size is 48244)"
+  },
+  {
+   "source": "Player/GloveClass15.bmd",
+   "reason": "index out of range"
+  },
+  {
+   "source": "Player/GloveClass215.bmd",
+   "reason": "unpack_from requires a buffer of at least 48260 bytes for unpacking 16 bytes at offset 48244 (actual buffer size is 48244)"
+  },
+  {
+   "source": "Player/GloveClass315.bmd",
+   "reason": "unpack_from requires a buffer of at least 93300 bytes for unpacking 16 bytes at offset 93284 (actual buffer size is 93284)"
+  },
+  {
+   "source": "Player/GloveClass415.bmd",
+   "reason": "unpack_from requires a buffer of at least 50872 bytes for unpacking 20 bytes at offset 50852 (actual buffer size is 50852)"
+  },
+  {
+   "source": "Player/HelmClass15.bmd",
+   "reason": "unpack_from requires a buffer of at least 193732 bytes for unpacking 16 bytes at offset 193716 (actual buffer size is 193716)"
+  },
+  {
+   "source": "Player/HelmClass215.bmd",
+   "reason": "unpack_from requires a buffer of at least 193732 bytes for unpacking 16 bytes at offset 193716 (actual buffer size is 193716)"
+  },
+  {
+   "source": "Player/HelmClass315.bmd",
+   "reason": "unpack_from requires a buffer of at least 182308 bytes for unpacking 16 bytes at offset 182292 (actual buffer size is 182292)"
+  },
+  {
+   "source": "Player/HelmClass415.bmd",
+   "reason": "unpack_from requires a buffer of at least 187340 bytes for unpacking 8 bytes at offset 187332 (actual buffer size is 187332)"
+  },
+  {
+   "source": "Player/PantClass15.bmd",
+   "reason": "unpack_from requires a buffer of at least 58838 bytes for unpacking 8 bytes at offset 58830 (actual buffer size is 58836)"
+  },
+  {
+   "source": "Player/PantClass215.bmd",
+   "reason": "unpack_from requires a buffer of at least 58852 bytes for unpacking 20 bytes at offset 58832 (actual buffer size is 58836)"
+  },
+  {
+   "source": "Player/PantClass315.bmd",
+   "reason": "unpack_from requires a buffer of at least 85796 bytes for unpacking 16 bytes at offset 85780 (actual buffer size is 85780)"
+  },
+  {
+   "source": "Player/PantClass415.bmd",
+   "reason": "unpack_from requires a buffer of at least 88632 bytes for unpacking 20 bytes at offset 88612 (actual buffer size is 88612)"
+  },
+  {
+   "source": "Player/player.bmd",
+   "reason": "Model không có mesh"
+  }
+ ],
+ "note": "Bổ sung từ client mới; model custom Class15 và sword49 không có trong bộ mới.",
+ "recoveredFromNewClient": [
+  "Item/rare_shiningtails.bmd",
+  "Player/HelmMale117_alice.bmd",
+  "Player/HelmMale119_dark.bmd"
+ ]
+}

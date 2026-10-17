@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "map",
+    "source": "Interface/newui_menu_bt01.OZJ",
+    "frame": 1,
+    "sourceDecodedSHA256": "1cf342ed4567d824e1ff0b7c372aa887b603f3ed22e3c08326a9be0d7e6bf42e",
+    "innerFrameColor": "#c19d46"
+  },
+  {
+    "icon": "inventory",
+    "source": "Interface/newui_menu_bt02.OZJ",
+    "frame": 1,
+    "sourceDecodedSHA256": "8f0c4ca40a107e9db8265d47d2127afb96c150263247e12ac46a5bb375261a4b",
+    "innerFrameColor": "#c19d46"
+  },
+  {
+    "icon": "character",
+    "source": "Interface/newui_menu_bt03.OZJ",
+    "frame": 1,
+    "sourceDecodedSHA256": "edf0f5ddf0000368b87aaba9a08951f6409d8768a10aaafe7aabe510f6e0c8bd",
+    "innerFrameColor": "#c19d46"
+  },
+  {
+    "icon": "other",
+    "source": "Interface/newui_menu_bt04.OZJ",
+    "frame": 1,
+    "sourceDecodedSHA256": "bacfa49e77ac55bbef5f05501faabeb11a31f7f98fd4bd4e2627e4b47faeb477",
+    "innerFrameColor": "#c19d46"
+  },
+  {
+    "icon": "train",
+    "source": "Client Item model icon item-sword03.webp",
+    "sourceSHA256": "6f3886b283cd43e66580db57dd1862b90a7eacb61ba017f4017b16664cd0c431",
+    "frameSource": "Interface/newui_menu_bt02.OZJ frame1",
+    "innerFrameColor": "#c19d46"
+  },
+  {
+    "icon": "auto",
+    "source": "Client Item model icon item-skillscroll03.webp",
+    "sourceSHA256": "339adaa81b82eb588997780486f85d6ce79c8e07f3f2c05ceb712059c70a7e5f",
+    "frameSource": "Interface/newui_menu_bt02.OZJ frame1",
+    "innerFrameColor": "#c19d46"
+  }
+]

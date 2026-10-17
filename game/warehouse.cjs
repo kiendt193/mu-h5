@@ -1,0 +1,7 @@
+'use strict';
+const CAPACITY=2000,PAGE_SIZE=80;
+function init(c){c.warehouse ||= [];if(!Array.isArray(c.warehouse))throw Error('Dữ liệu kho không hợp lệ');return c.warehouse;}
+function transfer(c,id,direction){const storage=init(c),from=direction==='deposit'?c.inventory:storage,to=direction==='deposit'?storage:c.inventory,cap=direction==='deposit'?CAPACITY:40;if(!['deposit','withdraw'].includes(direction)||typeof id!=='string')throw Error('Thao tác kho không hợp lệ');const i=from.findIndex(it=>it.id===id);if(i<0)throw Error('Món đồ không còn ở nơi gửi');if(to.length>=cap)throw Error(direction==='deposit'?'Kho đã đủ 2.000 món':'Hành trang đã đầy');if(to.some(it=>it.id===id))throw Error('Mã món đồ bị trùng');const [it]=from.splice(i,1);to.push(it);return it;}
+function list(c,page=0,query=''){const storage=init(c);if(!Number.isSafeInteger(page)||page<0||typeof query!=='string'||query.length>100)throw Error('Trang kho không hợp lệ');const q=query.toLocaleLowerCase('vi-VN'),items=q?storage.filter(it=>(it.name||'').toLocaleLowerCase('vi-VN').includes(q)):storage;const pages=Math.max(1,Math.ceil(items.length/PAGE_SIZE));page=Math.min(page,pages-1);return{capacity:CAPACITY,count:storage.length,total:items.length,page,pages,items:items.slice(page*PAGE_SIZE,(page+1)*PAGE_SIZE)};}
+function publicCharacter(c){const {warehouse,...rest}=c;return{...rest,warehouseCount:warehouse?.length||0,warehouseCapacity:CAPACITY};}
+module.exports={CAPACITY,init,transfer,list,publicCharacter};

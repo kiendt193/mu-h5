@@ -1,0 +1,1845 @@
+{
+ "requested": 1232,
+ "ready": 774,
+ "failed": [
+  {
+   "key": "item-conquerorwing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-quiver_lv8",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-quiver_lv07",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing504_core1",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing505",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing52",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing53",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing54",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing55",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wingsofpower",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wingsrelic",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-angel_devil_wing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-angel_wing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-bowsoldier",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-bowsoldierup",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-brilliantbow",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-chaoswing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-devil_wing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-elf_wing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-flamewing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-magic_wing",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-mastery7_arrows",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-mastery_bow07",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-matery8_arrowbox",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword100",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword46",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword46_l",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword46_r",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword47",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword47_l",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword47_r",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword49_l",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-sword49_r",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing270",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "item-wing271",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass08",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass09",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass10",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass11",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass12",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass13",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass14",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass209",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass210",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass211",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass212",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass213",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass214",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass308",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass309",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass310",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass311",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass312",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass313",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass314",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass401",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass402",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass403",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass404",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass405",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass406",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass407",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass409",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass410",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass411",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass412",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass413",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armorclass414",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale100",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale100_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale102_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale102_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale102_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale104_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale109_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale109_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale113_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale114",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale117_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale118",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale121",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale122",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale123",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale124",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale125",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale126",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale127",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale128_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale128_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale129",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale130_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale132",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale133",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale134",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale136_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale137",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale138_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale138_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale149",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale150",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale151",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale151_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale152",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale158",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale158_magum",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale159_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale159_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale160",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale57_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale92",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale93",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale94",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale96",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale98",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-armormale99",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass08",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass09",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass10",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass11",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass12",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass13",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass14",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass209",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass210",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass211",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass212",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass213",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass214",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass308",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass309",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass310",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass311",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass312",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass313",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass314",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass401",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass402",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass403",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass404",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass405",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass406",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass407",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass409",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass410",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass411",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass412",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass413",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootclass414",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmail3003",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale100",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale114",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale118",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale121",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale122",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale123",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale124",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale125",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale126",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale127",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale128_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale128_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale129",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale132",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale133",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale134",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale137",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale138_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale138_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale149",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale150",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale151",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale152",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale158",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale159_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale159_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale160",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale92",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale93",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale94",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale96",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale98",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-bootmale99",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass08",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass09",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass10",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass11",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass12",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass13",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass14",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass209",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass210",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass211",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass212",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass213",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass214",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass308",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass309",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass310",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass311",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass312",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass313",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass314",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass401",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass402",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass403",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass404",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass405",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass406",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass407",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass409",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass410",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass411",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass412",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass413",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-gloveclass414",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemail3003",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale100",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale110",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale114",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale118",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale121",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale122",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale123",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale124",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale125",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale126",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale127",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale128_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale128_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale129",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale132",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale133",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale134",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale137",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale138_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale138_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale149",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale150",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale151",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale152",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale158",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale159_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale159_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale160",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale92",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale93",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale94",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale95",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale96",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale98",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-glovemale99",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass08",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass09",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass10",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass11",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass12",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass13",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass14",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass209",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass210",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass211",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass212",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass213",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass214",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass308",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass309",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass310",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass311",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass312",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass313",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass314",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass401",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass402",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass403",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass404",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass405",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass406",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass407",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass409",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass410",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass411",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass412",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass413",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmclass414",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale100_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale100_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale100_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale100_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale100_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale102_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale102_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale102_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale102_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale102_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale103_dark",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale103_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale103_magic",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale103_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale104_fight",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale104_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale104_knight",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale109_banzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale109_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale109_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale111_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale111_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale112_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale113_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale113_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale113_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale114",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale115_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale115_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale116",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale116_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale117_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale117_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale117_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale118",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale119_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale119_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale121",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale122",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale123",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale124",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale125",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale126",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale127",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale128_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale128_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale128_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale129",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale130_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale130_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale132",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale133",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale134",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale136_dark",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale136_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale136_magic",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale136_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale137",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale138_mage",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale138_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale138_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale149_dark",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale149_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale149_kundun",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale149_magic",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale150_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale151_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale151_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale151_remulia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale151_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale151_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale152_lancer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale158",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale159_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale159_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale159_remuria",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale159_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale159_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale51_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale57_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale92",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale93",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale94",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale96",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale98_fight",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale98_jacquard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale98_knight",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale99",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale99_dark",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale99_guncrasher",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-helmmale99_w_wizard",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass08",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass09",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass10",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass11",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass12",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass13",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass14",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass209",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass210",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass211",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass212",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass213",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass214",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass308",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass309",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass310",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass311",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass312",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass313",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass314",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass401",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass402",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass403",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass404",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass405",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass406",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass407",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass408",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass409",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass410",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass411",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass412",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass413",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantclass414",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale100_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale100_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale100_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale102_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale102_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale102_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale109_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale113_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale114",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale117_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale118",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale121",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale122",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale123",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale124",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale125",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale126",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale127",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale128_benzia",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale128_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale129",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale132",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale133",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale134",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale137",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale138_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale138_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale149",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale150",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale151",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale151_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale151_slayer",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale152",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale158",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale159_alice",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale159_elf",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale160",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale57_rune",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale92",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale93",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale94",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale96",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale98",
+   "reason": "Model không có trong client mới"
+  },
+  {
+   "key": "player-pantmale99",
+   "reason": "Model không có trong client mới"
+  }
+ ],
+ "boneSocketWing": 47,
+ "normalRunActions": [
+  26,
+  32,
+  30
+ ],
+ "note": "Unsupported source models keep the previous 2D appearance fallback. No fabricated source model."
+}

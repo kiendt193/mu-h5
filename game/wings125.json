@@ -1,0 +1,517 @@
+[
+  {
+    "definitionId": "12:0",
+    "name": "Cánh Tiên Nữ",
+    "appearance": "item-wing01",
+    "classes": [
+      "elf"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 0,
+      "elf": 1,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 180,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 1,
+    "icon": "icons/129-item-wing01.webp",
+    "sourceRequiredLevel": 180,
+    "sourceDefense": 10
+  },
+  {
+    "definitionId": "12:1",
+    "name": "Cánh Thiên Đàng",
+    "appearance": "item-wing02",
+    "classes": [
+      "wizard",
+      "gladiator"
+    ],
+    "classStages": {
+      "wizard": 1,
+      "knight": 0,
+      "elf": 0,
+      "gladiator": 1,
+      "darklord": 0
+    },
+    "requiredLevel": 180,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 1,
+    "icon": "icons/129-item-wing02.webp",
+    "sourceRequiredLevel": 180,
+    "sourceDefense": 10
+  },
+  {
+    "definitionId": "12:2",
+    "name": "Cánh Quỷ",
+    "appearance": "item-wing03",
+    "classes": [
+      "knight",
+      "gladiator"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 1,
+      "elf": 0,
+      "gladiator": 1,
+      "darklord": 0
+    },
+    "requiredLevel": 180,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 1,
+    "icon": "icons/129-item-wing03.webp",
+    "sourceRequiredLevel": 180,
+    "sourceDefense": 20
+  },
+  {
+    "definitionId": "12:3",
+    "name": "Cánh Tinh Thần",
+    "appearance": "item-wing04",
+    "classes": [
+      "elf"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 0,
+      "elf": 2,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 215,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing04.webp",
+    "sourceRequiredLevel": 215,
+    "sourceDefense": 30
+  },
+  {
+    "definitionId": "12:4",
+    "name": "Cánh Linh Hồn",
+    "appearance": "item-wing05",
+    "classes": [
+      "wizard"
+    ],
+    "classStages": {
+      "wizard": 2,
+      "knight": 0,
+      "elf": 0,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 215,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing05.webp",
+    "sourceRequiredLevel": 215,
+    "sourceDefense": 30
+  },
+  {
+    "definitionId": "12:5",
+    "name": "Cánh Rồng",
+    "appearance": "item-wing06",
+    "classes": [
+      "knight"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 2,
+      "elf": 0,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 215,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing06.webp",
+    "sourceRequiredLevel": 215,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:6",
+    "name": "Cánh Bóng Đêm",
+    "appearance": "item-wing07",
+    "classes": [
+      "gladiator"
+    ],
+    "classStages": {
+      "gladiator": 1
+    },
+    "requiredLevel": 215,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing07.webp",
+    "sourceRequiredLevel": 215,
+    "sourceDefense": 40
+  },
+  {
+    "definitionId": "12:36",
+    "name": "Cánh Cuồng Phong",
+    "appearance": "item-wing08",
+    "classes": [
+      "knight"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 3,
+      "elf": 0,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing08.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 60
+  },
+  {
+    "definitionId": "12:37",
+    "name": "Cánh Thiên Sứ",
+    "appearance": "item-wing09",
+    "classes": [
+      "wizard"
+    ],
+    "classStages": {
+      "wizard": 3,
+      "knight": 0,
+      "elf": 0,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing09.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:38",
+    "name": "Cánh Ngũ Sắc",
+    "appearance": "item-wing10",
+    "classes": [
+      "elf"
+    ],
+    "classStages": {
+      "wizard": 0,
+      "knight": 0,
+      "elf": 3,
+      "gladiator": 0,
+      "darklord": 0
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing10.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:39",
+    "name": "Cánh Lôi Vũ",
+    "appearance": "item-wing11",
+    "classes": [
+      "gladiator"
+    ],
+    "classStages": {
+      "gladiator": 3
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing11.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 55
+  },
+  {
+    "definitionId": "12:40",
+    "name": "Áo Choàng Đế Vương",
+    "appearance": "item-darklordrobe02",
+    "classes": [
+      "darklord"
+    ],
+    "classStages": {
+      "darklord": 3
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-darklordrobe02.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:41",
+    "name": "Cánh Vũ Linh",
+    "appearance": "item-wing42",
+    "classes": [
+      "summoner"
+    ],
+    "classStages": {
+      "summoner": 1
+    },
+    "requiredLevel": 180,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 1,
+    "icon": "icons/129-item-wing42.webp",
+    "sourceRequiredLevel": 180,
+    "sourceDefense": 10
+  },
+  {
+    "definitionId": "12:42",
+    "name": "Cánh Hỏa Thiên",
+    "appearance": "item-wing43",
+    "classes": [
+      "summoner"
+    ],
+    "classStages": {
+      "summoner": 2
+    },
+    "requiredLevel": 215,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing43.webp",
+    "sourceRequiredLevel": 215,
+    "sourceDefense": 30
+  },
+  {
+    "definitionId": "12:43",
+    "name": "Cánh Phượng Hoàng",
+    "appearance": "item-wing44",
+    "classes": [
+      "summoner"
+    ],
+    "classStages": {
+      "summoner": 3
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing44.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:49",
+    "name": "Áo Choàng Chiến Binh",
+    "appearance": "item-wing50",
+    "classes": [
+      "fighter"
+    ],
+    "classStages": {
+      "fighter": 1
+    },
+    "requiredLevel": 180,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-wing50.webp",
+    "sourceRequiredLevel": 180,
+    "sourceDefense": 15
+  },
+  {
+    "definitionId": "12:50",
+    "name": "Áo Choàng Uy Quyền",
+    "appearance": "item-wing51",
+    "classes": [
+      "fighter"
+    ],
+    "classStages": {
+      "fighter": 3
+    },
+    "requiredLevel": 300,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 3,
+    "icon": "icons/129-item-wing51.webp",
+    "sourceRequiredLevel": 300,
+    "sourceDefense": 45
+  },
+  {
+    "definitionId": "12:414",
+    "name": "Wings of Elysium",
+    "appearance": "item-wing401",
+    "classes": [
+      "wizard"
+    ],
+    "classStages": null,
+    "requiredLevel": 380,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "vitality": 0,
+      "energy": 0,
+      "leadership": 0
+    },
+    "wingTier": 4,
+    "icon": "icons/129-item-wing401.webp",
+    "sourceRequiredLevel": 380,
+    "sourceDefense": 155
+  },
+  {
+    "definitionId": "12:415",
+    "name": "Wings of Flame God",
+    "appearance": "item-wing402",
+    "classes": [
+      "knight"
+    ],
+    "classStages": null,
+    "requiredLevel": 380,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "vitality": 0,
+      "energy": 0,
+      "leadership": 0
+    },
+    "wingTier": 4,
+    "icon": "icons/129-item-wing402.webp",
+    "sourceRequiredLevel": 380,
+    "sourceDefense": 170
+  },
+  {
+    "definitionId": "12:416",
+    "name": "Wing of Celestial Body",
+    "appearance": "item-wing403",
+    "classes": [
+      "elf"
+    ],
+    "classStages": null,
+    "requiredLevel": 380,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "vitality": 0,
+      "energy": 0,
+      "leadership": 0
+    },
+    "wingTier": 4,
+    "icon": "icons/129-item-wing403.webp",
+    "sourceRequiredLevel": 380,
+    "sourceDefense": 170
+  },
+  {
+    "definitionId": "13:30",
+    "name": "Áo Choàng Của Vua",
+    "appearance": "item-darklordrobe",
+    "classes": [
+      "darklord"
+    ],
+    "classStages": {
+      "darklord": 1
+    },
+    "requiredLevel": 150,
+    "requirements": {
+      "strength": 0,
+      "dexterity": 0,
+      "energy": 0,
+      "vitality": 0,
+      "leadership": 0
+    },
+    "wingTier": 2,
+    "icon": "icons/129-item-darklordrobe.webp",
+    "sourceRequiredLevel": 1,
+    "sourceDefense": 0
+  }
+]

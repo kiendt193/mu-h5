@@ -1,0 +1,114 @@
+[
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu01.OZJ",
+    "sourceSha256": "d2457a291d5cc6768bfc93e34a95a809f21e2fbe1410ddc8f31808278fdf7f72",
+    "file": "assets/interface1223/newui_menu01.webp",
+    "width": 256,
+    "height": 51
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu02.OZJ",
+    "sourceSha256": "e6002d056cd628362fe8fd5ad9780faaf30c60233e8b8162b48b55c5ecb9badc",
+    "file": "assets/interface1223/newui_menu02.webp",
+    "width": 128,
+    "height": 51
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu03.OZJ",
+    "sourceSha256": "27b670f6d3feb93e9c1b9db2971d7b0d0a7776d973f5eb58ac842c00a5c4afd4",
+    "file": "assets/interface1223/newui_menu03.webp",
+    "width": 256,
+    "height": 51
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_red.OZJ",
+    "sourceSha256": "91b6299af1dd0fc277fe4a710c8eb19a3376f0169eb04b874cda83556b2fdb78",
+    "file": "assets/interface1223/newui_menu_red.webp",
+    "width": 45,
+    "height": 39
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_blue.OZJ",
+    "sourceSha256": "d5785b6520991e5053e287d9a2a5e8ece959e7966542b0f41e370c83af15a4ca",
+    "file": "assets/interface1223/newui_menu_blue.webp",
+    "width": 45,
+    "height": 39
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_AG.OZJ",
+    "sourceSha256": "9f90b97d20296772615e70f42de6e8579bd7532498441cb70b623aadb842a53a",
+    "file": "assets/interface1223/newui_menu_ag.webp",
+    "width": 16,
+    "height": 39
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_SD.OZJ",
+    "sourceSha256": "4ab2adf482df9400bac76ac00806d3aa6e24ff42dfe40b1c66e12d3fa46584af",
+    "file": "assets/interface1223/newui_menu_sd.webp",
+    "width": 16,
+    "height": 39
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_Bt01.OZJ",
+    "sourceSha256": "8fec488660bb3b1446dd009b6abb64706f4f9b4d42472190bec690fc341589fd",
+    "file": "assets/interface1223/newui_menu_bt01.webp",
+    "width": 38,
+    "height": 168
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_Bt02.OZJ",
+    "sourceSha256": "b0d4e93c059fbe8c7aad30ee7d8e5fadd6bcf66fa5018c22125b197a6c089a7c",
+    "file": "assets/interface1223/newui_menu_bt02.webp",
+    "width": 38,
+    "height": 168
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_Bt03.OZJ",
+    "sourceSha256": "6609e1111a29711c0f55558177daff0cf0a31f589456e8fbe6b82a56817156e6",
+    "file": "assets/interface1223/newui_menu_bt03.webp",
+    "width": 38,
+    "height": 168
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_menu_Bt04.OZJ",
+    "sourceSha256": "2655fbb510b96ba41c8e7066765b2a95a44b7443d9e391ec9152962971f96d74",
+    "file": "assets/interface1223/newui_menu_bt04.webp",
+    "width": 38,
+    "height": 168
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_item_back01.OZT",
+    "sourceSha256": "e65b4f1599f29a12aea792e20a26ee666aa7d6ebead0d0fe56e830e707844a10",
+    "file": "assets/interface1223/newui_item_back01.webp",
+    "width": 190,
+    "height": 64
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_msgbox_back.OZJ",
+    "sourceSha256": "8dc9b944a83c14ba9da1a8b8b25d2a0bdbe798071f9db8f0b1aeaf94a7a919c6",
+    "file": "assets/interface1223/newui_msgbox_back.webp",
+    "width": 225,
+    "height": 512
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_msgbox_top.OZT",
+    "sourceSha256": "5cef55e5c312cfacb4d8dcd503dc947c4e99303cc3e4432cd10af8ece7113961",
+    "file": "assets/interface1223/newui_msgbox_top.webp",
+    "width": 230,
+    "height": 67
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_msgbox_bottom.OZT",
+    "sourceSha256": "0481f2714917f872f49dc5bd5bed768b6e572005b73d98687cfdaf80d9594dd5",
+    "file": "assets/interface1223/newui_msgbox_bottom.webp",
+    "width": 230,
+    "height": 50
+  },
+  {
+    "source": "Server-V6.3.3-BanDep/2.Client/Data/Interface/newui_msgbox_middle.OZT",
+    "sourceSha256": "315194d4d7f136e5375d881c6598a5a7026ffd774d1ce6a7ab9ac822215257ce",
+    "file": "assets/interface1223/newui_msgbox_middle.webp",
+    "width": 230,
+    "height": 15
+  }
+]

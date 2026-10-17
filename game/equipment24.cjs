@@ -1,0 +1,4 @@
+'use strict';const SCORE=require('./public/gear-score24.js');
+function install(R){for(const r of Object.values(R.TABLE)){r.twoHand=['bow','crossbow'].includes(r.type);r.bothHands=r.twoHand;}const prior=R.rule;R.rule=function(it){const r=prior.call(this,it);return r?{...r,twoHand:['bow','crossbow'].includes(r.type),bothHands:['bow','crossbow'].includes(r.type)}:r;};}
+function effective(c,life){const result={...(c.attributes||{})};for(const it of Object.values(c.gear||{})){if(!it||it.disabled)continue;for(const k of ['strength','dexterity','vitality','energy','leadership']){const v=it.bonusAttributes?.[k];if(Number.isFinite(v)&&v>0)result[k]=(result[k]||0)+v;}}for(const k of ['strength','dexterity','vitality','energy','leadership']){const v=life?.[k];if(Number.isFinite(v)&&v>0)result[k]=(result[k]||0)+v;}return result;}
+module.exports={install,effective,SCORE};

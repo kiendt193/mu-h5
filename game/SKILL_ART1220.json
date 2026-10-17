@@ -1,0 +1,273 @@
+{
+  "origin": "imagegen built-in",
+  "style": "Rendered dark fantasy MMORPG, cinematic glow, ornate metal frames; 8x8 atlas, no text; full prompt preserved in creation conversation",
+  "atlas_sha256": "d2064d4f8e356ec8ce7b229451d5344cedf7964804b93f2643eb1eb39980ff41",
+  "skills": [
+    {
+      "id": "slash",
+      "name": "Chém ánh sáng",
+      "sourceId": 23
+    },
+    {
+      "id": "twisting",
+      "name": "Chém xoáy",
+      "sourceId": 41
+    },
+    {
+      "id": "rage",
+      "name": "Địa chấn",
+      "sourceId": 42
+    },
+    {
+      "id": "falling",
+      "name": "Chém xuống",
+      "sourceId": 19
+    },
+    {
+      "id": "deathstab",
+      "name": "Đâm gió",
+      "sourceId": 43
+    },
+    {
+      "id": "breath",
+      "name": "Phun lửa",
+      "sourceId": 49
+    },
+    {
+      "id": "thrust",
+      "name": "Đâm",
+      "sourceId": 20
+    },
+    {
+      "id": "uppercut",
+      "name": "Chém xoáy lên",
+      "sourceId": 21
+    },
+    {
+      "id": "horizontal",
+      "name": "Chém xoáy ngang",
+      "sourceId": 22
+    },
+    {
+      "id": "fire",
+      "name": "Quả cầu lửa",
+      "sourceId": 4
+    },
+    {
+      "id": "ice",
+      "name": "Mưa băng tuyết",
+      "sourceId": 39
+    },
+    {
+      "id": "evil",
+      "name": "Linh hồn",
+      "sourceId": 9
+    },
+    {
+      "id": "meteor",
+      "name": "Lôi thạch",
+      "sourceId": 2
+    },
+    {
+      "id": "lightning",
+      "name": "Sấm sét",
+      "sourceId": 3
+    },
+    {
+      "id": "inferno",
+      "name": "Vòng tròn lửa",
+      "sourceId": 14
+    },
+    {
+      "id": "poison",
+      "name": "Độc",
+      "sourceId": 1
+    },
+    {
+      "id": "flame",
+      "name": "Cột lửa",
+      "sourceId": 5
+    },
+    {
+      "id": "tornado",
+      "name": "Lốc xoáy",
+      "sourceId": 8
+    },
+    {
+      "id": "aqua",
+      "name": "Lượng nước xoáy",
+      "sourceId": 12
+    },
+    {
+      "id": "meteorstorm",
+      "name": "Mưa sao băng",
+      "sourceId": 13
+    },
+    {
+      "id": "arrow",
+      "name": "Xuyên tâm tiễn",
+      "sourceId": 52
+    },
+    {
+      "id": "multi",
+      "name": "Tấn công liên hoàn",
+      "sourceId": 24
+    },
+    {
+      "id": "icearrow",
+      "name": "Mũi tên băng",
+      "sourceId": 51
+    },
+    {
+      "id": "starfall",
+      "name": "Mũi tên thiên đường",
+      "sourceId": 46
+    },
+    {
+      "id": "five",
+      "name": "Liên hoàn tiễn",
+      "sourceId": 235
+    },
+    {
+      "id": "heal",
+      "name": "Phục hồi máu",
+      "sourceId": 26
+    },
+    {
+      "id": "mgslash",
+      "name": "Chém sức mạnh",
+      "sourceId": 56
+    },
+    {
+      "id": "mgfire",
+      "name": "Chém lửa",
+      "sourceId": 55
+    },
+    {
+      "id": "mgspirit",
+      "name": "Linh hồn",
+      "sourceId": 9
+    },
+    {
+      "id": "spiral",
+      "name": "Tia năng lượng",
+      "sourceId": 57
+    },
+    {
+      "id": "rays",
+      "name": "Tia năng lượng",
+      "sourceId": 73
+    },
+    {
+      "id": "swordslash",
+      "name": "Hỏa diệm",
+      "sourceId": 236
+    },
+    {
+      "id": "mgball",
+      "name": "Quả cầu lửa",
+      "sourceId": 4
+    },
+    {
+      "id": "mgtornado",
+      "name": "Lốc xoáy",
+      "sourceId": 8
+    },
+    {
+      "id": "mgmeteor",
+      "name": "Mưa sao băng",
+      "sourceId": 13
+    },
+    {
+      "id": "force",
+      "name": "Đâm đoạt mệnh",
+      "sourceId": 66
+    },
+    {
+      "id": "fireburst",
+      "name": "Hỏa xích long",
+      "sourceId": 61
+    },
+    {
+      "id": "firescream",
+      "name": "Lửa địa ngục",
+      "sourceId": 78
+    },
+    {
+      "id": "dlforce",
+      "name": "Đâm ánh sáng",
+      "sourceId": 60
+    },
+    {
+      "id": "fireblast",
+      "name": "Cột lửa",
+      "sourceId": 74
+    },
+    {
+      "id": "spark",
+      "name": "Tập hợp năng lượng",
+      "sourceId": 65
+    },
+    {
+      "id": "earthshake",
+      "name": "Giậm đất",
+      "sourceId": 62
+    },
+    {
+      "id": "sumfire",
+      "name": "Quả cầu lửa",
+      "sourceId": 4
+    },
+    {
+      "id": "drain",
+      "name": "Hút sinh lực",
+      "sourceId": 214
+    },
+    {
+      "id": "chainlightning",
+      "name": "Sét liên hoàn",
+      "sourceId": 215
+    },
+    {
+      "id": "electricsurge",
+      "name": "Bùng nổ điện",
+      "sourceId": 216
+    },
+    {
+      "id": "redstorm",
+      "name": "Bão đỏ",
+      "sourceId": 230
+    },
+    {
+      "id": "rfstrike",
+      "name": "Đấm mạnh",
+      "sourceId": 19
+    },
+    {
+      "id": "ringblow",
+      "name": "Quyền xung kích",
+      "sourceId": 260
+    },
+    {
+      "id": "upperbeast",
+      "name": "Thú quyền",
+      "sourceId": 261
+    },
+    {
+      "id": "chaindriver",
+      "name": "Đấm liên hoàn",
+      "sourceId": 262
+    },
+    {
+      "id": "darkside",
+      "name": "Ảnh quyền",
+      "sourceId": 263
+    },
+    {
+      "id": "dragonlore",
+      "name": "Long quyền",
+      "sourceId": 264
+    }
+  ],
+  "prompt": "Use case: stylized-concept. Asset type: production fantasy MMORPG skill icon atlas for a MU-inspired H5 game. Create ONE square 2048x2048 atlas with EXACTLY 8 columns by 8 rows of 64 SQUARE icon tiles, uniform cells, no margins, no gutters, no text, no letters, no numbers, no UI controls. Each icon is detailed premium rendered game art, sculpted 3D forms, cinematic glow, dark navy background, crisp central silhouette, compact ornate dark metal frame INSIDE each cell, jewel tone lighting, readable at 64px. Absolutely no flat vector shapes or hand drawn line doodles. Keep all motifs fully contained within their cell. Content ordered left to right top to bottom. Row1: radiant sword slash, spinning twin swords, earth-shattering hammer strike, descending sword, piercing blade, dragon flame breath, spear thrust, rising blade. Row2: horizontal blade cleave, fireball, ice blizzard crystals, spectral skull souls, molten meteor, blue lightning bolt, ring of infernal fire, green venom vial. Row3: flaming pillar, blue tornado, swirling tidal vortex, meteor rain, arrow piercing a target, three enchanted arrows, icy arrow, heavenly golden arrow. Row4: five arrows in a fan, healing green holy light, blazing powerful greatsword, fire slash sword, purple spectral souls, spiraling magical beam, white energy ray, sword erupting flames. Row5: mage fire orb, turbulent cyclone, purple meteor storm, deadly dark scepter thrust, fiery dragon chain, infernal scream skull, bright spear of light, orange flame column. Row6: gathered violet energy sphere, horse hoof ground impact, summoner fire orb, life-draining vampiric energy, branching chain lightning, electrical explosion, crimson storm, massive steel gauntlet punch. Row7: shockwave fist, roaring beast claw fist, chained gauntlets punching, shadow phantom fist, dragon fist, golden sword buff, blue shield buff, silver star magic. Row8: emerald healing aura, crimson flame blade, icy crystal sword, violet arcane eye, divine winged sigil, golden lightning spear, turquoise ocean staff, amber claw strike. The final image is an actual complete 8x8 grid icon atlas for cropping, not a mockup of a game screen. No surrounding border outside the grid."
+}

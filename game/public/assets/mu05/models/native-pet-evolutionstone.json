@@ -1,0 +1,1 @@
+{"file":"models/native-pet-evolutionstone.bin","meshes":[{"offset":0,"count":192,"texture":"textures/native-b7da95d6f5c0e60a2477.webp"}],"bones":1,"bind":[[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]],"animation":{"parents":[-1],"clips":{"0":{"frames":1,"lock":false,"bones":[[[0.0,0.0,0.0,0.0,-0.0,0.0]]]}}},"source":"Item/evolutionstone.bmd"}

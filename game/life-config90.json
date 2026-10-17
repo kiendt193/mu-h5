@@ -1,0 +1,982 @@
+{
+  "version": 90,
+  "ranks": [
+    {
+      "id": "rank-0",
+      "name": "Tân binh",
+      "sourceName": "Novato",
+      "min": 0,
+      "max": 50,
+      "bonus": {
+        "hp": 30,
+        "mp": 20,
+        "damage": 1,
+        "defense": 1
+      }
+    },
+    {
+      "id": "rank-1",
+      "name": "Học việc",
+      "sourceName": "Aprendiz",
+      "min": 51,
+      "max": 100,
+      "bonus": {
+        "hp": 60,
+        "mp": 40,
+        "damage": 2,
+        "defense": 2
+      }
+    },
+    {
+      "id": "rank-2",
+      "name": "Sứ giả",
+      "sourceName": "Mensageiro",
+      "min": 101,
+      "max": 150,
+      "bonus": {
+        "hp": 90,
+        "mp": 60,
+        "damage": 3,
+        "defense": 3
+      }
+    },
+    {
+      "id": "rank-3",
+      "name": "Thợ săn",
+      "sourceName": "Caçador",
+      "min": 151,
+      "max": 200,
+      "bonus": {
+        "hp": 120,
+        "mp": 80,
+        "damage": 4,
+        "defense": 4
+      }
+    },
+    {
+      "id": "rank-4",
+      "name": "Sát thủ",
+      "sourceName": "Assasino",
+      "min": 201,
+      "max": 250,
+      "bonus": {
+        "hp": 150,
+        "mp": 100,
+        "damage": 5,
+        "defense": 5
+      }
+    },
+    {
+      "id": "rank-5",
+      "name": "Xạ thủ",
+      "sourceName": "Arqueiro",
+      "min": 251,
+      "max": 300,
+      "bonus": {
+        "hp": 180,
+        "mp": 120,
+        "damage": 6,
+        "defense": 6
+      }
+    },
+    {
+      "id": "rank-6",
+      "name": "Thương sĩ",
+      "sourceName": "Lanceiro",
+      "min": 301,
+      "max": 350,
+      "bonus": {
+        "hp": 210,
+        "mp": 140,
+        "damage": 7,
+        "defense": 7
+      }
+    },
+    {
+      "id": "rank-7",
+      "name": "Kỵ sĩ",
+      "sourceName": "Cavaleiro",
+      "min": 351,
+      "max": 400,
+      "bonus": {
+        "hp": 240,
+        "mp": 160,
+        "damage": 8,
+        "defense": 8
+      }
+    },
+    {
+      "id": "rank-8",
+      "name": "Chiến sĩ",
+      "sourceName": "Soldado",
+      "min": 401,
+      "max": 450,
+      "bonus": {
+        "hp": 270,
+        "mp": 180,
+        "damage": 9,
+        "defense": 9
+      }
+    },
+    {
+      "id": "rank-9",
+      "name": "Pháp sư",
+      "sourceName": "Mago",
+      "min": 451,
+      "max": 500,
+      "bonus": {
+        "hp": 300,
+        "mp": 200,
+        "damage": 10,
+        "defense": 10
+      }
+    },
+    {
+      "id": "rank-10",
+      "name": "Chiến binh",
+      "sourceName": "Guerreiro",
+      "min": 501,
+      "max": 550,
+      "bonus": {
+        "hp": 330,
+        "mp": 220,
+        "damage": 11,
+        "defense": 11
+      }
+    },
+    {
+      "id": "rank-11",
+      "name": "Đấu sĩ",
+      "sourceName": "Gladiador",
+      "min": 551,
+      "max": 600,
+      "bonus": {
+        "hp": 360,
+        "mp": 240,
+        "damage": 12,
+        "defense": 12
+      }
+    },
+    {
+      "id": "rank-12",
+      "name": "Tướng quân",
+      "sourceName": "General",
+      "min": 601,
+      "max": 650,
+      "bonus": {
+        "hp": 390,
+        "mp": 260,
+        "damage": 13,
+        "defense": 13
+      }
+    },
+    {
+      "id": "rank-13",
+      "name": "Bậc thầy chiến trận",
+      "sourceName": "Batlle Master",
+      "min": 651,
+      "max": 700,
+      "bonus": {
+        "hp": 420,
+        "mp": 280,
+        "damage": 14,
+        "defense": 14
+      }
+    },
+    {
+      "id": "rank-14",
+      "name": "Người giải phóng",
+      "sourceName": "Libertador",
+      "min": 701,
+      "max": 750,
+      "bonus": {
+        "hp": 450,
+        "mp": 300,
+        "damage": 15,
+        "defense": 15
+      }
+    },
+    {
+      "id": "rank-15",
+      "name": "Lãnh chúa",
+      "sourceName": "Lord",
+      "min": 751,
+      "max": 800,
+      "bonus": {
+        "hp": 480,
+        "mp": 320,
+        "damage": 16,
+        "defense": 16
+      }
+    },
+    {
+      "id": "rank-16",
+      "name": "Huyền thoại",
+      "sourceName": "Mito",
+      "min": 801,
+      "max": 850,
+      "bonus": {
+        "hp": 510,
+        "mp": 340,
+        "damage": 17,
+        "defense": 17
+      }
+    },
+    {
+      "id": "rank-17",
+      "name": "Á thần",
+      "sourceName": "Semideus",
+      "min": 851,
+      "max": 900,
+      "bonus": {
+        "hp": 540,
+        "mp": 360,
+        "damage": 18,
+        "defense": 18
+      }
+    },
+    {
+      "id": "rank-18",
+      "name": "Bất tử",
+      "sourceName": "Imortal",
+      "min": 901,
+      "max": 950,
+      "bonus": {
+        "hp": 570,
+        "mp": 380,
+        "damage": 19,
+        "defense": 19
+      }
+    },
+    {
+      "id": "rank-19",
+      "name": "Alpha",
+      "sourceName": "Alpha",
+      "min": 951,
+      "max": 1000,
+      "bonus": {
+        "hp": 600,
+        "mp": 400,
+        "damage": 20,
+        "defense": 20
+      }
+    },
+    {
+      "id": "rank-20",
+      "name": "Anh hùng",
+      "sourceName": "Heroi",
+      "min": 1001,
+      "max": 1100,
+      "bonus": {
+        "hp": 630,
+        "mp": 420,
+        "damage": 21,
+        "defense": 21
+      }
+    },
+    {
+      "id": "rank-21",
+      "name": "Tối thượng",
+      "sourceName": "Supremo",
+      "min": 1101,
+      "max": -1,
+      "bonus": {
+        "hp": 660,
+        "mp": 440,
+        "damage": 22,
+        "defense": 22
+      }
+    }
+  ],
+  "serverMissions": [
+    {
+      "index": 0,
+      "name": "Tiêu Diệt Quái Vật",
+      "target": 1000000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 1,
+      "name": "Tiêu Diệt Boss Vàng",
+      "target": 100,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 2,
+      "name": "Tiêu Diệt Quái Vật Kalima",
+      "target": 250000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 3,
+      "name": "Tiêu Diệt Phù Thủy Trắng",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 4,
+      "name": "PK Người Chơi",
+      "target": 1000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 5,
+      "name": "Tiêu Diệt Rồng Đỏ",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 6,
+      "name": "Tiêu Diệt Lính Binh Đoàn",
+      "target": 50,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 7,
+      "name": "Phá Cổng BC",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 8,
+      "name": "Tham Gia Hỗn Nguyên Lâu",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 9,
+      "name": "Win Hỗn Nguyên Lâu",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 10,
+      "name": "Thời Gian Online",
+      "target": 480,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 11,
+      "name": "Nhặt Ngọc",
+      "target": 250,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 12,
+      "name": "Dùng Ngọc",
+      "target": 350,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 13,
+      "name": "Chế Tạo Thành Công",
+      "target": 800,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 14,
+      "name": "Chế Tạo Thất Bại",
+      "target": 500,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 15,
+      "name": "Nhặt Zen",
+      "target": 2000000000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 16,
+      "name": "Nhặt Đồ Excellent",
+      "target": 50,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 17,
+      "name": "Nhặt Đồ Thần",
+      "target": 35,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 18,
+      "name": "Chiến Thằng Quyết Đấu",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 19,
+      "name": "Số Lần Tăng Level",
+      "target": 10000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 20,
+      "name": "Số Lần Tăng Reset",
+      "target": 100,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 21,
+      "name": "Tiêu Boss Boss Kanturu",
+      "target": 20,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 22,
+      "name": "Tiêu Diệt Quái Lv100",
+      "target": 500000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 23,
+      "name": "Tiêu Diệt Boss Class",
+      "target": 250,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 24,
+      "name": "Mở Kho Báu Hoàng Tộc",
+      "target": 100,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 25,
+      "name": "Tiêu Diệt Cua Giả Mạo",
+      "target": 600,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 26,
+      "name": "Tiêu Diệt Quỷ Vương",
+      "target": 50,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 27,
+      "name": "Tiêu Diệt Cua Kỳ Cục",
+      "target": 600,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 28,
+      "name": "Tiêu Diệt Nhện Raklion",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 29,
+      "name": "Tiêu Diệt Kundun",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 30,
+      "name": "Phá Hủy Tượng BC",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 31,
+      "name": "Hoàn Thành BC",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 32,
+      "name": "Hoàn Thành Relife",
+      "target": 1,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 33,
+      "name": "Tiêu Diệt Thỏ Trắng",
+      "target": 300,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 34,
+      "name": "Tiêu Diệt Quái Mùa Hè",
+      "target": 300,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 35,
+      "name": "Tiêu Diệt Phượng Hoàng",
+      "target": 100,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 36,
+      "name": "Tiêu Diệt Quái Kanturu",
+      "target": 50000,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 37,
+      "name": "Tiêu Diệt Medusa",
+      "target": 25,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 38,
+      "name": "Tiêu Diệt Tôn Hành Giả",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 39,
+      "name": "Tiêu Diệt Boss Nix",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 40,
+      "name": "Tiêu Diệt Ngộ Không",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 41,
+      "name": "Tiêu Diệt Ngưu Ma Vương",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 42,
+      "name": "Tiêu Diệt Lữ Bố",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 43,
+      "name": "Tiêu Diệt Erohim",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 44,
+      "name": "Tiêu Diệt VolKath",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 45,
+      "name": "Tiêu Diệt Triệu Vân",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 46,
+      "name": "Tiêu Diệt Arthur",
+      "target": 10,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 47,
+      "name": "Tiêu Diệt Boss Thế Giới",
+      "target": 50,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 48,
+      "name": "Tiêu Diệt Quỷ Xương",
+      "target": 50,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    },
+    {
+      "index": 49,
+      "name": "Treo Máy Offline",
+      "target": 480,
+      "sourceRewardType": 1,
+      "sourceRewardValue": 1000
+    }
+  ],
+  "harmony": [
+    {
+      "id": "1:1",
+      "group": 1,
+      "name": "Sát thương tối thiểu",
+      "stat": "damage",
+      "rate": 50,
+      "minLevel": 0,
+      "values": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        20,
+        20,
+        20
+      ],
+      "zen": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        200000,
+        220000,
+        240000,
+        280000,
+        320000,
+        360000,
+        400000,
+        500000,
+        500000,
+        500000
+      ]
+    },
+    {
+      "id": "1:2",
+      "group": 1,
+      "name": "Sát thương tối đa",
+      "stat": "damage",
+      "rate": 50,
+      "minLevel": 0,
+      "values": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        17,
+        20,
+        23,
+        26,
+        29,
+        29,
+        29
+      ],
+      "zen": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        200000,
+        220000,
+        240000,
+        280000,
+        320000,
+        360000,
+        400000,
+        500000,
+        500000,
+        500000
+      ]
+    },
+    {
+      "id": "1:5",
+      "group": 1,
+      "name": "Sát thương vật lý",
+      "stat": "damage",
+      "rate": 30,
+      "minLevel": 6,
+      "values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7,
+        8,
+        9,
+        11,
+        12,
+        14,
+        16,
+        19,
+        19,
+        19
+      ],
+      "zen": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        200000,
+        220000,
+        240000,
+        280000,
+        320000,
+        360000,
+        400000,
+        500000,
+        500000,
+        500000
+      ]
+    },
+    {
+      "id": "2:1",
+      "group": 2,
+      "name": "Sát thương phép",
+      "stat": "damage",
+      "rate": 50,
+      "minLevel": 0,
+      "values": [
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        17,
+        18,
+        19,
+        21,
+        23,
+        25,
+        27,
+        31,
+        31,
+        31
+      ],
+      "zen": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        200000,
+        220000,
+        240000,
+        280000,
+        320000,
+        360000,
+        400000,
+        500000,
+        500000,
+        500000
+      ]
+    },
+    {
+      "id": "3:1",
+      "group": 3,
+      "name": "Phòng thủ",
+      "stat": "defense",
+      "rate": 50,
+      "minLevel": 0,
+      "values": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        25,
+        25,
+        25
+      ],
+      "zen": [
+        100000,
+        110000,
+        120000,
+        130000,
+        140000,
+        150000,
+        200000,
+        220000,
+        240000,
+        280000,
+        320000,
+        360000,
+        400000,
+        500000,
+        500000,
+        500000
+      ]
+    }
+  ],
+  "seeds": [
+    {
+      "id": 2,
+      "type": 1,
+      "name": "Hỏa · Sát thương tối thiểu",
+      "stat": "damage",
+      "values": [
+        30,
+        32,
+        35,
+        40,
+        50
+      ]
+    },
+    {
+      "id": 3,
+      "type": 1,
+      "name": "Hỏa · Sát thương tối đa",
+      "stat": "damage",
+      "values": [
+        20,
+        22,
+        25,
+        30,
+        35
+      ]
+    },
+    {
+      "id": 11,
+      "type": 2,
+      "name": "Thủy · Phòng thủ",
+      "stat": "defense",
+      "values": [
+        30,
+        33,
+        36,
+        39,
+        42
+      ]
+    },
+    {
+      "id": 22,
+      "type": 4,
+      "name": "Phong · HP tối đa",
+      "stat": "hpPercent",
+      "values": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": 23,
+      "type": 4,
+      "name": "Phong · MP tối đa",
+      "stat": "mpPercent",
+      "values": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": 32,
+      "type": 5,
+      "name": "Lôi · Tỉ lệ chí mạng",
+      "stat": "critical",
+      "values": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "eggRoundsPerDay": 1,
+  "wordRoundsPerDay": 5,
+  "wordReward": 10,
+  "maxListingsPerCharacter": 20,
+  "maxListings": 2000,
+  "gardenMaxPlots": 40,
+  "gardenUnlockBase": 100000,
+  "crops": {
+    "carrot": {
+      "name": "Cà rốt",
+      "seedZen": 1000,
+      "duration": 7200000
+    },
+    "tomato": {
+      "name": "Cà chua",
+      "seedZen": 2000,
+      "duration": 14400000
+    },
+    "rice": {
+      "name": "Lúa",
+      "seedZen": 1500,
+      "duration": 10800000
+    }
+  },
+  "animals": {
+    "chicken": {
+      "name": "Gà",
+      "buyZen": 10000,
+      "duration": 14400000
+    },
+    "cow": {
+      "name": "Bò",
+      "buyZen": 50000,
+      "duration": 43200000
+    }
+  },
+  "farmRewardsEnabled": false
+}

@@ -1,0 +1,812 @@
+{
+  "achievements": [
+    {
+      "id": "elite100-0-1",
+      "name": "Sát thần 1",
+      "title": "Sát thần 1",
+      "counter": "kills",
+      "target": 50000,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-0-2",
+      "name": "Sát thần 2",
+      "title": "Sát thần 2",
+      "counter": "kills",
+      "target": 100000,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-0-3",
+      "name": "Sát thần 3",
+      "title": "Sát thần 3",
+      "counter": "kills",
+      "target": 250000,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-0-4",
+      "name": "Sát thần 4",
+      "title": "Sát thần 4",
+      "counter": "kills",
+      "target": 500000,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-0-5",
+      "name": "Sát thần 5",
+      "title": "Sát thần 5",
+      "counter": "kills",
+      "target": 1000000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-1-1",
+      "name": "Chúa tể chiến trường 1",
+      "title": "Chúa tể chiến trường 1",
+      "counter": "highKills",
+      "target": 10000,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-1-2",
+      "name": "Chúa tể chiến trường 2",
+      "title": "Chúa tể chiến trường 2",
+      "counter": "highKills",
+      "target": 25000,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-1-3",
+      "name": "Chúa tể chiến trường 3",
+      "title": "Chúa tể chiến trường 3",
+      "counter": "highKills",
+      "target": 50000,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-1-4",
+      "name": "Chúa tể chiến trường 4",
+      "title": "Chúa tể chiến trường 4",
+      "counter": "highKills",
+      "target": 100000,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-1-5",
+      "name": "Chúa tể chiến trường 5",
+      "title": "Chúa tể chiến trường 5",
+      "counter": "highKills",
+      "target": 250000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-2-1",
+      "name": "Đế vương tái sinh 1",
+      "title": "Đế vương tái sinh 1",
+      "counter": "resets",
+      "target": 100,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-2-2",
+      "name": "Đế vương tái sinh 2",
+      "title": "Đế vương tái sinh 2",
+      "counter": "resets",
+      "target": 250,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-2-3",
+      "name": "Đế vương tái sinh 3",
+      "title": "Đế vương tái sinh 3",
+      "counter": "resets",
+      "target": 500,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-2-4",
+      "name": "Đế vương tái sinh 4",
+      "title": "Đế vương tái sinh 4",
+      "counter": "resets",
+      "target": 1000,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-2-5",
+      "name": "Đế vương tái sinh 5",
+      "title": "Đế vương tái sinh 5",
+      "counter": "resets",
+      "target": 2000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-3-1",
+      "name": "Bậc thầy ngọc 1",
+      "title": "Bậc thầy ngọc 1",
+      "counter": "gems",
+      "target": 1000,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-3-2",
+      "name": "Bậc thầy ngọc 2",
+      "title": "Bậc thầy ngọc 2",
+      "counter": "gems",
+      "target": 2500,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-3-3",
+      "name": "Bậc thầy ngọc 3",
+      "title": "Bậc thầy ngọc 3",
+      "counter": "gems",
+      "target": 5000,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-3-4",
+      "name": "Bậc thầy ngọc 4",
+      "title": "Bậc thầy ngọc 4",
+      "counter": "gems",
+      "target": 10000,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-3-5",
+      "name": "Bậc thầy ngọc 5",
+      "title": "Bậc thầy ngọc 5",
+      "counter": "gems",
+      "target": 25000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-4-1",
+      "name": "Thánh thủ rèn 1",
+      "title": "Thánh thủ rèn 1",
+      "counter": "craftSuccess",
+      "target": 100,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-4-2",
+      "name": "Thánh thủ rèn 2",
+      "title": "Thánh thủ rèn 2",
+      "counter": "craftSuccess",
+      "target": 250,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-4-3",
+      "name": "Thánh thủ rèn 3",
+      "title": "Thánh thủ rèn 3",
+      "counter": "craftSuccess",
+      "target": 500,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-4-4",
+      "name": "Thánh thủ rèn 4",
+      "title": "Thánh thủ rèn 4",
+      "counter": "craftSuccess",
+      "target": 1000,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-4-5",
+      "name": "Thánh thủ rèn 5",
+      "title": "Thánh thủ rèn 5",
+      "counter": "craftSuccess",
+      "target": 2000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-5-1",
+      "name": "Hiền giả MU 1",
+      "title": "Hiền giả MU 1",
+      "counter": "wordWins",
+      "target": 50,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-5-2",
+      "name": "Hiền giả MU 2",
+      "title": "Hiền giả MU 2",
+      "counter": "wordWins",
+      "target": 100,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-5-3",
+      "name": "Hiền giả MU 3",
+      "title": "Hiền giả MU 3",
+      "counter": "wordWins",
+      "target": 250,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-5-4",
+      "name": "Hiền giả MU 4",
+      "title": "Hiền giả MU 4",
+      "counter": "wordWins",
+      "target": 500,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-5-5",
+      "name": "Hiền giả MU 5",
+      "title": "Hiền giả MU 5",
+      "counter": "wordWins",
+      "target": 1000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-6-1",
+      "name": "Chủ kho báu Kundun 1",
+      "title": "Chủ kho báu Kundun 1",
+      "counter": "boxes",
+      "target": 50,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-6-2",
+      "name": "Chủ kho báu Kundun 2",
+      "title": "Chủ kho báu Kundun 2",
+      "counter": "boxes",
+      "target": 100,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-6-3",
+      "name": "Chủ kho báu Kundun 3",
+      "title": "Chủ kho báu Kundun 3",
+      "counter": "boxes",
+      "target": 250,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-6-4",
+      "name": "Chủ kho báu Kundun 4",
+      "title": "Chủ kho báu Kundun 4",
+      "counter": "boxes",
+      "target": 500,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-6-5",
+      "name": "Chủ kho báu Kundun 5",
+      "title": "Chủ kho báu Kundun 5",
+      "counter": "boxes",
+      "target": 1000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-7-1",
+      "name": "Đại thương gia 1",
+      "title": "Đại thương gia 1",
+      "counter": "sales",
+      "target": 50,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-7-2",
+      "name": "Đại thương gia 2",
+      "title": "Đại thương gia 2",
+      "counter": "sales",
+      "target": 100,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-7-3",
+      "name": "Đại thương gia 3",
+      "title": "Đại thương gia 3",
+      "counter": "sales",
+      "target": 250,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-7-4",
+      "name": "Đại thương gia 4",
+      "title": "Đại thương gia 4",
+      "counter": "sales",
+      "target": 500,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-7-5",
+      "name": "Đại thương gia 5",
+      "title": "Đại thương gia 5",
+      "counter": "sales",
+      "target": 1000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-8-1",
+      "name": "Tông sư gia cường 1",
+      "title": "Tông sư gia cường 1",
+      "counter": "harmony",
+      "target": 50,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-8-2",
+      "name": "Tông sư gia cường 2",
+      "title": "Tông sư gia cường 2",
+      "counter": "harmony",
+      "target": 100,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-8-3",
+      "name": "Tông sư gia cường 3",
+      "title": "Tông sư gia cường 3",
+      "counter": "harmony",
+      "target": 250,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-8-4",
+      "name": "Tông sư gia cường 4",
+      "title": "Tông sư gia cường 4",
+      "counter": "harmony",
+      "target": 500,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-8-5",
+      "name": "Tông sư gia cường 5",
+      "title": "Tông sư gia cường 5",
+      "counter": "harmony",
+      "target": 1000,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    },
+    {
+      "id": "elite100-9-1",
+      "name": "Vô địch sinh tồn 1",
+      "title": "Vô địch sinh tồn 1",
+      "counter": "pkWins",
+      "target": 1,
+      "reward": 100,
+      "bonus": {
+        "hp": 100,
+        "mp": 60,
+        "damage": 5,
+        "defense": 4,
+        "critical": 1
+      }
+    },
+    {
+      "id": "elite100-9-2",
+      "name": "Vô địch sinh tồn 2",
+      "title": "Vô địch sinh tồn 2",
+      "counter": "pkWins",
+      "target": 3,
+      "reward": 200,
+      "bonus": {
+        "hp": 200,
+        "mp": 120,
+        "damage": 10,
+        "defense": 8,
+        "critical": 2
+      }
+    },
+    {
+      "id": "elite100-9-3",
+      "name": "Vô địch sinh tồn 3",
+      "title": "Vô địch sinh tồn 3",
+      "counter": "pkWins",
+      "target": 10,
+      "reward": 300,
+      "bonus": {
+        "hp": 300,
+        "mp": 180,
+        "damage": 15,
+        "defense": 12,
+        "critical": 3
+      }
+    },
+    {
+      "id": "elite100-9-4",
+      "name": "Vô địch sinh tồn 4",
+      "title": "Vô địch sinh tồn 4",
+      "counter": "pkWins",
+      "target": 25,
+      "reward": 400,
+      "bonus": {
+        "hp": 400,
+        "mp": 240,
+        "damage": 20,
+        "defense": 16,
+        "critical": 4
+      }
+    },
+    {
+      "id": "elite100-9-5",
+      "name": "Vô địch sinh tồn 5",
+      "title": "Vô địch sinh tồn 5",
+      "counter": "pkWins",
+      "target": 50,
+      "reward": 500,
+      "bonus": {
+        "hp": 500,
+        "mp": 300,
+        "damage": 25,
+        "defense": 20,
+        "critical": 5
+      }
+    }
+  ],
+  "daily": [
+    {
+      "id": "daily100-kills",
+      "name": "Diệt 500 quái",
+      "counter": "kills",
+      "target": 500,
+      "zen": 50000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-highKills",
+      "name": "Diệt 100 quái cấp 100 trở lên",
+      "counter": "highKills",
+      "target": 100,
+      "zen": 50000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-gems",
+      "name": "Nhặt 10 ngọc",
+      "counter": "gems",
+      "target": 10,
+      "zen": 30000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-eggs",
+      "name": "Đập đủ 3 trứng",
+      "counter": "eggs",
+      "target": 3,
+      "zen": 20000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-wordWins",
+      "name": "Giải đúng 1 câu đố",
+      "counter": "wordWins",
+      "target": 1,
+      "zen": 20000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-buys",
+      "name": "Mua 1 món trong chợ",
+      "counter": "buys",
+      "target": 1,
+      "zen": 20000,
+      "reward": 10
+    },
+    {
+      "id": "daily100-harmony",
+      "name": "Gia cường 1 lần",
+      "counter": "harmony",
+      "target": 1,
+      "zen": 30000,
+      "reward": 10
+    }
+  ]
+}

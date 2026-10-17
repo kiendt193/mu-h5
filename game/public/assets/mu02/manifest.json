@@ -1,0 +1,60 @@
+{
+  "cell": [
+    128,
+    192
+  ],
+  "frames": 4,
+  "directions": 8,
+  "source": "Soucre5.2 FullShare.rar / Client.rar / Client/Data",
+  "sprites": {
+    "knight": {
+      "idle": "knight-idle.webp",
+      "run": "knight-run.webp",
+      "attack": "knight-attack.webp"
+    },
+    "wizard": {
+      "idle": "wizard-idle.webp",
+      "run": "wizard-run.webp",
+      "attack": "wizard-attack.webp"
+    },
+    "elf": {
+      "idle": "elf-idle.webp",
+      "run": "elf-run.webp",
+      "attack": "elf-attack.webp"
+    },
+    "spider": {
+      "idle": "spider-idle.webp",
+      "run": "spider-run.webp",
+      "attack": "spider-attack.webp"
+    },
+    "hound": {
+      "idle": "hound-idle.webp",
+      "run": "hound-run.webp",
+      "attack": "hound-attack.webp"
+    },
+    "skeleton": {
+      "idle": "skeleton-idle.webp",
+      "run": "skeleton-run.webp",
+      "attack": "skeleton-attack.webp"
+    }
+  },
+  "terrain": {
+    "grass0": "grass0.webp",
+    "road0": "road0.webp",
+    "grass1": "grass1.webp",
+    "road1": "road1.webp",
+    "grass2": "grass2.webp",
+    "road2": "road2.webp"
+  },
+  "props": {
+    "tree": "tree.webp",
+    "tree2": "tree2.webp",
+    "gate": "gate.webp",
+    "merchant": "merchant.webp"
+  },
+  "items": {
+    "sword": "item-sword.webp",
+    "staff": "item-staff.webp",
+    "bow": "item-bow.webp"
+  }
+}

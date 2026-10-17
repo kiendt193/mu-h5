@@ -1,0 +1,5024 @@
+{
+  "classes": [
+    "wizard",
+    "knight",
+    "elf",
+    "gladiator",
+    "darklord",
+    "summoner",
+    "fighter"
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Poison",
+      "vietnameseName": "Độc",
+      "damage": 12,
+      "mana": 42,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 5
+    },
+    {
+      "id": 2,
+      "name": "Meteorite",
+      "vietnameseName": "Lôi thạch",
+      "damage": 21,
+      "mana": 12,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 6
+    },
+    {
+      "id": 3,
+      "name": "Lightning",
+      "vietnameseName": "Sấm sét",
+      "damage": 17,
+      "mana": 15,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 7
+    },
+    {
+      "id": 4,
+      "name": "Fire Ball",
+      "vietnameseName": "Quả cầu lửa",
+      "damage": 8,
+      "mana": 3,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 8
+    },
+    {
+      "id": 5,
+      "name": "Flame",
+      "vietnameseName": "Cột lửa",
+      "damage": 25,
+      "mana": 50,
+      "bp": 0,
+      "range": 6,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 9
+    },
+    {
+      "id": 7,
+      "name": "Ice",
+      "vietnameseName": "Băng công",
+      "damage": 10,
+      "mana": 38,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 11
+    },
+    {
+      "id": 8,
+      "name": "Twister",
+      "vietnameseName": "Lốc xoáy",
+      "damage": 35,
+      "mana": 60,
+      "bp": 0,
+      "range": 6,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 12
+    },
+    {
+      "id": 9,
+      "name": "Evil Spirit",
+      "vietnameseName": "Linh hồn",
+      "damage": 45,
+      "mana": 90,
+      "bp": 0,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 13
+    },
+    {
+      "id": 10,
+      "name": "Hell Fire",
+      "vietnameseName": "Lửa địa ngục",
+      "damage": 120,
+      "mana": 160,
+      "bp": 0,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 14
+    },
+    {
+      "id": 11,
+      "name": "Power Wave",
+      "vietnameseName": "Sóng năng lượng",
+      "damage": 14,
+      "mana": 5,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 15
+    },
+    {
+      "id": 12,
+      "name": "Aqua Beam",
+      "vietnameseName": "Lượng nước xoáy",
+      "damage": 80,
+      "mana": 140,
+      "bp": 0,
+      "range": 6,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 16
+    },
+    {
+      "id": 13,
+      "name": "Blast",
+      "vietnameseName": "Mưa sao băng",
+      "damage": 70,
+      "mana": 150,
+      "bp": 0,
+      "range": 3,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 17
+    },
+    {
+      "id": 14,
+      "name": "Inferno",
+      "vietnameseName": "Vòng tròn lửa",
+      "damage": 100,
+      "mana": 200,
+      "bp": 0,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 1,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 18
+    },
+    {
+      "id": 19,
+      "name": "Falling Slash",
+      "vietnameseName": "Chém xuống",
+      "damage": 0,
+      "mana": 9,
+      "bp": 0,
+      "range": 3,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 1,
+        "summoner": 1,
+        "fighter": 1
+      },
+      "sourceLine": 23
+    },
+    {
+      "id": 20,
+      "name": "Lunge",
+      "vietnameseName": "Đâm",
+      "damage": 0,
+      "mana": 9,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 1,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 24
+    },
+    {
+      "id": 21,
+      "name": "Uppercut",
+      "vietnameseName": "Chém xoáy lên",
+      "damage": 0,
+      "mana": 8,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 1,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 25
+    },
+    {
+      "id": 22,
+      "name": "Cyclone",
+      "vietnameseName": "Chém xoáy ngang",
+      "damage": 0,
+      "mana": 9,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 1,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 26
+    },
+    {
+      "id": 23,
+      "name": "Slash",
+      "vietnameseName": "Chém ánh sáng",
+      "damage": 0,
+      "mana": 10,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 1,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 27
+    },
+    {
+      "id": 24,
+      "name": "Triple Shot",
+      "vietnameseName": "Tấn công liên hoàn",
+      "damage": 0,
+      "mana": 5,
+      "bp": 0,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 1,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 28
+    },
+    {
+      "id": 38,
+      "name": "Decay",
+      "vietnameseName": "Mưa độc tố",
+      "damage": 95,
+      "mana": 110,
+      "bp": 7,
+      "range": 6,
+      "radius": 4,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 2,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 39
+    },
+    {
+      "id": 39,
+      "name": "Ice Storm",
+      "vietnameseName": "Mưa băng tuyết",
+      "damage": 80,
+      "mana": 100,
+      "bp": 5,
+      "range": 6,
+      "radius": 4,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 2,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 40
+    },
+    {
+      "id": 40,
+      "name": "Nova",
+      "vietnameseName": "Bùng nổ năng lượng",
+      "damage": 0,
+      "mana": 180,
+      "bp": 45,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 2,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 41
+    },
+    {
+      "id": 41,
+      "name": "Twisting Slash",
+      "vietnameseName": "Chém xoáy",
+      "damage": 0,
+      "mana": 10,
+      "bp": 10,
+      "range": 0,
+      "radius": 3,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 42
+    },
+    {
+      "id": 42,
+      "name": "Rageful Blow",
+      "vietnameseName": "Địa chấn",
+      "damage": 60,
+      "mana": 25,
+      "bp": 20,
+      "range": 0,
+      "radius": 4,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 2,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 43
+    },
+    {
+      "id": 43,
+      "name": "Death Stab",
+      "vietnameseName": "Đâm gió",
+      "damage": 70,
+      "mana": 15,
+      "bp": 12,
+      "range": 2,
+      "radius": 2,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 2,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 44
+    },
+    {
+      "id": 46,
+      "name": "Starfall",
+      "vietnameseName": "Mũi tên thiên đường",
+      "damage": 120,
+      "mana": 20,
+      "bp": 15,
+      "range": 8,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 1,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 47
+    },
+    {
+      "id": 49,
+      "name": "Fire Breath",
+      "vietnameseName": "Phun lửa",
+      "damage": 30,
+      "mana": 9,
+      "bp": 0,
+      "range": 3,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 1,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 50
+    },
+    {
+      "id": 51,
+      "name": "Ice Arrow",
+      "vietnameseName": "Mũi tên băng",
+      "damage": 105,
+      "mana": 10,
+      "bp": 12,
+      "range": 8,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 2,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 52
+    },
+    {
+      "id": 52,
+      "name": "Penetration",
+      "vietnameseName": "Xuyên tâm tiễn",
+      "damage": 70,
+      "mana": 7,
+      "bp": 9,
+      "range": 6,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 1,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 53
+    },
+    {
+      "id": 55,
+      "name": "Fire Slash",
+      "vietnameseName": "Chém lửa",
+      "damage": 80,
+      "mana": 15,
+      "bp": 20,
+      "range": 2,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 54
+    },
+    {
+      "id": 56,
+      "name": "Power Slash",
+      "vietnameseName": "Chém sức mạnh",
+      "damage": 0,
+      "mana": 15,
+      "bp": 0,
+      "range": 0,
+      "radius": 5,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 55
+    },
+    {
+      "id": 57,
+      "name": "Spiral Slash",
+      "vietnameseName": "Tia năng lượng",
+      "damage": 75,
+      "mana": 20,
+      "bp": 15,
+      "range": 5,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 56
+    },
+    {
+      "id": 60,
+      "name": "Force",
+      "vietnameseName": "Đâm ánh sáng",
+      "damage": 10,
+      "mana": 10,
+      "bp": 0,
+      "range": 5,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 57
+    },
+    {
+      "id": 61,
+      "name": "Fire Burst",
+      "vietnameseName": "Hỏa xích long",
+      "damage": 100,
+      "mana": 25,
+      "bp": 0,
+      "range": 6,
+      "radius": 3,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 58
+    },
+    {
+      "id": 62,
+      "name": "Earthquake",
+      "vietnameseName": "Giậm đất",
+      "damage": 150,
+      "mana": 0,
+      "bp": 50,
+      "range": 0,
+      "radius": 7,
+      "delay": 5000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 59
+    },
+    {
+      "id": 65,
+      "name": "Electric Spark",
+      "vietnameseName": "Tập hợp năng lượng",
+      "damage": 250,
+      "mana": 0,
+      "bp": 100,
+      "range": 0,
+      "radius": 6,
+      "delay": 5000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 62
+    },
+    {
+      "id": 66,
+      "name": "Force Wave",
+      "vietnameseName": "Đâm đoạt mệnh",
+      "damage": 50,
+      "mana": 10,
+      "bp": 0,
+      "range": 4,
+      "radius": 3,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 63
+    },
+    {
+      "id": 73,
+      "name": "Mana Rays",
+      "vietnameseName": "Tia năng lượng",
+      "damage": 85,
+      "mana": 130,
+      "bp": 7,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 70
+    },
+    {
+      "id": 74,
+      "name": "Fire Blast",
+      "vietnameseName": "Cột lửa",
+      "damage": 150,
+      "mana": 30,
+      "bp": 10,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 71
+    },
+    {
+      "id": 78,
+      "name": "Fire Scream",
+      "vietnameseName": "Lửa địa ngục",
+      "damage": 130,
+      "mana": 45,
+      "bp": 10,
+      "range": 4,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 75
+    },
+    {
+      "id": 214,
+      "name": "Drain Life",
+      "vietnameseName": "Hút máu",
+      "damage": 35,
+      "mana": 50,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 84
+    },
+    {
+      "id": 215,
+      "name": "Chain Lightning",
+      "vietnameseName": "Sét liên hoàn",
+      "damage": 70,
+      "mana": 85,
+      "bp": 0,
+      "range": 6,
+      "radius": 3,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 85
+    },
+    {
+      "id": 216,
+      "name": "Electric Surge",
+      "vietnameseName": "Sóng điện",
+      "damage": 90,
+      "mana": 100,
+      "bp": 0,
+      "range": 6,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 86
+    },
+    {
+      "id": 223,
+      "name": "Sahamutt",
+      "vietnameseName": "Gọi hỏa kỳ lân",
+      "damage": 40,
+      "mana": 90,
+      "bp": 5,
+      "range": 6,
+      "radius": 3,
+      "delay": 4000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 92
+    },
+    {
+      "id": 224,
+      "name": "Neil",
+      "vietnameseName": "Gọi quỷ",
+      "damage": 65,
+      "mana": 110,
+      "bp": 10,
+      "range": 6,
+      "radius": 4,
+      "delay": 4000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 93
+    },
+    {
+      "id": 225,
+      "name": "Ghost Phantom",
+      "vietnameseName": "Gọi ma công",
+      "damage": 80,
+      "mana": 120,
+      "bp": 15,
+      "range": 6,
+      "radius": 5,
+      "delay": 4000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 94
+    },
+    {
+      "id": 230,
+      "name": "Red Storm",
+      "vietnameseName": "Sốc điện",
+      "damage": 95,
+      "mana": 115,
+      "bp": 7,
+      "range": 0,
+      "radius": 5,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 1,
+        "fighter": 0
+      },
+      "sourceLine": 95
+    },
+    {
+      "id": 232,
+      "name": "Frozen Stab",
+      "vietnameseName": "Chém băng",
+      "damage": 110,
+      "mana": 30,
+      "bp": 24,
+      "range": 6,
+      "radius": 3,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 2,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 96
+    },
+    {
+      "id": 235,
+      "name": "Five Shot",
+      "vietnameseName": "Liên hoàn tiễn",
+      "damage": 40,
+      "mana": 10,
+      "bp": 7,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 2,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 99
+    },
+    {
+      "id": 236,
+      "name": "Sword Slash",
+      "vietnameseName": "Hỏa diệm",
+      "damage": 140,
+      "mana": 20,
+      "bp": 25,
+      "range": 0,
+      "radius": 5,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 100
+    },
+    {
+      "id": 237,
+      "name": "Lightning Storm",
+      "vietnameseName": "Bão điện",
+      "damage": 110,
+      "mana": 120,
+      "bp": 10,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 1,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 101
+    },
+    {
+      "id": 238,
+      "name": "Birds",
+      "vietnameseName": "Hỗn loạn",
+      "damage": 190,
+      "mana": 50,
+      "bp": 15,
+      "range": 0,
+      "radius": 6,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 1,
+        "summoner": 0,
+        "fighter": 0
+      },
+      "sourceLine": 102
+    },
+    {
+      "id": 260,
+      "name": "Large Ring Blower",
+      "vietnameseName": "Ngọa Hổ",
+      "damage": 0,
+      "mana": 9,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 104
+    },
+    {
+      "id": 261,
+      "name": "Upper Beast",
+      "vietnameseName": "Mãnh Long",
+      "damage": 0,
+      "mana": 9,
+      "bp": 0,
+      "range": 2,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 105
+    },
+    {
+      "id": 262,
+      "name": "Chain Driver",
+      "vietnameseName": "Vật ngã",
+      "damage": 0,
+      "mana": 15,
+      "bp": 20,
+      "range": 4,
+      "radius": 0,
+      "delay": 700,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 106
+    },
+    {
+      "id": 263,
+      "name": "Dark Side",
+      "vietnameseName": "Ảo ảnh liên hoàn",
+      "damage": 0,
+      "mana": 70,
+      "bp": 0,
+      "range": 5,
+      "radius": 5,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 108
+    },
+    {
+      "id": 264,
+      "name": "Dragon Lore",
+      "vietnameseName": "Gầm Thét",
+      "damage": 0,
+      "mana": 50,
+      "bp": 30,
+      "range": 3,
+      "radius": 5,
+      "delay": 700,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 109
+    },
+    {
+      "id": 265,
+      "name": "Dragon Slayer",
+      "vietnameseName": "Hơi thở rồng",
+      "damage": 0,
+      "mana": 100,
+      "bp": 100,
+      "range": 4,
+      "radius": 0,
+      "delay": 3000,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 110
+    },
+    {
+      "id": 269,
+      "name": "Charge",
+      "vietnameseName": "Charge",
+      "damage": 90,
+      "mana": 20,
+      "bp": 15,
+      "range": 4,
+      "radius": 0,
+      "delay": 0,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 114
+    },
+    {
+      "id": 270,
+      "name": "Phoenix Shot",
+      "vietnameseName": "Phượng hoàng tung cánh",
+      "damage": 0,
+      "mana": 30,
+      "bp": 0,
+      "range": 4,
+      "radius": 3,
+      "delay": 1200,
+      "level": 0,
+      "energy": 0,
+      "leadership": 0,
+      "classes": {
+        "wizard": 0,
+        "knight": 0,
+        "elf": 0,
+        "gladiator": 0,
+        "darklord": 0,
+        "summoner": 0,
+        "fighter": 1
+      },
+      "sourceLine": 115
+    }
+  ],
+  "removedArmor": [],
+  "equipmentChanges": [
+    {
+      "id": "0:0",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:1",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:2",
+      "before": [
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "0:32",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:33",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:34",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:35",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:46",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:52",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:53",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:56",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:59",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:60",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:61",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:64",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:80",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:81",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "0:83",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "1:0",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "1:1",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "1:3",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "1:4",
+      "before": [
+        "wizard",
+        "elf",
+        "gladiator"
+      ],
+      "after": [
+        "wizard",
+        "elf",
+        "gladiator",
+        "summoner"
+      ]
+    },
+    {
+      "id": "2:0",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "2:1",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "2:2",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "2:3",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "2:4",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "4:120",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "5:0",
+      "before": [
+        "wizard",
+        "gladiator"
+      ],
+      "after": [
+        "wizard",
+        "gladiator",
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:14",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:15",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:16",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:17",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:18",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:19",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:20",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:21",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:22",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:23",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:24",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:25",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:26",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:27",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:28",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:29",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:32",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:34",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:36",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:50",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:52",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:54",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:56",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:62",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:65",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "5:120",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:50",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:51",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:52",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:53",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:54",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:55",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:120",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:121",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:122",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "6:123",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:6",
+      "before": [
+        "knight",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:8",
+      "before": [
+        "knight"
+      ],
+      "after": [
+        "knight",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:9",
+      "before": [
+        "knight"
+      ],
+      "after": [
+        "knight",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:39",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:40",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:41",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:42",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:44",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:53",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:59",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:60",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:61",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:73",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:77",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:93",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:101",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:104",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:109",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:112",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:141",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:144",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:153",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:156",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:167",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:170",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:192",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:195",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:203",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "7:206",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:210",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:211",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:212",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:213",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:214",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:215",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:216",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:217",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:218",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:219",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:220",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:221",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:222",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:223",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:224",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:225",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:226",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:227",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:228",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "7:229",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:6",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:8",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:9",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:39",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:40",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:41",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:42",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:44",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:53",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:59",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:60",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:61",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:73",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:77",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:93",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:101",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:104",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:109",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:112",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:141",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:144",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:153",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:156",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:167",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:170",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:192",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:195",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:203",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "8:206",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:210",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:211",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:212",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:213",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:214",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:215",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:216",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:217",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:218",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:219",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:220",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:221",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:222",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:223",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:224",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:225",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:226",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:227",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:228",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "8:229",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:6",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:8",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:9",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:39",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:40",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:41",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:42",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:44",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:53",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:59",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:60",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:61",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:73",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:77",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:93",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:101",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:104",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:109",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:112",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:141",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:144",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:153",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:156",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:167",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:170",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:192",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:195",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:203",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "9:206",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:210",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:211",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:212",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:213",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:214",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:215",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:216",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:217",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:218",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:219",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:220",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:221",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:222",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:223",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:224",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:225",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:226",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:227",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:228",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "9:229",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "10:39",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:40",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:41",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:42",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:44",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:53",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:93",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:101",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:109",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:141",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:153",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:167",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:192",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:203",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:210",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:211",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:212",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:213",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:214",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:215",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:216",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:217",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:218",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:219",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:220",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:221",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:222",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:223",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:224",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:225",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:226",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:227",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:228",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "10:229",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:6",
+      "before": [
+        "knight",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "darklord",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:8",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:9",
+      "before": [
+        "knight",
+        "gladiator"
+      ],
+      "after": [
+        "knight",
+        "gladiator",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:39",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:40",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:41",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:42",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:43",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:44",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:53",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:59",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:60",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:61",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:73",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:77",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:93",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:101",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:104",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:109",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:112",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:141",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:144",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:153",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:156",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:167",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:170",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:192",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:195",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:203",
+      "before": [],
+      "after": [
+        "summoner"
+      ]
+    },
+    {
+      "id": "11:206",
+      "before": [],
+      "after": [
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:210",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:211",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:212",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:213",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:214",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:215",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:216",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:217",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:218",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:219",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:220",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:221",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:222",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:223",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:224",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:225",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:226",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:227",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:228",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    },
+    {
+      "id": "11:229",
+      "before": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord"
+      ],
+      "after": [
+        "wizard",
+        "knight",
+        "elf",
+        "gladiator",
+        "darklord",
+        "summoner",
+        "fighter"
+      ]
+    }
+  ],
+  "sourceHashes": {
+    "Item.txt": "fe5dca5fd875d4ed9259cc49352f5e49c9b7056f2f2e265f75730444ebf17f8b",
+    "Skill.txt": "e35cd20adc587c22401fa12e5b2e5e39936935458d0fadcef585e5be04bcbcee"
+  }
+}

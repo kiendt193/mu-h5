@@ -1,0 +1,6 @@
+'use strict';
+const INITIAL=5000;
+function historical(config,count){if(!Number.isSafeInteger(count)||count<0||count>100000)throw Error('Số lần reset không hợp lệ');let sum=0;for(let n=1;n<=count;n++){const row=config.rows.find(r=>n>=r.min&&n<=r.max);if(!row||!Number.isSafeInteger(row.points)||row.points<0)throw Error('Thiếu cấu hình thưởng reset '+n);sum+=row.points;}return sum;}
+function reward(c,config){return c.resetBalanceVersion===82&&Number.isSafeInteger(c.resetRewardTotal)&&c.resetRewardTotal>=0?c.resetRewardTotal:historical(config,c.resetCount||0);}
+function wrap(reset,config){const perform=reset.perform,view=reset.view;reset.view=function(c){const v=view(c),earned=reward(c,config);return {...v,initialPoints:INITIAL,resetRewardTotal:earned,pointsAfterReset:v.available?INITIAL+earned+v.points:null};};reset.perform=function(c){const v=view(c),earned=reward(c,config),total=INITIAL+earned+(v.points||0);if(!Number.isSafeInteger(total)||total<INITIAL)throw Error('Điểm reset không hợp lệ');const result=perform(c);c.unspentPoints=total;c.resetRewardTotal=earned+v.points;c.resetBalanceVersion=82;c.lastResetRefund=0;return reset.view(c);};return reset;}
+module.exports={INITIAL,historical,wrap};

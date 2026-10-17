@@ -1,0 +1,117 @@
+{
+  "source": "Data/Util/ResetTable.txt, account level AL0; overlapping endpoints use first row",
+  "rows": [
+    {
+      "min": 1,
+      "max": 50,
+      "level": 200,
+      "zen": 0,
+      "points": 350,
+      "gems": {}
+    },
+    {
+      "min": 51,
+      "max": 100,
+      "level": 250,
+      "zen": 0,
+      "points": 330,
+      "gems": {}
+    },
+    {
+      "min": 101,
+      "max": 150,
+      "level": 280,
+      "zen": 0,
+      "points": 300,
+      "gems": {}
+    },
+    {
+      "min": 151,
+      "max": 200,
+      "level": 310,
+      "zen": 0,
+      "points": 280,
+      "gems": {}
+    },
+    {
+      "min": 201,
+      "max": 251,
+      "level": 340,
+      "zen": 0,
+      "points": 260,
+      "gems": {}
+    },
+    {
+      "min": 251,
+      "max": 300,
+      "level": 370,
+      "zen": 0,
+      "points": 240,
+      "gems": {}
+    },
+    {
+      "min": 301,
+      "max": 351,
+      "level": 400,
+      "zen": 0,
+      "points": 220,
+      "gems": {}
+    },
+    {
+      "min": 351,
+      "max": 400,
+      "level": 400,
+      "zen": 0,
+      "points": 200,
+      "gems": {}
+    },
+    {
+      "min": 401,
+      "max": 451,
+      "level": 400,
+      "zen": 0,
+      "points": 180,
+      "gems": {}
+    },
+    {
+      "min": 451,
+      "max": 500,
+      "level": 400,
+      "zen": 0,
+      "points": 160,
+      "gems": {}
+    },
+    {
+      "min": 501,
+      "max": 600,
+      "level": 400,
+      "zen": 0,
+      "points": 140,
+      "gems": {}
+    },
+    {
+      "min": 601,
+      "max": 700,
+      "level": 400,
+      "zen": 0,
+      "points": 120,
+      "gems": {}
+    },
+    {
+      "min": 701,
+      "max": 800,
+      "level": 400,
+      "zen": 0,
+      "points": 100,
+      "gems": {}
+    },
+    {
+      "min": 801,
+      "max": 9999,
+      "level": 400,
+      "zen": 0,
+      "points": 50,
+      "gems": {}
+    }
+  ]
+}

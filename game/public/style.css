@@ -89,3 +89,6 @@
     padding: 48px 10px calc(16px + env(safe-area-inset-bottom, 0px));
   }
 }
+/* ELITE GEAR BONUS LINES 20261017 */
+#modal .gearBonusLine{display:block;margin-top:3px;padding-left:2px;color:#9fe8c1;font-size:11px;line-height:1.5;white-space:normal;overflow-wrap:anywhere}
+#modal #selectedItem .gearBonusLine{color:#b4efc7}

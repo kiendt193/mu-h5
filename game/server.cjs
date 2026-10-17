@@ -140,7 +140,26 @@ const statsPk35=stats;stats=c=>{const attrs=EQ24.effective(c,LIFE90.bonus(c)),ef
  }catch(e){if(!res.headersSent)reply(res,e.status||500,{error:e.status?e.message:'Lỗi máy chủ'});else res.end();if(!e.status)console.error(e)}});
  async function close(){sessions.clear();for(const stream of streams.values())if(!stream.destroyed)stream.write('event: update\ndata: '+JSON.stringify({version:'2.8',loginRequired:true})+'\n\n');clearInterval(timer);await BOT.flush();await save();for(const s of streams.values())s.end();await new Promise(r=>server.close(r));if(dataStore)await dataStore.close()}return{server,close,db,players,mobs,drops,tick,stats,snapshot,adventures:AD,worldPK:PKW};
 }
-if(require.main===module){(async()=>{let dataStore=null,initialDb=null;
+if(require.main===module){(async()=>{
+// Once the Singapore service is confirmed, the old Oregon service can
+// redirect browsers without starting a second game loop or writing Neon data.
+if(process.env.MU_REDIRECT_TO){
+ const base=new URL(process.env.MU_REDIRECT_TO);
+ if(base.protocol!=='https:')throw new Error('MU_REDIRECT_TO must use HTTPS');
+ const redirect=http.createServer((req,res)=>{
+  const requested=new URL(req.url||'/mu/','http://localhost');
+  const location=new URL(requested.pathname+requested.search,base.origin).href;
+  if(req.method==='GET'||req.method==='HEAD'){
+   res.writeHead(302,{'Location':location,'Cache-Control':'no-store'});
+   return res.end();
+  }
+  res.writeHead(409,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+  res.end(JSON.stringify({error:'Máy chủ chuyển sang Singapore, vui lòng tải lại trang.',url:location}));
+ });
+ redirect.listen(Number(process.env.PORT||18082),process.env.HOST||'127.0.0.1',()=>console.log('MU H5 region migration redirect active'));
+ return;
+}
+let dataStore=null,initialDb=null;
 if(process.env.DATABASE_URL){
  dataStore=await require('./storage-postgres.cjs').connect(process.env.DATABASE_URL);
  initialDb=await dataStore.read();

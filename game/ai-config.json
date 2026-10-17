@@ -1,1 +1,9 @@
-{"enabled":true,"count":100,"pulseMs":500,"chatIntervalMs":15000,"nearbyPlayersLimit":14,"saveIntervalMs":60000,"marketLimit":35}
+{
+  "enabled": true,
+  "count": 4,
+  "pulseMs": 500,
+  "chatIntervalMs": 15000,
+  "nearbyPlayersLimit": 10,
+  "saveIntervalMs": 60000,
+  "marketLimit": 120
+}

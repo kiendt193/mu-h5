@@ -36,11 +36,12 @@ const POOL={
   ['critical','Chí mạng +3%',3]
  ]
 };
-const VERSION=1;
-function target(it){
+const VERSION=2;
+function target(it,equipped=false){
  if(!it||it.kind!=='gear'||!ELIGIBLE.has(it.slot))return 0;
  const level=Math.max(0,Number(it.requiredLevel)||0,Number(it.sourceDropLevel)||0);
  const rare=it.rarity==='excellent'||it.rarity==='ancient';
+ if(equipped)return rare?Math.max(6,level>=350?6:level>=250?5:4):Math.max(3,level>=350?3:level>=250?2:0);
  if(level>=350)return rare?6:3;
  if(level>=250)return rare?5:2;
  if(level>=180&&rare)return 4;
@@ -51,8 +52,8 @@ function hash(value){
  for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}
  return h>>>0;
 }
-function add(it){
- const targetCount=target(it);
+function add(it,equipped=false){
+ const targetCount=target(it,equipped);
  if(!targetCount)return false;
  it.eliteOptions=Array.isArray(it.eliteOptions)?it.eliteOptions:[];
  const all=[...(it.excellent||[]),...(it.baseOptions||[]),...it.eliteOptions].filter(x=>x&&typeof x.id==='string');
@@ -74,8 +75,9 @@ function add(it){
 }
 function updateCharacter(c){
  let changed=false;
- const items=[...(c.inventory||[]),...(c.warehouse||[]),...(c.gearRecovery||[]),...Object.values(c.gear||{})];
+ const items=[...(c.inventory||[]),...(c.warehouse||[]),...(c.gearRecovery||[])];
  for(const it of items)if(it&&add(it))changed=true;
+ for(const it of Object.values(c.gear||{}))if(it&&add(it,true))changed=true;
  if(c.eliteOptionsVersion!==VERSION){c.eliteOptionsVersion=VERSION;changed=true}
  return changed;
 }
@@ -86,5 +88,9 @@ function install(D){
  D.migrate=function(c,...args){const result=priorMigrate(c,...args);updateCharacter(c);return result};
  const priorDrop=D.makeDrop;
  D.makeDrop=function(...args){const item=priorDrop(...args);if(item)add(item);return item};
+ const priorEquip=D.equip;
+ D.equip=function(c,...args){const result=priorEquip(c,...args);updateCharacter(c);return result};
+ const priorAuto=D.autoItems;
+ D.autoItems=function(c,...args){const result=priorAuto(c,...args);updateCharacter(c);return result};
 }
 module.exports={VERSION,POOL,target,add,updateCharacter,install};

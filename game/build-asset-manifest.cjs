@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.join(__dirname,'public');
+if(!fs.existsSync(root))throw new Error('MU public asset directory missing');
+const {catalog}=require('./asset-cache.cjs');
+const manifest=catalog(root);
+const destination=path.join(__dirname,'asset-manifest.prebuilt.json');
+const tmp=destination+'.tmp';
+fs.writeFileSync(tmp,JSON.stringify(manifest));
+fs.renameSync(tmp,destination);
+console.log('MU H5 asset manifest generated: '+Object.keys(manifest.files).length+' files');

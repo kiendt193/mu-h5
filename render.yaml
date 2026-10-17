@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mu-h5-full-2-8
+    runtime: node
+    plan: free
+    buildCommand: cd game && npm install --omit=dev
+    startCommand: node game/server.cjs
+    healthCheckPath: /mu/api/health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_ENV
+        value: production

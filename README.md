@@ -1,23 +1,17 @@
-# MU H5 Full 2.8
+# MU H5 Full 2.8 — bộ game gốc
 
-Game sử dụng Node.js >= 18 và tài nguyên trong `game/public/`. **Bộ mã nguồn/tài nguyên Full 2.8 chưa được upload hoàn chỉnh lên repository này.**
+**Lưu ý:** Repository này **chưa chứa toàn bộ 613 MB file game**. Code ở `offline/index.html` trước đó chỉ là bản demo tự dựng, **không phải MU H5 Full 2.8 gốc** và đã ngừng giới thiệu như bản chính thức.
 
-Sau khi upload đủ dữ liệu, máy chủ chạy bằng `node game/server.cjs`. Cần một dịch vụ Node.js chạy liên tục và lưu trữ bền vững cho MU_DATA để giữ dữ liệu nhân vật; GitHub Pages không chạy được backend.
+## Chơi đúng bản game gốc ở chế độ offline (Windows)
 
-Không đưa `accounts.json`, `.env`, token, khoá bí mật lên GitHub. Repository hiện PUBLIC: kiểm tra quyền phân phối các tài nguyên game trước khi upload.
+Tải `MU_H5_Full_2_8_ORIGINAL_OFFLINE.zip.001`, `.002`, `.003` do ChatGPT cung cấp trong cuộc trò chuyện, đặt cùng một thư mục rồi ghép 3 phần thành `MU_H5_Full_2_8_ORIGINAL_OFFLINE.zip`.
 
-Bạn có thể dùng gói công cụ `MU_H5_GitHub_Tools.zip` do ChatGPT tạo để upload nguồn từ Windows, rồi kết nối repository với Railway.
+Giải nén ZIP và chạy `START_GAME_OFFLINE.cmd`. Máy phải cài Node.js 18 trở lên. Mở `http://localhost:18082/mu/` để chơi. Không phải đăng ký tài khoản; dữ liệu nhân vật lưu trong `OFFLINE_SAVE/accounts.json`. Toàn bộ giao diện, tài nguyên và gameplay sử dụng game gốc trong `game/`, chỉ có lớp đăng nhập được bỏ qua ở bản offline. **Không cần VPS**, nhưng máy tính của bạn phải chạy Node.js khi chơi.
 
+Nếu đã có phiên bản `MU_H5_Full_2_8.zip` gốc, giải nén đè `MU_H5_2_8_OFFLINE_PATCH.zip` lên thư mục chứa `game` rồi chạy launcher mới.
 
-## Play offline — online link (lite version)
+### Tình trạng link web
 
-Open **https://mu-h5-offline-web-production.up.railway.app/** and choose one of 7 classes.
-The offline browser source is at [offline/index.html](offline/index.html). Gameplay and progress are stored in your browser localStorage; no account, player server, or dedicated VPS is needed. This is a **reduced browser adaptation**, **not** the original full MU H5 2.8 client/assets.
+Đường link Railway `https://mu-h5-offline-web-production.up.railway.app/` hiện chỉ hiển thị thông báo, không còn trình bày demo là game gốc. Để chơi game gốc qua link công khai cần tải toàn bộ mã nguồn/tài nguyên lên host có Node.js và dữ liệu lưu bền vững. Việc đó chưa hoàn tất.
 
-## Play FULL MU H5 2.8 offline on Windows (original game)
-
-The full source/assets package is distributed separately as `MU_H5_Full_2_8.zip` (not uploaded to this repo). Extract that package and place [START_MU_H5_OFFLINE.cmd](START_MU_H5_OFFLINE.cmd) next to the `game` folder.
-
-Install Node.js >= 18 and double click the launcher. Open **http://localhost:18082/mu/**. Your local data is saved in `OFFLINE_SAVE/`. No VPS is used. Keep the CMD window open while playing.
-
-**Never commit account saves or credentials to this public repository.**
+**Bảo mật:** Không đưa `accounts.json`, khóa riêng, token, hay tệp `.env` lên repository PUBLIC.

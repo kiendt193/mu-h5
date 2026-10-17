@@ -11,3 +11,5 @@ services:
         value: 0.0.0.0
       - key: NODE_ENV
         value: production
+      - key: MU_TRUST_PROXY
+        value: "1"

@@ -160,6 +160,7 @@ if(process.env.MU_REDIRECT_TO){
  return;
 }
 let dataStore=null,initialDb=null;
+if(process.env.MU_REQUIRE_DATABASE==='1'&&!process.env.DATABASE_URL)throw new Error('MU_REQUIRE_DATABASE=1: configure DATABASE_URL on this Render service before starting the game');
 if(process.env.DATABASE_URL){
  dataStore=await require('./storage-postgres.cjs').connect(process.env.DATABASE_URL);
  initialDb=await dataStore.read();

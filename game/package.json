@@ -3,7 +3,8 @@
   "version": "2.8.0",
   "private": true,
   "scripts": {
-    "start": "node server.cjs"
+    "start": "node server.cjs",
+    "postinstall": "node build-asset-manifest.cjs"
   },
   "engines": {
     "node": ">=18"

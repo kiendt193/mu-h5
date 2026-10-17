@@ -1,0 +1,15 @@
+/game/data/
+**/accounts.json
+**/.env
+**/.env.*
+**/*.pem
+**/*.key
+**/*.p12
+**/*.sqlite
+**/*.db
+**/*.log
+**/node_modules/
+**/backups/
+*.zip
+*.7z
+*.7z.*

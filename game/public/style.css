@@ -97,3 +97,13 @@
 #modal .muEquipWarning{color:#ffbf9d;border-left:3px solid #d98b61;background:#391e1cbb;padding:7px 9px;margin:8px 0;font-size:12px;line-height:1.6;white-space:normal;max-width:100%;overflow-wrap:anywhere}
 #modal .muHandLabel{display:inline-block;color:#b0e1c1;margin:5px 8px;font-size:12px}
 #modal [data-hand-equip],#modal [data-hand-switch]{margin:4px 3px;padding:8px 9px;border-color:#7c966c;white-space:normal}
+
+/* MU QUICK UNEQUIP ALL ITEMS 20261018 */
+#modal .quickUnequip{margin:12px 0 14px;padding:10px 12px;border:1px solid #6c735e;background:#101917e3;min-width:0}
+#modal .quickUnequip h3{margin:0 0 8px;font-size:14px;color:#efcf8f}
+#modal .quickUnequipItems{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px}
+#modal .quickUnequipItems button{min-width:0;min-height:42px;padding:6px 8px;white-space:normal;text-align:left;border:1px solid #8b825e;background:#19201ddd;color:#f6dfb4;overflow-wrap:anywhere;touch-action:manipulation}
+#modal .quickUnequipItems button small{display:block;line-height:1.35;color:#aabbb0;overflow-wrap:anywhere}
+#modal .quickUnequipItems button:disabled{opacity:.48}
+#modal .quickUnequipItems button:focus-visible{outline:2px solid #dabb72;outline-offset:2px}
+@media(max-width:650px){#modal .quickUnequip{padding:8px;margin:9px 0}#modal .quickUnequipItems{grid-template-columns:repeat(2,minmax(0,1fr))}#modal .quickUnequipItems button{font-size:12px}}

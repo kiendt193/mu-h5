@@ -15,15 +15,40 @@ const defs=[
  return Object.freeze({id:v.id,key:v.key,name:v.name,english:v.english,mana:v.mana,sourceId:row?.sourceId??v.sourceId??null,hasModel:!!row||!!v.sourceId});
 });
 const byId=new Map(defs.map(x=>[x.id,x]));
+function skillKey(id){return 'elfsummon'+id}
+function installSkills(skills,sources){
+ for(const def of defs){
+  const src=sources[def.id];
+  if(!src||src.classes?.elf!==1)continue;
+  const skill={id:skillKey(def.id),summonId:def.id,sourceId:def.id,name:src.vietnameseName||def.name,sourceName:src.name,english:src.name,
+   level:Math.max(1,src.level||1),requiredStage:1,requiredEnergy:src.energy||0,requiredLeadership:src.leadership||0,
+   mana:src.mana,mult:0,range:0,area:0,cooldown:10000,originalCooldown:10000,effect:'spirit',
+   icon:'fx/spirit.webp',illustration:'icons/item-book04.webp',targetType:'self',support:'summon',hasModel:def.hasModel,
+   description:'Triệu hồi '+(src.vietnameseName||def.name)+' đi theo, tự hỗ trợ tấn công quái. Chỉ một đồng hành tại một thời điểm.'};
+  if(!skills.elf.some(x=>x.id===skill.id))skills.elf.push(skill);
+ }
+}
+function ensureStarter(c){
+ if(c.classId!=='elf')return false;
+ c.skills||=[];let changed=false;
+ // Introductory Goblin summon is unlocked once for existing and new Elf characters.
+ if(!c.skills.includes(skillKey(30))){c.skills.push(skillKey(30));changed=true;}
+ // Preserve any summon previously used before these skills joined the skill book system.
+ const previous=byId.get(Number(c.elfSummonSkillId));
+ if(previous?.hasModel&&!c.skills.includes(skillKey(previous.id))){c.skills.push(skillKey(previous.id));changed=true;}
+ return changed;
+}
 function cast(p,id,now=Date.now()){
  const c=p.user.character,def=byId.get(Number(id));
  if(c.classId!=='elf')throw Error('Chỉ Tiên nữ Elf được triệu hồi bằng kỹ năng này');
  if(!def)throw Error('Kỹ năng triệu hồi không hợp lệ');
+ if(!c.skills?.includes(skillKey(def.id)))throw Error('Chưa học kỹ năng triệu hồi này');
  if(!def.hasModel)throw Error('Thiếu tài nguyên quái triệu hồi: '+def.english);
  if(p.hp<=0)throw Error('Không thể triệu hồi khi đã gục');
  if(p.mp<def.mana)throw Error('Không đủ MP để triệu hồi '+def.name);
+ if(p.elfSummon?.skillId===def.id&&p.elfSummon.map===c.map)return null;
  if(now<(p.elfSummonAt||0))throw Error('Triệu hồi đang hồi chiêu');
- p.mp-=def.mana;p.elfSummonAt=now+1500;
+ p.mp-=def.mana;p.elfSummonAt=now+10000;
  c.elfSummonSkillId=def.id; // save selection, not a second inventory pet
  p.elfSummon={skillId:def.id,map:c.map,x:p.x+30,y:p.y+22,sourceId:def.sourceId,name:def.name,at:now,lastStrike:0,lastFollow:now,action:'idle',facing:p.facing||0};
  return p.elfSummon;
@@ -63,4 +88,4 @@ function tick(p,mobs,now,options){
  const before=focus.hp;focus.hp-=damage;focus.hitAt=now;focus.target=p.user.id;
  return {mob:focus,damage:Math.min(before,damage),pet:s};
 }
-module.exports={defs,cast,restore,tick,view};
+module.exports={defs,byId,skillKey,installSkills,ensureStarter,cast,restore,tick,view};

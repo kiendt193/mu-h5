@@ -173,5 +173,113 @@ Object.assign(MU_LANG_DATA,{
   "战斗力",
   "Kekuatan tempur",
   "พลังต่อสู้"
+ ],
+ "Đeo tay trái": [
+  "Equip left hand",
+  "装备左手",
+  "Pakai tangan kiri",
+  "สวมมือซ้าย"
+ ],
+ "Đeo tay phải": [
+  "Equip right hand",
+  "装备右手",
+  "Pakai tangan kanan",
+  "สวมมือขวา"
+ ],
+ "Đeo cung/nỏ (hai tay)": [
+  "Equip bow/crossbow (two hands)",
+  "装备弓/弩（双手）",
+  "Pakai busur/panah otomatis (dua tangan)",
+  "สวมธนู/หน้าไม้ (สองมือ)"
+ ],
+ "Chuyển sang tay trái": [
+  "Switch to left hand",
+  "切换左手",
+  "Pindah ke tangan kiri",
+  "ย้ายไปมือซ้าย"
+ ],
+ "Chuyển sang tay phải": [
+  "Switch to right hand",
+  "切换右手",
+  "Pindah ke tangan kanan",
+  "ย้ายไปมือขวา"
+ ],
+ "Đang dùng cả hai tay": [
+  "Using both hands",
+  "正在双手持有",
+  "Menggunakan kedua tangan",
+  "ใช้งานสองมือ"
+ ],
+ "Đang cầm tay phải": [
+  "Right hand equipped",
+  "右手装备中",
+  "Terpasang di tangan kanan",
+  "สวมมือขวาอยู่"
+ ],
+ "Đang cầm tay trái": [
+  "Left hand equipped",
+  "左手装备中",
+  "Terpasang di tangan kiri",
+  "สวมมือซ้ายอยู่"
+ ],
+ "Chưa thể đeo": [
+  "Cannot equip",
+  "无法装备",
+  "Tidak dapat dipakai",
+  "ไม่สามารถสวมใส่"
+ ],
+ "Thiếu cấp": [
+  "Level too low",
+  "等级不足",
+  "Level kurang",
+  "เลเวลไม่เพียงพอ"
+ ],
+ "Thiếu Sức mạnh": [
+  "Strength too low",
+  "力量不足",
+  "Kekuatan kurang",
+  "พละกำลังไม่เพียงพอ"
+ ],
+ "Thiếu Nhanh nhẹn": [
+  "Agility too low",
+  "敏捷不足",
+  "Ketangkasan kurang",
+  "ความคล่องตัวไม่เพียงพอ"
+ ],
+ "Thiếu Năng lượng": [
+  "Energy too low",
+  "智力不足",
+  "Energi kurang",
+  "พลังงานไม่เพียงพอ"
+ ],
+ "Thiếu Thể lực": [
+  "Vitality too low",
+  "体力不足",
+  "Vitalitas kurang",
+  "พลังชีวิตไม่เพียงพอ"
+ ],
+ "Chưa chuyển chức": [
+  "Class advancement required",
+  "需要转职",
+  "Perlu naik kelas",
+  "ต้องเปลี่ยนอาชีพ"
+ ],
+ "Đấu sĩ MG không được đội mũ": [
+  "Magic Gladiator cannot wear helmets",
+  "魔剑士无法佩戴头盔",
+  "Magic Gladiator tidak bisa memakai helm",
+  "Magic Gladiator ไม่สามารถสวมหมวก"
+ ],
+ "Đây là tên/đạn, không phải cung hoặc nỏ": [
+  "This is ammunition, not a bow or crossbow",
+  "这是弹药，不是弓或弩",
+  "Ini amunisi, bukan busur atau crossbow",
+  "นี่คือลูกธนู ไม่ใช่ธนูหรือหน้าไม้"
+ ],
+ "Đã cập nhật tay cầm": [
+  "Hand equipment updated",
+  "已更新左右手装备",
+  "Tangan perlengkapan diperbarui",
+  "อัปเดตอุปกรณ์มือเรียบร้อย"
  ]
 });

@@ -23,6 +23,7 @@ PET.DROP_RATE=0.0005; // 2.6 normal pet: 0.05% per eligible monster kill
 const RANK_MODULE=require('./rankings.cjs');
 /* features137 */const F137=require('./features137.cjs');F137.questRates(Q);F137.installPets(PET,PS);
 require('./elite-options.cjs').install(D);
+require('./hand-equip.cjs').install(D);
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function createGame({directory=process.env.MU_DATA||path.join(__dirname,'data'),rng=Math.random,manualTicks=false,dropRate=.2,initialDb=null,dataStore=null}={}){
  if(!Number.isFinite(dropRate)||dropRate<0||dropRate>1)throw Error('Tỉ lệ rơi không hợp lệ');
@@ -112,7 +113,8 @@ const statsPk35=stats;stats=c=>{const attrs=EQ24.effective(c,LIFE90.bonus(c)),ef
  else if(op==='craft'){try{const craftResult=S.craft(c,b.recipe,b.itemId,rng);dirty=true;await save();CHAT120.craft(p,craftResult);return reply(res,200,{...snapshot(p),craftResult})}catch(e){throw fail(e.message)}}
  else if(op==='unequip'){try{S.unequip(c,b.slot)}catch(e){throw fail(e.message)}p.hp=Math.min(p.hp,stats(c).maxHp);p.mp=Math.min(p.mp,stats(c).maxMp)}
  else if(op==='ride'){try{S.ride(c,b.enabled)}catch(e){throw fail(e.message)}}
- else if(op==='equip'){try{D.equip(c,b.id,b.slot)}catch(e){throw fail(e.message)}p.hp=Math.min(p.hp,stats(c).maxHp)}
+ else if(op==='equip'){try{D.equip(c,b.id,b.hand||b.slot)}catch(e){throw fail(e.message)}p.hp=Math.min(p.hp,stats(c).maxHp);p.mp=Math.min(p.mp,stats(c).maxMp)}
+ else if(op==='handSwitch'){try{D.switchHand(c,b.id,b.hand)}catch(e){throw fail(e.message)}}
  else if(op==='claimGear'){try{R.claim(c,b.id)}catch(e){throw fail(e.message)}}
  else if(op==='warehouseList'){try{return reply(res,200,WH.list(c,b.page??0,b.query??''))}catch(e){throw fail(e.message)}}
  else if(op==='warehouseDeposit'||op==='warehouseWithdraw'){try{WH.transfer(c,b.id,op==='warehouseDeposit'?'deposit':'withdraw');await save()}catch(e){throw fail(e.message)}}

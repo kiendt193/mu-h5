@@ -185,3 +185,24 @@
 
 /* MU item accumulated battle power 20261018 */
 #modal .muItemLC{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;background:linear-gradient(125deg,#193423,#081b12);border:2px solid #70ce89;padding:12px;margin:12px 0;font-size:16px;color:#b6f6c2}#modal .muItemLC small{font-size:12px;color:#e3c88c}
+
+/* MU COMPACT INVENTORY REAL UI 20261019 */
+#modal #selectedItem .item{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;margin:5px 0 8px;padding:10px}
+#modal #selectedItem .item>div:not(.muSetBonuses){flex:1 1 155px;min-width:0;overflow-wrap:anywhere}
+#modal #selectedItem .muEquipActions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:nowrap;gap:5px;flex:0 0 auto;margin-left:auto;max-width:100%}
+#modal #selectedItem .muEquipActions button{min-height:37px;padding:7px 10px;font-size:13px;white-space:nowrap;margin:0}
+#modal #selectedItem [data-unequip]{background:#20251e;border:1px solid #99835d;color:#f3ddb0}
+#modal #selectedItem [data-unequip]:disabled{opacity:.4;cursor:not-allowed}
+#modal .muSetDetails{display:block;padding:0!important;margin:8px 0!important;border:1px solid #5d986a;background:#0a1911e9;box-shadow:none}
+#modal .muSetDetails summary{list-style:none;display:flex;gap:8px;align-items:center;justify-content:space-between;cursor:pointer;padding:8px 10px;color:#eed7a0;font-weight:700;font-size:13px;line-height:1.3}
+#modal .muSetDetails summary::-webkit-details-marker{display:none}
+#modal .muSetDetails summary::before{content:'▸';color:#9ce8ac;font-size:13px}
+#modal .muSetDetails[open] summary::before{content:'▾'}
+#modal .muSetDetails .muSetCount{margin-left:auto;color:#b8e6c1;font-size:11px;white-space:nowrap;font-weight:normal}
+#modal .muSetDetails .muSetBonuses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;padding:5px 8px 8px}
+#modal .muSetDetails .muSetActive,#modal .muSetDetails .muSetInactive{display:block;min-width:0;line-height:1.35;padding:5px 7px;margin:0;font-size:11px;font-weight:500;overflow-wrap:anywhere;border-left-width:2px}
+#modal .muSetDetails .muSetActive{background:#123220ab;border-left-color:#56c878;color:#a9ebba}
+#modal .muSetDetails .muSetInactive{background:#2023208c;border-left-color:#676b60;color:#919c93}
+#modal .muSetDetails .muSetNote{display:block;margin:0 8px 8px;font-size:10px;line-height:1.35;color:#a6c5ad}
+#modal .quickUnequip,#modal .muItemLC{display:none!important}
+@media(max-width:520px){#modal .muSetDetails .muSetBonuses{gap:3px;padding:5px}#modal .muSetDetails .muSetActive,#modal .muSetDetails .muSetInactive{font-size:10px;padding:5px}#modal #selectedItem .item>div{min-width:145px}#modal #selectedItem .muEquipActions button{padding:6px 8px}}

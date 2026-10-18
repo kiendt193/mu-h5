@@ -92,6 +92,8 @@ function install(D){
   const it=c.inventory?.find(x=>x.id===id);
   if(!it)throw Error('Không có món đồ trong hành trang');
   if(!weapon(it)){
+   // Pets use their own eligibility and summon handler; never apply gear rules.
+   if(it.kind==='pet')return prior(c,id,hand);
    E.sync(it);
    const faults=reasons(c,it);
    if(faults.length)throw Error('Không thể trang bị: '+faults.join(' · '));

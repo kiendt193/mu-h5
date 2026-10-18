@@ -166,3 +166,19 @@
 #muFarmWorld .muFarmError{grid-column:1/-1;color:#ffb1ad}
 #muFarmWorld.busy button{pointer-events:none;opacity:.65}
 @media(max-width:850px){#muFarmWorld{padding:5px}#muFarmWorld .muFarmPage{grid-template-columns:1fr;gap:8px}#muFarmWorld .muFarmTop{padding:8px;align-items:start;flex-direction:column}#muFarmWorld .muFarmTopButtons{justify-content:start}#muFarmWorld .muFarmLand{padding:7px;min-height:0}#muFarmWorld .muFarmPlot{min-height:110px;padding:4px}#muFarmWorld .muFarmPlots{gap:6px}#muFarmWorld .muFarmCards{grid-template-columns:repeat(4,minmax(0,1fr))}#muFarmWorld .muFarmCards strong{font-size:10px}#muFarmWorld .muFarmCards small{font-size:9px}#muFarmWorld .muFarmSidebar>section{padding:10px}}
+
+/* MU Forge/Total LC layout 20261018 */
+#modal .muForgePicker{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;font-weight:700}
+#modal .muForgePicker select{min-height:44px;width:100%;max-width:100%;border:1px solid #c5ab6b;background:#0a1117;color:#edd29b;padding:8px}
+#modal .muForgePreview{display:flex;align-items:center;gap:15px;border:2px solid #79b389;background:linear-gradient(130deg,#152f2d,#091519);padding:14px;margin:8px 0 13px;min-width:0}
+#modal .muForgeIcon{width:72px;min-width:72px;height:72px;display:grid;place-items:center;border:1px solid #9b8751;font-size:32px}
+#modal .muForgeIcon img{width:65px;height:65px;object-fit:contain;image-rendering:pixelated}
+#modal .muForgePreview h3{color:#f6d391;margin:0 0 6px}
+#modal .muForgeScore{display:block;color:#9cfcb3;font-size:clamp(15px,2vw,20px);line-height:1.4}
+#modal .muForgePreview small{display:block;color:#b0cebb;font-size:11px;line-height:1.4}
+#modal .muForgeSockets{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:8px;margin:10px 0}
+#modal .muForgeSocket{display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid #a4a889;background:#10241d;box-shadow:inset 0 0 14px #21402a}
+#modal .muForgeSocket span{font-size:22px;color:#87ecaa}
+#modal .muForgeSocket small{color:#d9dcbb}
+#modal .muForgeSocket button{min-height:37px}
+@media(max-width:550px){#modal .muForgePreview{padding:9px;gap:9px}#modal .muForgeIcon{min-width:52px;width:52px;height:52px}#modal .muForgeIcon img{width:47px;height:47px}#modal .muForgeSockets{grid-template-columns:repeat(2,minmax(0,1fr))}}

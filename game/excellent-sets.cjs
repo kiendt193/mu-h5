@@ -40,7 +40,7 @@ function view(c){
   const x=map.get(key);
   if(!x.slots.includes(slot)){x.slots.push(slot);if(it.rarity==='excellent')x.excellent++;}
  }
- return [...map.values()].map(x=>({...x,count:x.slots.length,bonuses:(x.pieces===3?[...ACCESSORY,...ACCESSORY_EX.map(b=>({...b,requiresExcellent:true}))]:[...RULES,...EXTRAS.map(b=>({...b,requiresExcellent:true}))]).map(b=>({...b,active:(b.requiresExcellent?x.excellent:x.count)>=b.need}))}));
+ return [...map.values()].map(x=>({...x,count:x.slots.length,bonuses:(x.pieces===3?[...ACCESSORY,...ACCESSORY_EX.map(b=>({...b,requiresExcellent:true}))]:[...RULES,...EXTRAS.map(b=>({...b,requiresExcellent:true}))]).map(b=>({...b,active:(b.requiresExcellent?x.excellent:x.slots.length)>=b.need}))}));
 }
 function options(c){return view(c).flatMap(group=>group.bonuses.filter(b=>b.active).map(b=>({id:b.id,value:b.value})))}
 module.exports={family,view,options};

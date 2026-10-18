@@ -22,7 +22,7 @@
   firescream:'fire',chainlightning:'bolt',electricsurge:'bolt',redstorm:'whirl',
   ringblow:'fist',chaindriver:'fist',darkside:'spirit',dragonlore:'fire'
  };
- const R={version:'2.8.375',status:'loading',indexed:0,loaded:0,draws:0,
+ const R={version:'2.8.376',status:'loading',indexed:0,loaded:0,draws:0,
    lastSkill:null,files:new Map(),images:new Map(),loading:new Set(),failed:new Set(),active:true};
  window.MU_ORIGINAL_TEXTURE_FX=R;
  const profile=id=>typeof MU_PC_PROFILES==='undefined'?null:MU_PC_PROFILES[id];
@@ -45,12 +45,12 @@
    const file=R.files.get(name);if(!file)return null;
    R.loading.add(name);
    const im=new Image();im.decoding='async';
-   im.onload=()=>{R.loading.delete(name);R.images.set(name,im);R.loaded=R.images.size};
+   im.onload=()=>{R.loading.delete(name);const sprite=window.MU_SKILL_ALPHA?.prepare(im);if(sprite){R.images.set(name,sprite);R.loaded=R.images.size;}else{R.failed.add(name);}};
    im.onerror=()=>{R.loading.delete(name);R.failed.add(name)};
    im.src=ROOT+file;return null;
  }
  function paint(c,im,x,y,w,h,rot,opacity){
-  if(!im?.naturalWidth)return;
+  if(!(im?.naturalWidth||im?.width))return;
   c.save();c.translate(x,y);c.rotate(rot||0);c.globalAlpha=clamp(opacity,0,1);
   c.drawImage(im,-w/2,-h/2,w,h);c.restore();R.draws++;
  }

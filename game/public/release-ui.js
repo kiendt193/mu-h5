@@ -14,6 +14,10 @@
  const label=document.getElementById('loginVersion');
  function show(text,kind='maintenance'){
   if(!notice){notice=document.createElement('div');notice.id='muDeploymentNotice';notice.setAttribute('role','status');notice.style.cssText='position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);left:50%;transform:translateX(-50%);max-width:min(96vw,720px);width:max-content;z-index:11050;padding:12px 18px;background:#12202af3;color:#ffdf9c;border:1px solid #b39451;border-radius:8px;box-shadow:0 8px 28px #000a;font-size:14px;line-height:1.5;text-align:center;pointer-events:auto';document.body.appendChild(notice);}
+  // Show version-update prompts at the center of the visible viewport on PC and mobile.
+  // Maintenance/disconnect notices retain their existing position at the top.
+  notice.style.top=kind==='updated'?'50%':'calc(env(safe-area-inset-top,0px) + 10px)';
+  notice.style.transform=kind==='updated'?'translate(-50%, -50%)':'translateX(-50%)';
   notice.dataset.kind=kind;notice.textContent=text;notice.hidden=false;
  }
  function online(){wasConnected=true;if(notice?.dataset.kind==='maintenance'){notice.hidden=true;}}

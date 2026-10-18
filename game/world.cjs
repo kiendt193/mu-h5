@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('fs'),path=require('path'),MAPS=require('./worlds/maps.json'),SIZE=256,CELL=32;
-const walls=MAPS.map(m=>{const b=fs.readFileSync(path.join(__dirname,'worlds',m.id+'.bin'));if(b.length!==65536)throw Error('Invalid original map attributes');return b;});
+const walls=MAPS.map(m=>{const b=fs.readFileSync(path.join(__dirname,'worlds',(m.farm?1:m.id)+'.bin'));if(b.length!==65536)throw Error('Invalid original map attributes');return b;});
 const valid=(x,y)=>x>=0&&y>=0&&x<SIZE&&y<SIZE;
 function walkCell(map,x,y){return valid(x,y)&&!(walls[map][y*SIZE+x]&12);}
 function safe(map,x,y){return Number.isFinite(x)&&Number.isFinite(y)&&valid(Math.floor(x/CELL),Math.floor(y/CELL))&&!!(walls[map][Math.floor(y/CELL)*SIZE+Math.floor(x/CELL)]&1);}

@@ -28,6 +28,12 @@ function cast(p,id,now=Date.now()){
  p.elfSummon={skillId:def.id,map:c.map,x:p.x+30,y:p.y+22,sourceId:def.sourceId,name:def.name,at:now,lastStrike:0,lastFollow:now,action:'idle',facing:p.facing||0};
  return p.elfSummon;
 }
+function restore(p,now=Date.now()){
+ const c=p.user.character,def=byId.get(Number(c.elfSummonSkillId));
+ if(c.classId!=='elf'||!def?.hasModel||p.elfSummon)return null;
+ p.elfSummon={skillId:def.id,map:c.map,x:p.x+30,y:p.y+22,sourceId:def.sourceId,name:def.name,at:now,lastStrike:now,lastFollow:now,action:'idle',facing:p.facing||0};
+ return p.elfSummon;
+}
 function view(p){
  const s=p.elfSummon,c=p.user.character;
  if(!s||s.map!==c.map||c.classId!=='elf'||p.hp<=0)return null;
@@ -57,4 +63,4 @@ function tick(p,mobs,now,options){
  const before=focus.hp;focus.hp-=damage;focus.hitAt=now;focus.target=p.user.id;
  return {mob:focus,damage:Math.min(before,damage),pet:s};
 }
-module.exports={defs,cast,tick,view};
+module.exports={defs,cast,restore,tick,view};

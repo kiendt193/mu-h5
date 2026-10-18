@@ -4,6 +4,7 @@ const extra=require('./events-config100.json');
 const clone=structuredClone,integer=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
 const dateKey=n=>new Date(n+7*3600000).toISOString().slice(0,10);
 const ancient=it=>it?.rarity==='ancient'||!!it?.ancient;
+const BOSS_HUNTER_TITLE={id:'world-boss-hunter-11',name:'✦ Chinh Phục Thập Đại Boss ✦',bonus:{strength:25,dexterity:25,vitality:25,energy:25,leadership:25,hpPercent:5,mpPercent:5,damage:30,defense:30},source:'Boss thế giới · Hạ boss đủ điều kiện trên 10 lần'};
 function ensure(c){c.life90??={counts:{},claimed:[],title:null,egg:null,word:null,garden:{plots:Array.from({length:4},()=>({kind:'empty'}))},revision:0};return c.life90;}
 function count(c,id,n=1,now=Date.now()){const s=ensure(c);const key=dateKey(now);if(s.daily100?.day!==key)s.daily100={day:key,counts:{},claimed:[]};s.daily100.counts[id]=(s.daily100.counts[id]||0)+n;s.counts[id]=Math.min(Number.MAX_SAFE_INTEGER,(s.counts[id]||0)+n);}
 const missions=[
@@ -12,8 +13,9 @@ const missions=[
  ...[['firstKill','Bước chân đầu tiên','kills',100],['hunter','Thợ săn lão luyện','kills',10000],['reset10','Tái sinh','resets',10],['reset50','Bất khuất','resets',50],['eggs9','Khám phá trứng','eggs',9],['eggs90','Thợ săn kho báu','eggs',90],['boxes10','Người mở Kundun','boxes',10],['seller10','Thương nhân','sales',10],['buyer10','Khách hàng thân thiết','buys',10],['word10','Thông thái','wordWins',10],['word100','Bậc thầy ngôn từ','wordWins',100],['socket5','Thợ khảm','socketed',5],['harmony10','Bậc thầy gia cường','harmony',10],['harvest10','Người làm vườn','harvests',10],['animal10','Người chăn nuôi','animalCare',10],['plots10','Chủ điền trang','plots',10]].map(([id,name,counter,target])=>({id,name,counter,target,reward:50,title:name}))
 ];
 function progress(c,m){const s=ensure(c);return m.counter==='resets'?c.resetCount||0:m.counter==='plots'?s.garden.plots.length:s.counts[m.counter]||0;}
-function titles(c){const s=ensure(c);return [...require('./titles1220.json').filter(t=>(c.resetCount||0)>=t.min),...cfg.ranks.filter(r=>(c.resetCount||0)>=r.min).map(r=>({...r,source:'CustomRankUser.txt'})),...missions.filter(m=>s.claimed.includes(m.id)).map(m=>({id:'achievement-'+m.id,name:m.title,bonus:m.bonus||{hp:50,mp:30,damage:2,defense:2},source:'Thành tựu'}))];}
+function titles(c){const s=ensure(c);return [...((s.counts.worldBossKills||0)>10?[BOSS_HUNTER_TITLE]:[]),...require('./titles1220.json').filter(t=>(c.resetCount||0)>=t.min),...cfg.ranks.filter(r=>(c.resetCount||0)>=r.min).map(r=>({...r,source:'CustomRankUser.txt'})),...missions.filter(m=>s.claimed.includes(m.id)).map(m=>({id:'achievement-'+m.id,name:m.title,bonus:m.bonus||{hp:50,mp:30,damage:2,defense:2},source:'Thành tựu'}))];}
 function title(c){if(c.ai)return extra.achievements[(c.aiIndex||0)%extra.achievements.length];return titles(c).find(t=>t.id===ensure(c).title)||null;}
+function bossTitleProgress(c){const s=ensure(c);if((s.counts.worldBossKills||0)>10&&s.title!==BOSS_HUNTER_TITLE.id&&!s.bossTitleClaimed){s.bossTitleClaimed=true;if(!s.title)s.title=BOSS_HUNTER_TITLE.id;s.revision++;}}
 const bonusCache=new WeakMap();
 function bonus(c){const s=ensure(c),items=Object.values(c.gear||{}).filter(Boolean);const key=[s.revision,s.title,c.resetCount,...items.map(it=>it.id)].join('|');const cached=bonusCache.get(c);if(cached?.key===key)return cached.value;const value={hp:0,mp:0,damage:0,defense:0,hpPercent:0,mpPercent:0,critical:0};for(const[k,n]of Object.entries(title(c)?.bonus||{}))value[k]=(value[k]||0)+n;for(const it of items){const h=cfg.harmony.find(h=>h.id===it.harmony90?.id);if(h)value[h.stat]+=h.values[Math.min(15,it.harmony90.level||0)]||0;for(const socket of it.sockets90||[]){const seed=cfg.seeds.find(s=>s.id===socket?.seedId);if(seed)value[seed.stat]+=seed.values[Math.max(0,Math.min(4,(socket.tier||1)-1))];}}bonusCache.set(c,{key,value});return value;}
 function decorateStats(c,base){const b=bonus(c);const s={...base,maxHp:Math.round(base.maxHp*(1+b.hpPercent/100)+b.hp),maxMp:Math.round(base.maxMp*(1+b.mpPercent/100)+b.mp),damage:base.damage+b.damage,defense:base.defense+b.defense,critical:Math.min(100,base.critical+b.critical)};s.battlePower=base.battlePower+Math.round(b.damage*3+b.defense*2+(s.maxHp-base.maxHp)/10+(s.maxMp-base.maxMp)/15+b.critical*5);s.lifeBonuses=b;s.equippedTitle=title(c)?.name||null;return s;}
@@ -64,4 +66,4 @@ function create({D,db,clock=Date.now,rng=Math.random}){
  }
  return{act,view,findCharacter};
 }
-module.exports={cfg,missions,ensure,count,kill,picked,ancient,install,bought,bonus,decorateStats,title,create,dateKey};
+module.exports={cfg,missions,ensure,count,kill,picked,ancient,install,bought,bonus,decorateStats,title,bossTitleProgress,create,dateKey};

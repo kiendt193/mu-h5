@@ -107,3 +107,14 @@
 #modal .quickUnequipItems button:disabled{opacity:.48}
 #modal .quickUnequipItems button:focus-visible{outline:2px solid #dabb72;outline-offset:2px}
 @media(max-width:650px){#modal .quickUnequip{padding:8px;margin:9px 0}#modal .quickUnequipItems{grid-template-columns:repeat(2,minmax(0,1fr))}#modal .quickUnequipItems button{font-size:12px}}
+
+
+/* MU ACTIVE NORMAL / EXCELLENT SET BONUSES 20261018 */
+#modal .muSetDetails{display:block;clear:both;margin:12px 0 16px;padding:12px 14px;border:2px solid #63ab79;background:linear-gradient(155deg,#14241be8,#08100fef);box-shadow:inset 0 0 14px #18452a88;max-width:100%;min-width:0;overflow-wrap:anywhere}
+#modal .muSetDetails h3{font-size:16px;color:#c5ecab;margin:0 0 7px;font-weight:750}
+#modal .muSetDetails>p{margin:6px 0;line-height:1.5}
+#modal .muSetDetails .muSetActive{padding:7px 9px;border-left:3px solid #58db79;background:#153823ab;color:#aef4b6;font-weight:650;font-size:13px}
+#modal .muSetDetails .muSetInactive{padding:5px 9px;border-left:3px solid #615f54;color:#a7a89c;font-size:12px}
+#modal .muSetDetails small{font-size:11px;color:inherit;opacity:.85}
+#modal .muSetDetails strong{color:#f3e1a0}
+@media(max-width:650px){#modal .muSetDetails{margin:10px 0 13px;padding:10px}#modal .muSetDetails h3{font-size:15px}#modal .muSetDetails .muSetActive{font-size:13px}}

@@ -22,3 +22,16 @@ Use node ID as stable key; prerequisites refer to other node IDs, not display la
 Server-authoritative Elf summoned ally is separate from inventory pets and Dark Raven. Initial skills use original spawned monster resource IDs when available. Damage is attributed to the summoner, uses normal monster eligibility, visibility, safe area and geometry rules.
 For any summon lacking a matching source monster mesh, cast is disabled instead of fabricating a character. The original binary `SkillElect.hit` is NOT executed and no arbitrary executable data is uploaded to hosting.
 The current summon panel is a first-stage accessible control; learning scroll/books, animation-specific FX, persistence and master buffs should be implemented after asset and gameplay verification.
+
+## Original 2.8 spawn-resource audit (2026-10-18)
+Matching exact spawn monster names:
+- Summon Goblin (30) -> Goblin sourceId 26: found.
+- Summon Stone Golem (31) -> Stone Golem sourceId 32: found.
+- Summon Assassin (32) -> Assassin sourceId 21: found.
+- Summon Elite Yeti (33) -> Elite Yeti sourceId 20: found.
+- Summon Dark Knight (34), Bali (35) and Soldier (36): no **exact matching summon creature** in existing spawn table. The UI must disable these rather than invent a different monster model; request the three original creature assets when available.
+- Node identifiers 30..36 are not directly referenced in FE MasterSkillTree RelatedSkill / ReplaceSkill columns; summon master upgrades therefore require additional effects/source metadata rather than guessing numerical buffs.
+
+## Test & operations
+- Fake data unit smoke checked MP consumption of skill 30 (40), attack damage, and restoration from saved last summon ID.
+- Real Render/Neon integration is deployed separately and must be checked against the latest commit. No account or character data is reset.

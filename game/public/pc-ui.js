@@ -43,7 +43,7 @@
      box.appendChild(button);
     }
     if(!summonList.length){const empty=document.createElement('p');empty.textContent='Không tìm thấy kỹ năng triệu hồi khớp bộ lọc.';box.appendChild(empty)}
-    root.appendChild(box);
+    root.querySelector('.pcSkills')?.before(box);
    }
   }
   for(const im of document.querySelectorAll('.pcSkillCard>img'))fallbackImage(im,im.closest('[data-pc-card]').dataset.pcCard);

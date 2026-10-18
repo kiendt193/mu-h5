@@ -2,7 +2,7 @@
 const MU_PC_RULES={
  gate(state,sk){const c=state.character,s=state.stats,reasons=[];
   if((c.classStage||1)<(sk.requiredStage||1))reasons.push('Cần chuyển chức '+Math.max(0,(sk.requiredStage||1)-1)+' lần');
-  if(!c.skills.includes(sk.id))reasons.push('Chưa học sách / ngọc kỹ năng');
+  if(!c.skills.includes(sk.id))reasons.push('Chưa học sách / ngọc kỹ năng');if(sk.support==='summon'&&!sk.hasModel)reasons.push('Chưa có mô hình pet gốc');
   if(c.level<sk.level)reasons.push('Cần cấp '+sk.level);
   if((c.attributes?.energy||0)<(sk.requiredEnergy||0))reasons.push('Cần Năng lượng '+sk.requiredEnergy);
   if((c.attributes?.leadership||0)<(sk.requiredLeadership||0))reasons.push('Cần Mệnh lệnh '+sk.requiredLeadership);

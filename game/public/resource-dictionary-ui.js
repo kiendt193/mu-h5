@@ -141,7 +141,7 @@
   // Keep the lock option available but out of the main three-button row.
   const lock=panel.querySelector('[data-lock135]');
   const enhance=panel.querySelector('.muEquipActions [data-enhance]');
-  if(lock||enhance){
+  if((lock||enhance)&&!panel.querySelector(':scope > .muItemMore')){
    const more=document.createElement('details');more.className='muItemMore';
    more.innerHTML='<summary>⚙ Gia cường / Tùy chọn</summary>';
    if(enhance){

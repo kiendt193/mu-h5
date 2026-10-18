@@ -11,6 +11,32 @@ function createAssets(root){const prebuilt=path.join(path.dirname(root),'asset-m
  if(relative.startsWith('assets/')&&!versioned){url.searchParams.set('v',hash);res.writeHead(302,{'Location':url.pathname+url.search,'Cache-Control':'no-cache'});res.end();return;}
  const headers={'Content-Type':mime[path.extname(f)]||'application/octet-stream','X-Content-Type-Options':'nosniff','Cache-Control':versioned?'public, max-age=31536000, immutable':'no-cache'};
  if(hash){headers.ETag='"'+hash+'"';if(req.headers['if-none-match']===headers.ETag){res.writeHead(304,headers);res.end();return;}}
+ // Audio files may be requested with byte ranges by Chrome/Android.
+ // Serve RFC 7233 single-range responses so media decoding and replay work.
+ if(/\.(?:mp3|wav|ogg)$/i.test(relative)){
+  const size=fs.statSync(f).size;
+  headers['Accept-Ranges']='bytes';
+  const requested=req.headers.range;
+  const match=typeof requested==='string'?/^bytes=(\d*)-(\d*)$/.exec(requested.trim()):null;
+  const ifRange=req.headers['if-range'];
+  if(match&&(!ifRange||ifRange===headers.ETag)){
+   let start=match[1]===''?null:Number(match[1]);
+   let end=match[2]===''?null:Number(match[2]);
+   if(start===null){start=Math.max(0,size-(end||0));end=size-1;}
+   else if(end===null)end=size-1;
+   else end=Math.min(end,size-1);
+   if(!Number.isSafeInteger(start)||!Number.isSafeInteger(end)||start>=size||start<0||end<start){
+    res.writeHead(416,{...headers,'Content-Range':'bytes */'+size,'Content-Length':0});
+    res.end();return;
+   }
+   headers['Content-Range']='bytes '+start+'-'+end+'/'+size;
+   headers['Content-Length']=end-start+1;
+   res.writeHead(206,headers);
+   if(req.method==='HEAD')res.end();else fs.createReadStream(f,{start,end}).pipe(res);
+   return;
+  }
+  headers['Content-Length']=size;
+ }
  let html;if(relative==='index.html'){html=fs.readFileSync(f,'utf8').replace(/href="([^"?]+\.css)(?:\?[^"]*)?"/g,(all,file)=>manifest.files[file]?'href="'+file+'?v='+manifest.files[file]+'"':all);}
  res.writeHead(200,headers);if(req.method==='HEAD')res.end();else if(html!==undefined)res.end(html);else fs.createReadStream(f).pipe(res);
  };}

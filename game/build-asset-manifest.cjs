@@ -2,6 +2,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.join(__dirname,'public');
 if(!fs.existsSync(root))throw new Error('MU public asset directory missing');
+require('./install-skill-assets.cjs')();
 const {catalog}=require('./asset-cache.cjs');
 const manifest=catalog(root);
 const destination=path.join(__dirname,'asset-manifest.prebuilt.json');

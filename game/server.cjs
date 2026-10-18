@@ -2,13 +2,13 @@
 const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const CLASSES={knight:{name:'Chiến binh',hp:180,damage:22,range:65,color:'#eeb267'},wizard:{name:'Pháp sư',hp:120,damage:28,range:210,color:'#a891ff'},elf:{name:'Cung thủ',hp:140,damage:24,range:250,color:'#80dba3'}};
 CLASSES.gladiator={name:'Đấu sĩ',hp:110,damage:25,range:100,color:'#dce4ef'};CLASSES.darklord={name:'Chúa tể',hp:90,damage:24,range:210,color:'#d9ae75'};
-const ELF_SUMMON=require('./elf-summons.cjs');ELF_SUMMON.installSkills(SKILLS,R.SOURCE_SKILLS);const BOOST=require('./boost.cjs');const PET=require('./pets.cjs');const P=require('./progression.cjs');const RS=require('./reset.cjs');const HB=require('./hotbar.cjs');const WH=require('./warehouse.cjs');const SHOP=require('./shop.cjs');
+const ELF_SUMMON=require('./elf-summons.cjs');const BOOST=require('./boost.cjs');const PET=require('./pets.cjs');const P=require('./progression.cjs');const RS=require('./reset.cjs');const HB=require('./hotbar.cjs');const WH=require('./warehouse.cjs');const SHOP=require('./shop.cjs');
 const R=require('./combat-rules.cjs');const W=require('./world.cjs');
 const AUTO1220=require('./auto-items1220.cjs');const DAMAGE119=require('./damage119.cjs');const Q=require('./quests.cjs');const S=require('./systems.cjs');const SP=require('./spawns.cjs');
 const serveAssets=require('./asset-cache.cjs').createAssets(path.join(__dirname,'public'));
 const {DropIndex}=require('./drop-index.cjs');const autoPickupAllowed=require('./auto-loot.cjs');
 const AD_MODULE=require('./adventures.cjs');
-const D=require('./domain.cjs'),{MAPS,SKILLS}=D;const {Encoder}=require('./public/net-sync.js');
+const D=require('./domain.cjs'),{MAPS,SKILLS}=D;ELF_SUMMON.installSkills(SKILLS,R.SOURCE_SKILLS);const {Encoder}=require('./public/net-sync.js');
 require('./seven-classes.cjs').register(D,CLASSES);const CONTENT1227=require('./content1227.cjs').install(D);require('./world-policy1220.cjs').install(D,SP);
 require('./combat-timing.cjs').apply(SKILLS);
 const U6=require('./update6.cjs');U6.install(D,P,R,S);

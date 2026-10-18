@@ -3,7 +3,7 @@ const TABLE=require('./rules/equipment.json'),N=require('./item-names.cjs');
 const CATALOG=require('./public/assets/mu03/catalog.json');
 const WEAPON_RULES=require('./rules/items.json');
 const SOURCE_SLOT={weapon:0,shield:1,helm:2,armor:3,pant:4,glove:5,boot:6,wing:7,mount:8,necklace:9,ring1:10,ring2:11};
-const ELF_MELEE=new Set(['sword','axe','mace','spear']);
+const ELF_HAND_WEAPONS=new Set(['sword','axe','mace','spear','staff','scepter']);
 const ALL_CLASSES=['knight','wizard','elf','gladiator','darklord','summoner','fighter'];
 const BY_KEY=new Map();
 // High-tier and custom item models can exist in the original MU catalog without
@@ -30,7 +30,7 @@ for(const item of CATALOG){
 // An Elf can hold a real one-handed melee weapon (including a dropped sword),
 // while armor and bows still keep their class limits and level/stat gates.
 for(const item of Object.values(TABLE)){
- if(item.sourceSlot!==0||!ELF_MELEE.has(WEAPON_RULES[item.definitionId]?.type))continue;
+ if(item.sourceSlot!==0||!ELF_HAND_WEAPONS.has(WEAPON_RULES[item.definitionId]?.type))continue;
  if(!Array.isArray(item.classes))continue;
  if(!item.classes.includes('elf'))item.classes.push('elf');
  item.classStages ||= {};
@@ -51,8 +51,8 @@ function rule(it){
  if(source.definitionId)return TABLE[source.definitionId]||null;
  if(!Object.hasOwn(SOURCE_SLOT,source.slot))return null;
  const classes=source.classes?.length?source.classes.slice():source.classId&&ALL_CLASSES.includes(source.classId)?[source.classId]:ALL_CLASSES.slice();
- const meleeType=it.weaponType||((source.appearance||source.key||source.name||'').match(/sword|mace|axe|spear|kiếm|đao|chùy|rìu/i)?.[0]||'').toLowerCase();
- if(source.slot==='weapon'&&ELF_MELEE.has(meleeType)&&!classes.includes('elf'))classes.push('elf');
+ const meleeType=it.weaponType||((source.appearance||source.key||source.name||'').match(/sword|mace|axe|spear|staff|scepter|kiếm|đao|chùy|rìu|trượng|gậy/i)?.[0]||'').toLowerCase();
+ if(source.slot==='weapon'&&ELF_HAND_WEAPONS.has(meleeType)&&!classes.includes('elf'))classes.push('elf');
  return {definitionId:null,name:source.name,sourceName:source.sourceName||source.name,
    classes,classStages:Object.fromEntries(classes.map(k=>[k,1])),
    requiredLevel:Math.max(1,Number(source.requiredLevel)||1),

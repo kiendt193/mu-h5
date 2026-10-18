@@ -4,7 +4,7 @@
  * Lazy model fetching avoids loading 166 original models on every phone.
  */
 (()=>{
- const N=window.MU_NATIVE_FX||globalThis.MU_NATIVE_FX;
+ const N=typeof MU_NATIVE_FX!=='undefined'?MU_NATIVE_FX:null;
  if(!N||typeof N.parts!=='function')return;
  const choice={
   slash:'swordforce',twisting:'swordforce',rage:'earthquake01',falling:'piercing',deathstab:'piercing',breath:'fire01',thrust:'piercing',uppercut:'swordforce',horizontal:'swordforce',

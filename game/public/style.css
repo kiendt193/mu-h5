@@ -182,3 +182,6 @@
 #modal .muForgeSocket small{color:#d9dcbb}
 #modal .muForgeSocket button{min-height:37px}
 @media(max-width:550px){#modal .muForgePreview{padding:9px;gap:9px}#modal .muForgeIcon{min-width:52px;width:52px;height:52px}#modal .muForgeIcon img{width:47px;height:47px}#modal .muForgeSockets{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* MU item accumulated battle power 20261018 */
+#modal .muItemLC{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;background:linear-gradient(125deg,#193423,#081b12);border:2px solid #70ce89;padding:12px;margin:12px 0;font-size:16px;color:#b6f6c2}#modal .muItemLC small{font-size:12px;color:#e3c88c}

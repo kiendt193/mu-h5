@@ -4,6 +4,17 @@ const extra=require('./events-config100.json');
 const clone=structuredClone,integer=(n,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(n)&&n>=min&&n<=max;
 const dateKey=n=>new Date(n+7*3600000).toISOString().slice(0,10);
 const ancient=it=>it?.rarity==='ancient'||!!it?.ancient;
+
+// Seasonal produce stays in the existing persisted life90.garden record.
+const PRODUCE={
+ carrot:{name:'Cà rốt',zen:500},tomato:{name:'Cà chua',zen:900},
+ rice:{name:'Lúa vàng',zen:700},flower:{name:'Hoa tươi',zen:650},
+ apple:{name:'Trái cây',zen:1200},egg:{name:'Trứng gà',zen:1100},
+ feather:{name:'Lông vũ',zen:800},milk:{name:'Sữa tươi',zen:2000},
+ honey:{name:'Mật ong',zen:1600},wool:{name:'Lông cừu',zen:2400}
+};
+function produceFor(kind,type){if(kind==='crop')return [type];return ({chicken:['egg','feather'],cow:['milk'],bee:['honey'],sheep:['wool']})[type]||[];}
+const BONUS_GEMS=['bless','soul','chaos','life','creation','pink','purple'];
 const BOSS_HUNTER_TITLE={id:'world-boss-hunter-11',name:'✦ Chinh Phục Thập Đại Boss ✦',bonus:{strength:25,dexterity:25,vitality:25,energy:25,leadership:25,hpPercent:5,mpPercent:5,damage:30,defense:30},source:'Boss thế giới · Hạ boss đủ điều kiện trên 10 lần'};
 function ensure(c){c.life90??={counts:{},claimed:[],title:null,egg:null,word:null,garden:{plots:Array.from({length:4},()=>({kind:'empty'}))},revision:0};return c.life90;}
 function count(c,id,n=1,now=Date.now()){const s=ensure(c);const key=dateKey(now);if(s.daily100?.day!==key)s.daily100={day:key,counts:{},claimed:[]};s.daily100.counts[id]=(s.daily100.counts[id]||0)+n;s.counts[id]=Math.min(Number.MAX_SAFE_INTEGER,(s.counts[id]||0)+n);}
@@ -34,10 +45,40 @@ function create({D,db,clock=Date.now,rng=Math.random}){
  const findCharacter=id=>db.users.flatMap(u=>u.characters||[]).find(c=>c.id===id);
  const pick=list=>list[Math.min(list.length-1,Math.floor(rng()*list.length))];
  function shuffled(list){const out=[...list];for(let i=out.length-1;i>0;i--){const j=Math.min(i,Math.floor(rng()*(i+1)));[out[i],out[j]]=[out[j],out[i]];}return out;}
- function day(c){const s=ensure(c),key=dateKey(clock());if(s.day!==key){s.day=key;s.eggRounds=0;s.wordRounds=0;s.egg=null;s.word=null;}return s;}
+ function day(c){const s=ensure(c),key=dateKey(clock());s.garden??={plots:Array.from({length:4},()=>({kind:'empty'}))};s.garden.stock??={};if(s.day!==key){s.day=key;s.eggRounds=0;s.wordRounds=0;s.egg=null;s.word=null;}return s;}
  function view(c){const s=day(c),w=s.word;const last=c.adventureLast;if(last&&s.lastAdventure!==last.at){if(last.success&&/blood|máu|huyết/i.test(last.name||''))tally(c,'bloodWins');s.lastAdventure=last.at;}return{now:clock(),gold:c.gold,phucDuyen:c.phucDuyen||0,daily100:extra.daily.map(q=>({...q,current:s.daily100?.day===dateKey(clock())?s.daily100.counts[q.counter]||0:0,claimed:s.daily100?.day===dateKey(clock())&&s.daily100.claimed.includes(q.id)})),egg:{maxOpen:3,opened:s.egg?.opened||[],results:s.egg?.results||{},remainingRounds:Math.max(0,1-s.eggRounds),active:!!s.egg},word:w?{id:w.id,letters:w.letters,hint:w.hint,until:w.until,attempts:w.attempts,done:w.done}:null,wordRoundsLeft:cfg.wordRoundsPerDay-s.wordRounds,missions:missions.map(m=>({...m,current:progress(c,m),claimed:s.claimed.includes(m.id)})),titles:titles(c),title:s.title,garden:gardenView(c),harmony:cfg.harmony,seeds:cfg.seeds};}
- function gardenView(c){const g=ensure(c).garden;return{map:{id:'garden-'+c.id,name:'Gia viên · '+c.name,private:true},plots:g.plots.map((p,index)=>{const age=p.started?clock()-p.started:0,def=p.kind==='crop'?cfg.crops[p.type]:cfg.animals[p.type],care=p.kind==='crop'?p.watered:p.fed&&p.cleaned;const pct=def&&care?Math.min(100,Math.floor(age/def.duration*100)):0;return{...p,index,name:def?.name||'Ô đất trống',percent:pct,stage:!def?'empty':!care?'needsCare':pct<20?'sprout':pct<65?'growing':pct<100?'young':'ready',ready:!!def&&age>=def.duration&&care};}),unlockZen:cfg.gardenUnlockBase*Math.max(1,g.plots.length-3),maxPlots:cfg.gardenMaxPlots,crops:cfg.crops,animals:cfg.animals,rewardsEnabled:false};}
- function gear(c,id){const it=Object.values(c.gear||{}).find(i=>i?.id===id);if(!it||it.locked||it.kind!=='gear'||!['weapon','shield','helm','armor','pant','glove','boot'].includes(it.slot))throw Error('Chọn trang bị đang mặc, không khóa; đồ trong túi không được gia cường/khảm');return it;}
+ function gardenView(c){const g=day(c).garden;return{map:{id:73,name:'Nông trại Hạnh Phúc · '+c.name,private:true},stock:{...g.stock},products:PRODUCE,plots:g.plots.map((p,index)=>{const age=p.started?clock()-p.started:0,def=p.kind==='crop'?cfg.crops[p.type]:cfg.animals[p.type],care=p.kind==='crop'?p.watered:p.fed&&p.cleaned;const pct=def&&care?Math.min(100,Math.floor(age/def.duration*100)):0;return{...p,index,name:def?.name||'Ô đất trống',percent:pct,stage:!def?'empty':!care?'needsCare':pct<20?'sprout':pct<65?'growing':pct<100?'young':'ready',ready:!!def&&age>=def.duration&&care};}),unlockZen:cfg.gardenUnlockBase*Math.max(1,g.plots.length-3),maxPlots:cfg.gardenMaxPlots,crops:cfg.crops,animals:cfg.animals,rewardsEnabled:true};}
+ function harvestPlot(c,s,index,now){
+ const plot=s.garden.plots[index],read=gardenView(c).plots[index];
+ if(!plot||!read?.ready)throw Error('Chưa đủ thời gian hoặc chưa chăm sóc cây, thú');
+ const products=produceFor(plot.kind,plot.type);
+ if(!products.length)throw Error('Sản phẩm không hợp lệ');
+ s.garden.stock??={};const result={products:[],gems:[],boxes:0,zen:0};
+ for(const type of products){
+  const qty=2+Math.floor(rng()*4);
+  s.garden.stock[type]=Math.min(999999, (s.garden.stock[type]||0)+qty);
+  result.products.push({type,name:PRODUCE[type].name,count:qty});
+ }
+ // Mutually exclusive rare roll; no unlimited farming through repeat requests.
+ const roll=rng();
+ if(roll<.008){
+   c.kundunPending137=(c.kundunPending137||0)+1;
+   result.boxes=1;
+ }else if(roll<.085){
+   const gem=BONUS_GEMS[Math.floor(rng()*BONUS_GEMS.length)];
+   c.gems??={};c.gems[gem]=(c.gems[gem]||0)+1;
+   result.gems.push(gem);
+ }else if(roll<.32){
+   const zen=500+Math.floor(rng()*2001);
+   if(!Number.isSafeInteger(c.gold+zen))throw Error('Zen vượt giới hạn');
+   c.gold+=zen;result.zen=zen;
+ }
+ if(plot.kind==='crop'){tally(c,'harvests');s.garden.plots[index]={kind:'empty'};}
+ else {tally(c,'animalCare');plot.started=now;plot.fed=false;plot.cleaned=false;}
+ result.message='Thu hoạch '+result.products.map(x=>x.name+' ×'+x.count).join(', ')+(result.gems.length?' · Nhận '+result.gems.join(', '):'')+(result.boxes?' · +1 Hộp Kundun':'')+(result.zen?' · +'+result.zen+' Zen':'');
+ return result;
+}
+ function gear(c,id){const it=[...Object.values(c.gear||{}),...(c.inventory||[])].find(i=>i?.id===id);if(!it||it.locked||it.kind!=='gear'||!['weapon','shield','helm','armor','pant','glove','boot','ring1','ring2','necklace'].includes(it.slot))throw Error('Chọn trang bị trong túi hoặc đang mặc, không khóa để gia cường/khảm');return it;}
  function act(c,b){const s=day(c),now=clock(),op=b.action;
   if(op==='view')return view(c);
   if(op==='marketList'){const rows=db.market90.filter(o=>(!b.classId||o.item.classes?.includes(b.classId)||o.item.classId===b.classId)&&(!b.mine||o.owner===c.id));const page=integer(b.page,0,24)?b.page:0;return{rows:rows.slice(page*80,page*80+80).map(o=>({...o,mine:o.owner===c.id})),total:rows.length,page,pages:Math.max(1,Math.ceil(rows.length/80)),gold:c.gold,phucDuyen:c.phucDuyen||0};}
@@ -56,11 +97,27 @@ function create({D,db,clock=Date.now,rng=Math.random}){
   if(op==='seedCraft'){const seed=cfg.seeds.find(s=>s.id===b.seedId);if(!seed||!integer(b.tier,1,5)||c.inventory.length>=40)throw Error('Loại hạt/cấp/túi không hợp lệ');pay(c,20000*b.tier,{soul:b.tier,chaos:1});c.inventory.push({id:crypto.randomUUID(),kind:'socketSeed90',name:seed.name+' · Cấp '+b.tier,seedId:seed.id,tier:b.tier,price:0});tally(c,'craftSuccess');return{message:'Đã tạo hạt khảm'};}
   if(op==='socket'){const it=gear(c,b.id),at=c.inventory.findIndex(i=>i.id===b.seed&&i.kind==='socketSeed90'),seed=c.inventory[at];if(!seed||!integer(b.index,0,4)||b.index>=(it.sockets90||[]).length||it.sockets90[b.index])throw Error('Chọn hạt và lỗ trống');const rule=cfg.seeds.find(s=>s.id===seed.seedId);if(!rule||it.slot==='weapon'&&[2,4].includes(rule.type)||it.slot!=='weapon'&&[1,5].includes(rule.type))throw Error('Hạt không phù hợp loại trang bị');it.sockets90[b.index]={seedId:seed.seedId,tier:seed.tier};c.inventory.splice(at,1);s.revision++;tally(c,'socketed');return{message:'Đã khảm hạt'};}
   if(op==='unsocket'){const it=gear(c,b.id),seed=it.sockets90?.[b.index];if(!integer(b.index,0,4)||!seed||c.inventory.length>=40)throw Error('Lỗ/túi không hợp lệ');pay(c,10000);const rule=cfg.seeds.find(s=>s.id===seed.seedId);c.inventory.push({id:crypto.randomUUID(),kind:'socketSeed90',name:rule.name+' · Cấp '+seed.tier,...seed,price:0});it.sockets90[b.index]=null;s.revision++;return{message:'Đã tháo hạt về túi'};}
-  if(op==='gardenUnlock'){const g=s.garden;if(g.plots.length>=cfg.gardenMaxPlots)throw Error('Đã mở tối đa');pay(c,gardenView(c).unlockZen);g.plots.push({kind:'empty'});return{message:'Đã mở thêm ô gia viên'};}
+  if(op==='gardenSell'||op==='gardenSellAll'){
+    const stock=s.garden.stock||{},keys=op==='gardenSellAll'?Object.keys(stock):[b.product];
+    if(keys.some(k=>!PRODUCE[k]))throw Error('Nông sản không hợp lệ');
+    let money=0,qty=0;
+    for(const key of keys){const n=stock[key]||0;if(!Number.isSafeInteger(n)||n<0)throw Error('Số lượng nông sản không hợp lệ');const sale=n*PRODUCE[key].zen;if(!Number.isSafeInteger(sale))throw Error('Giá bán không hợp lệ');money+=sale;qty+=n;}
+    if(!qty)throw Error('Kho nông sản chưa có gì để bán');
+    if(!Number.isSafeInteger(c.gold+money))throw Error('Zen vượt giới hạn');
+    for(const key of keys)delete stock[key];
+    c.gold+=money;return {message:'Đã bán '+qty+' nông sản, nhận '+money.toLocaleString('vi-VN')+' Zen',zen:money};
+   }
+   if(op==='gardenHarvestAll'){
+     const ready=gardenView(c).plots.filter(p=>p.ready);
+     if(!ready.length)throw Error('Chưa có ô đủ điều kiện thu hoạch');
+     const results=ready.map(p=>harvestPlot(c,s,p.index,now));
+     return {message:'Đã thu hoạch '+results.length+' ô',results};
+   }
+   if(op==='gardenUnlock'){const g=s.garden;if(g.plots.length>=cfg.gardenMaxPlots)throw Error('Đã mở tối đa');pay(c,gardenView(c).unlockZen);g.plots.push({kind:'empty'});return{message:'Đã mở thêm ô gia viên'};}
   if(op.startsWith('garden')){const p=s.garden.plots[b.index];if(!integer(b.index,0,cfg.gardenMaxPlots-1)||!p)throw Error('Ô gia viên không hợp lệ');if(op==='gardenPlant'||op==='gardenAnimal'){if(p.kind!=='empty')throw Error('Ô này đang sử dụng');const crop=op==='gardenPlant',def=(crop?cfg.crops:cfg.animals)[b.type];if(!def)throw Error('Loại cây/thú không hợp lệ');pay(c,crop?def.seedZen:def.buyZen);s.garden.plots[b.index]={kind:crop?'crop':'animal',type:b.type,started:now,watered:false,fed:false,cleaned:false};return{message:crop?'Đã gieo hạt; nhớ tưới nước':'Đã nhận con non; nhớ cho ăn và vệ sinh'};}
    if(op==='gardenWater'){if(p.kind!=='crop')throw Error('Không phải cây trồng');if(!p.watered)p.started=now;p.watered=true;return{message:'Đã tưới nước'};}
    if(op==='gardenFeed'||op==='gardenClean'){if(p.kind!=='animal')throw Error('Không phải chuồng thú');const wasCared=p.fed&&p.cleaned;if(op==='gardenFeed'&&!p.fed){pay(c,500);p.fed=true;tally(c,'animalCare');}else if(op==='gardenClean')p.cleaned=true;if(!wasCared&&p.fed&&p.cleaned)p.started=now;return{message:'Đã chăm sóc vật nuôi'};}
-   if(op==='gardenHarvest'){if(!gardenView(c).plots[b.index].ready)throw Error('Chưa đủ thời gian/chưa chăm sóc');if(p.kind==='crop'){tally(c,'harvests');s.garden.plots[b.index]={kind:'empty'};}else{tally(c,'animalCare');p.started=now;p.fed=false;p.cleaned=false;}return{message:'Đã ghi nhận sản lượng; phần thưởng sẽ bổ sung sau'};}
+   if(op==='gardenHarvest')return harvestPlot(c,s,b.index,now);
   }
   throw Error('Chức năng không hợp lệ');
  }

@@ -24,6 +24,28 @@
   if(!state)return;cancelAnimationFrame(previewFrame);
   const list=state.skills.filter(sk=>(!learnedOnly||state.character.skills.includes(sk.id))&&(!search||sk.name.toLocaleLowerCase('vi').includes(search.toLocaleLowerCase('vi'))));
   modal('<h2>Kỹ năng · '+escape(state.classes?.[state.me.classId]?.name||state.me.name)+'</h2><p>Học sách / ngọc trong Hành trang. Gán 4 ô và kỹ năng hỗ trợ tại Cài đặt Auto.</p><div class="pcSkillSearch"><input id="pcSkillSearch" placeholder="Tìm kỹ năng" value="'+escape(search)+'"><button id="pcLearnedOnly">'+(learnedOnly?'Tất cả kỹ năng':'Chỉ đã học')+'</button></div><div class="pcSkills">'+list.map(sk=>{const reasons=gate(sk),active=state.character.activeSkill===sk.id;return '<article class="pcSkillCard '+(active?'active':'')+'" data-pc-card="'+escape(sk.id)+'"><img src="assets/skill-icons/'+escape(sk.id)+'.png" alt="'+escape(sk.name)+'"><div><h3>'+escape(sk.name)+'</h3><p>'+escape(sk.description||'')+'</p><div class="pcSkillMeta"><span>Cấp '+sk.level+'</span><span>'+sk.mana+' MP</span><span>Hồi '+(sk.cooldown/1000).toLocaleString('vi-VN')+' giây</span><span>'+(sk.area?'Vùng '+Math.round(sk.area):'Tầm '+Math.round(sk.range||0))+'</span><span>Chuyển chức '+Math.max(0,(sk.requiredStage||1)-1)+' lần</span></div><p class="pcGate '+(!reasons.length?'ready':'')+'">'+escape(reasons.join(' · ')||'Đã học · Đủ điều kiện sử dụng')+'</p><div class="pcSkillActions"><button data-pc-select="'+escape(sk.id)+'" '+(reasons.length?'disabled':'')+'>'+(active?'Đang chọn':'Chọn kỹ năng')+'</button><button data-pc-preview="'+escape(sk.id)+'">Xem hiệu ứng</button></div></div></article>';}).join('')+'</div>'+(!list.length?'<p class="pcSkillEmpty">Không có kỹ năng phù hợp bộ lọc.</p>':'')+'<p><button id="pcBindSkills">Cài đặt Auto / Gán kỹ năng</button></p>','skills');
+  // The PC/mobile skill window is rendered here, overriding the legacy skillList.
+  // Put Elf summons in the actual panel, not in a stale click handler.
+  if(state.character.classId==='elf'){
+   const root=document.querySelector('#modalBody');
+   if(root){
+    const box=document.createElement('section');box.className='pcElfSummons';box.id='elfSummonPanel';
+    box.style.cssText='margin:14px 0;padding:14px;border:1px solid #6f9274;background:#101b18';
+    const current=(state.elfSummons||[]).find(x=>x.ownerId===state.character.id);
+    const heading=document.createElement('h3');heading.textContent='🌿 Triệu hồi đồng hành · Elf';box.appendChild(heading);
+    const desc=document.createElement('p');desc.textContent=current?'Đồng hành hiện tại: '+current.name:'Gọi một quái đồng hành đi theo và tự động hỗ trợ đánh quái.';box.appendChild(desc);
+    const summonList=(state.elfSummonSkills||[]).filter(sk=>!search||sk.name.toLocaleLowerCase('vi').includes(search.toLocaleLowerCase('vi'))||sk.english.toLowerCase().includes(search.toLowerCase()));
+    for(const sk of summonList){
+     const button=document.createElement('button');button.type='button';
+     button.textContent=sk.name+' · '+sk.mana+' MP'+(sk.hasModel?'':' · Chưa có model');
+     button.disabled=!sk.hasModel;button.style.cssText='margin:4px;padding:9px 12px;min-height:42px';
+     button.onclick=async()=>{button.disabled=true;try{const r=await action('elfSummon',{skillId:sk.id});if(r){toast('Đã triệu hồi '+sk.name);panel();}}catch(error){toast(error.message||'Không triệu hồi được');}finally{if(button.isConnected)button.disabled=!sk.hasModel;}};
+     box.appendChild(button);
+    }
+    if(!summonList.length){const empty=document.createElement('p');empty.textContent='Không tìm thấy kỹ năng triệu hồi khớp bộ lọc.';box.appendChild(empty)}
+    root.appendChild(box);
+   }
+  }
   for(const im of document.querySelectorAll('.pcSkillCard>img'))fallbackImage(im,im.closest('[data-pc-card]').dataset.pcCard);
   document.querySelector('#pcLearnedOnly').onclick=()=>{learnedOnly=!learnedOnly;panel();};
   const input=document.querySelector('#pcSkillSearch');input.oninput=()=>{search=input.value;panel();const next=document.querySelector('#pcSkillSearch');next.focus();next.setSelectionRange(search.length,search.length);};

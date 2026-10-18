@@ -5,6 +5,7 @@
  const CLASSES={knight:'Chiến binh',wizard:'Pháp sư',elf:'Tiên nữ',gladiator:'Đấu sĩ',darklord:'Chúa tể',summoner:'Thuật sĩ',fighter:'Thiết binh'};
  const handItem=it=>it?.kind==='gear'&&['weapon','shield'].includes(it.slot);
  const bow=it=>it?.slot==='weapon'&&(['bow','crossbow'].includes(it.weaponType)||/^4:/.test(it.definitionId||'')&&!['4:7','4:15'].includes(it.definitionId));
+ const quiver=it=>it?.slot==='shield'&&/^4:\d+$/.test(it.definitionId||'')&&/quiver/i.test(it.name||it.appearance||'');
  function reasons(it){
   const c=state?.character;if(!c||it?.kind!=='gear')return [];
   const errors=[];
@@ -30,10 +31,11 @@
   if(!equipped&&faults.length)append+='<p class="muEquipWarning">Chưa thể đeo: '+faults.map(escape).join(' · ')+'</p>';
   if(handItem(it)){
    if(!equipped){
-    const buttons=bow(it)?'<button data-hand-equip="'+escape(it.id)+'" data-hand="both">🏹 Đeo cung/nỏ (hai tay)</button>':
+    const buttons=quiver(it)?'<button data-hand-equip="'+escape(it.id)+'" data-hand="">🏹 Đeo ống tên</button>':bow(it)?'<button data-hand-equip="'+escape(it.id)+'" data-hand="both">🏹 Đeo cung/nỏ (hai tay)</button>':
      '<button data-hand-equip="'+escape(it.id)+'" data-hand="left">Đeo tay trái</button><button data-hand-equip="'+escape(it.id)+'" data-hand="right">Đeo tay phải</button>';
     html=html.replace('<button data-equip="'+it.id+'">Mặc</button>',buttons);
-   }else if(!bow(it)){
+   }else if(quiver(it)){append+='<span class="muHandLabel">Ống tên hỗ trợ cung/nỏ</span>';}
+   else if(!bow(it)){
     const current=it.hand||(state.character.gear.weapon?.id===it.id?'right':'left');
     append+='<span class="muHandLabel">Đang cầm tay '+(current==='right'?'phải':'trái')+'</span><button data-hand-switch="'+escape(it.id)+'" data-hand="'+(current==='right'?'left':'right')+'">Chuyển sang tay '+(current==='right'?'trái':'phải')+'</button>';
    }else append+='<span class="muHandLabel">Đang dùng cả hai tay</span>';

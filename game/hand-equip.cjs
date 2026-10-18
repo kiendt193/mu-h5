@@ -9,6 +9,7 @@ const LABEL={strength:'Sức mạnh',dexterity:'Nhanh nhẹn',vitality:'Thể l�
 const TWO_HAND=['bow','crossbow'];
 const AMMO=new Set(['4:7','4:15']);
 const weapon=it=>it?.kind==='gear'&&(it.slot==='weapon'||it.slot==='shield');
+const quiver=it=>it?.slot==='shield'&&/^4:\d+$/.test(it.definitionId||'')&&/quiver/i.test(it.name||it.appearance||'');
 function twoHands(it){return it?.slot==='weapon'&&(TWO_HAND.includes(R.rule(it)?.type)||Boolean(R.rule(it)?.bothHands));}
 function reasons(c,it){
  const fail=[];
@@ -33,7 +34,7 @@ function installed(c){
  const items=[];
  for(const key of ['weapon','shield'])if(c.gear?.[key]){
   const it=c.gear[key];
-  items.push({key,it,hand:it.hand==='left'||it.hand==='right'?it.hand:key==='weapon'?'right':'left'});
+  items.push({key,it,hand:['left','right','both','quiver'].includes(it.hand)?it.hand:key==='weapon'?'right':'left'});
  }
  return items;
 }
@@ -46,15 +47,15 @@ function equipHand(c,id,target=''){
  const item=c.inventory[i];if(!weapon(item))return null;
  E.sync(item);
  const faults=reasons(c,item);if(faults.length)throw Error('Không thể trang bị: '+faults.join(' · '));
- const bow=twoHands(item);
+ const bow=twoHands(item),ammo=quiver(item);
  if(!['','left','right','both'].includes(target))throw Error('Tay trang bị không hợp lệ');
  if(bow&&target&&target!=='both')throw Error('Cung và nỏ bắt buộc dùng cả hai tay');
  if(!bow&&target==='both')throw Error('Trang bị này phải chọn tay trái hoặc tay phải');
- const hand=bow?'both':target||(item.slot==='shield'?'left':'right');
+ const hand=bow?'both':ammo?'quiver':target||(item.slot==='shield'?'left':'right');
  const standing=installed(c);
  const remain=[],displaced=[];
  for(const slot of standing){
-  if(bow||twoHands(slot.it)||slot.hand===hand||item.slot==='shield'&&slot.it.slot==='shield')displaced.push(slot.it);
+  if((bow&&!quiver(slot.it))||(twoHands(slot.it)&&!ammo)||(!ammo&&slot.hand===hand)||(item.slot==='shield'&&slot.it.slot==='shield'))displaced.push(slot.it);
   else remain.push(slot.it);
  }
  const carried=remain.concat(item);
@@ -77,6 +78,7 @@ function switchHand(c,id,target){
  const slots=installed(c),mine=slots.find(s=>s.it.id===id);
  if(!mine)throw Error('Không tìm thấy trang bị đang mặc');
  if(twoHands(mine.it))throw Error('Cung và nỏ luôn sử dụng hai tay');
+ if(quiver(mine.it))throw Error('Ống tên là phụ kiện, không phải vũ khí để đổi tay');
  if(mine.hand===target)return mine.it;
  const other=slots.find(s=>s!==mine&&s.hand===target);
  if(other){other.it.hand=mine.hand;}

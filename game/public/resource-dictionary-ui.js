@@ -43,6 +43,10 @@
   const gear=kind==='gear'||!!it.slot;
   let where;
   if(it.drop===false||it.visualReady===false)where='<p class="muResourceNoDrop">Vật phẩm nằm trong danh mục gốc nhưng <strong>chưa có nguồn rơi quái đang hoạt động</strong> trong MU H5.</p>';
+  else if(['wing','mount'].includes(String(it.slot)))where='<p>🪽 Nguồn nhận: Lò Chaos, các công thức chế tạo và phần thưởng Hộp Kundun/sự kiện khi có trong bảng thưởng. Không phải trang bị rơi ngẫu nhiên từ quái thường.</p>';
+  else if(kind==='book')where='<p>📖 Sách kỹ năng có thể rơi từ quái khi cấp quái phù hợp kỹ năng và đúng hệ nhân vật.</p>'+mapList(areas(req),'Bản đồ có quái đủ cấp');
+  else if(kind==='gem')where='<p>💎 Ngọc cơ bản có thể nhận khi đánh quái tại các bản đồ hoạt động.</p>'+mapList(areas(1),'Bản đồ đánh quái');
+  else if(kind==='kundunBox90')where='<p>🎁 Nguồn: Boss Vàng, thưởng World Boss hoặc sự kiện tùy cấp hộp. Không có nguồn quái thường được xác nhận.</p>';
   else if(gear)where='<p>Quái cấp từ '+Math.max(1,req-10)+' có thể tạo món này theo bộ lọc vật phẩm của máy chủ. Danh sách bản đồ là <strong>vị trí rơi tiềm năng</strong> — không phải bảo đảm rơi.</p>'+mapList(maps,'Bản đồ có quái đủ điều kiện');
   else where='<p>Nguồn nhận có thể là quái, sự kiện hoặc công thức tùy loại vật phẩm. Chưa có quy tắc rơi quái riêng được xác thực cho ID này.</p>';
   const allowed=it.classes?.length?it.classes.join(', '):'Theo điều kiện vật phẩm';

@@ -6,7 +6,7 @@
  MU_FX.duration=duration;
  // The original GPU models stay in use. Bitmap joints cover the remaining skills.
  function sprites(c,e,u,project){if(!N.manifest)return false;const type=kinds[e.skillId]||e.effect||'blade',s=project(e.fromX??e.x,e.fromY??e.y),t=project(e.x,e.y),sx=s.x,sy=s.y-32,tx=t.x,ty=t.y-30,theta=Math.atan2(ty-sy,tx-sx),travel=Math.min(1,u/.65),fade=Math.min(1,u*12)*Math.min(1,(1-u)*5);let draws=0;
- function paint(name,x,y,width,height=width,rotation=0,alpha=1){const meta=N.byName.get(name.toLowerCase()),im=meta&&N.images.get(meta.file);if(!im?.complete||!im.naturalWidth)return; c.save();c.translate(x,y);c.rotate(rotation);c.globalAlpha=fade*alpha;c.drawImage(im,-width/2,-height/2,width,height);c.restore();draws++;}
+ function paint(name,x,y,width,height=width,rotation=0,alpha=1){const meta=N.byName.get(name.toLowerCase()),im=meta&&N.images.get(meta.file);if(!im?.complete||!im.naturalWidth)return;const sprite=window.MU_SKILL_ALPHA?.prepare(im);if(!sprite)return;c.save();c.translate(x,y);c.rotate(rotation);c.globalAlpha=fade*alpha;c.drawImage(sprite,-width/2,-height/2,width,height);c.restore();draws++;}
  function beam(name,a,b,width){const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy),angle=Math.atan2(dy,dx);const count=Math.max(1,Math.min(12,Math.ceil(len/24)));for(let i=0;i<count;i++){const f=(i+.5)/count;paint(name,a.x+dx*f,a.y+dy*f,width,Math.max(16,len/count+10),angle-Math.PI/2,.8);}}
  c.save();c.globalCompositeOperation='lighter';try{
   if(['blade','spin','powerslash','fist','darkside'].includes(type)){

@@ -118,7 +118,7 @@
   if(!panel)return result;
   // The user wants this inside the same equipment card, not a detached large box.
   const set=panel.querySelector(':scope > .muSetDetails'),card=panel.querySelector('.item');
-  if(set&&card){card.appendChild(set);const finished=state?.stats?.excellentSets?.some(x=>x.count>=x.pieces&&x.bonuses?.some(b=>b.active));if(finished)set.open=true;}
+  if(set&&card){card.appendChild(set);const match=/·\s*(\d+)\/(\d+)/.exec(set.querySelector('summary')?.textContent||'');set.open=Number(match?.[1]||0)>=2;}
   root.querySelector('#dictionary')?.remove();
   root.querySelector('#bagPoints')?.remove();
   for(const el of root.querySelectorAll('#selectedItem .gear62details, #selectedItem .muItemLC'))el.remove();
@@ -140,9 +140,17 @@
   if(actions&&actions.parentNode!==card)card?.appendChild(actions);
   // Keep the lock option available but out of the main three-button row.
   const lock=panel.querySelector('[data-lock135]');
-  if(lock&&lock.parentElement===panel){
+  const enhance=panel.querySelector('.muEquipActions [data-enhance]');
+  if(lock||enhance){
    const more=document.createElement('details');more.className='muItemMore';
-   more.innerHTML='<summary>⚙ Tùy chọn khác</summary>';more.appendChild(lock);panel.appendChild(more);
+   more.innerHTML='<summary>⚙ Gia cường / Tùy chọn</summary>';
+   if(enhance){
+    const forge=document.createElement('button');forge.type='button';
+    forge.dataset.forge90=enhance.dataset.enhance;forge.textContent='⚒ Gia cường / Khảm';
+    more.appendChild(forge);
+   }
+   if(lock&&lock.parentElement===panel)more.appendChild(lock);
+   panel.appendChild(more);
   }
   return result;
  };

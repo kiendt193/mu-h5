@@ -8,9 +8,9 @@ const AUTO1220=require('./auto-items1220.cjs');const DAMAGE119=require('./damage
 const serveAssets=require('./asset-cache.cjs').createAssets(path.join(__dirname,'public'));
 const {DropIndex}=require('./drop-index.cjs');const autoPickupAllowed=require('./auto-loot.cjs');
 const AD_MODULE=require('./adventures.cjs');
-const D=require('./domain.cjs'),{MAPS,SKILLS}=D;ELF_SUMMON.installSkills(SKILLS,R.SOURCE_SKILLS);const {Encoder}=require('./public/net-sync.js');
+const D=require('./domain.cjs'),{MAPS,SKILLS}=D;const {Encoder}=require('./public/net-sync.js');
 require('./seven-classes.cjs').register(D,CLASSES);const CONTENT1227=require('./content1227.cjs').install(D);require('./world-policy1220.cjs').install(D,SP);
-require('./combat-timing.cjs').apply(SKILLS);
+require('./combat-timing.cjs').apply(SKILLS);ELF_SUMMON.installSkills(SKILLS,R.SOURCE_SKILLS);
 const U6=require('./update6.cjs');U6.install(D,P,R,S);
 const PS=require('./pet-source.cjs');PS.install(PET);const petGain=P.gainXp;P.gainXp=(c,n)=>petGain(c,Math.round(n*(1+(PS.attrs(c).exp||0)/100)));
 const G62=require('./gear62.cjs');G62.install(D);

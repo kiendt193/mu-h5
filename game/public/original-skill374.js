@@ -13,14 +13,14 @@
   mgslash:'swordforce',mgfire:'fire01',mgspirit:'skull',spiral:'m_waves',rays:'laser01',swordslash:'swordforce',mgball:'ball01',mgtornado:'storm01',mgmeteor:'blast01',
   force:'waveforce',fireburst:'blast01',firescream:'darkfirescrem01',dlforce:'waveforce',fireblast:'blast01',spark:'arrow_spark',earthshake:'earthquake01',
   sumfire:'fire01',drain:'skull',chainlightning:'arrowthunder01',electricsurge:'arrowthunder01',redstorm:'storm01',
-  rfstrike:'swordforce',ringblow:'circle01',upperbeast:'aurora',chaindriver:'piercing',darkside:'darklordskill',dragonlore:'fire01',
+  rfstrike:'swordforce',ringblow:'circle01',upperbeast:'circle01',chaindriver:'piercing',darkside:'darklordskill',dragonlore:'fire01',
  };
- const R={status:'unavailable',list:null,loading:new Map(),ready:new Set(),failed:new Set(),playCount:0};
+ const R={status:'unavailable',list:null,loading:new Map(),ready:new Set(),failed:new Set(),playCount:0,modelsIndexed:0,loadedModels:0};
  window.MU_ORIGINAL_SKILL_FX=R;
  const base='assets/skill-full/';
  fetch(base+'model-index.json',{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(v=>{
    if(!v){R.status='waiting-for-asset-pack';return;}
-   R.list=v;R.status='ready';console.info('MU original Skill.zip models available',Object.keys(v).length);
+   R.list=v;R.modelsIndexed=Object.keys(v).length;R.status='ready';console.info('MU original Skill.zip models available',R.modelsIndexed);
  }).catch(()=>{R.status='waiting-for-asset-pack';});
  const old=N.parts;
  function choose(name){const data=R.list?.[name];return data?.find(e=>e.vertices>0)||null;}
@@ -37,7 +37,7 @@
    spec.meshes=kept.map(m=>({...m,texture:'../skill-full/'+m.texture}));
    if(MU_LIVE?.manifest?.models){
       MU_LIVE.manifest.models['native-fx-full-'+name]=spec;
-      R.ready.add(name);
+      R.ready.add(name);R.loadedModels=R.ready.size;
    }
   }).catch(err=>{R.failed.add(name);console.warn('Original Skill model skipped:',name,err?.message||err)}).finally(()=>R.loading.delete(name));
   R.loading.set(name,promise);

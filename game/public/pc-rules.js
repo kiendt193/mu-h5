@@ -6,7 +6,7 @@ const MU_PC_RULES={
   if(c.level<sk.level)reasons.push('Cần cấp '+sk.level);
   if((c.attributes?.energy||0)<(sk.requiredEnergy||0))reasons.push('Cần Năng lượng '+sk.requiredEnergy);
   if((c.attributes?.leadership||0)<(sk.requiredLeadership||0))reasons.push('Cần Mệnh lệnh '+sk.requiredLeadership);
-  if(sk.weaponTypes?.length&&!sk.weaponTypes.includes(s.weaponType))reasons.push('Vũ khí không phù hợp: '+sk.weaponTypes.join(' / '));
+  // Skills depend on class/level/advancement/resources, not the held weapon type.
   return reasons;
  },
  cooldown(at,duration,now){const length=Math.max(1,Number(duration)||1),ms=Math.max(0,Number(at)+length-Number(now));return{ms,cut:100-Math.min(100,ms/length*100),text:ms>=1000?(ms/1000).toFixed(1):ms>0?'0.'+Math.max(1,Math.ceil(ms/100)):''};}

@@ -115,7 +115,7 @@
   "dungeons": {
     "devil": {
       "name": "Devil Square",
-      "map": 2,
+      "map": 9,
       "minLevel": 20,
       "minutes": 20,
       "ticketPrice": 10000,
@@ -123,18 +123,33 @@
       "source": "Event/DevilSquare.dat",
       "rewardZen": 100000,
       "rewardSoul": 2,
-      "waves": 3
+      "waves": 5,
+      "description": "Devil Square - 5 đợt quái theo cấp, tính điểm theo tiêu diệt"
     },
     "blood": {
       "name": "Blood Castle",
-      "map": 2,
+      "map": 16,
       "minLevel": 20,
       "minutes": 15,
       "ticketPrice": 10000,
       "dailyLimit": 3,
       "source": "Event/BloodCastle.dat",
       "rewardZen": 150000,
-      "rewardBless": 2
+      "rewardBless": 2,
+      "description": "Blood Castle - chiến đấu qua cầu, phá cổng và tượng, nhặt kiếm và trao Thiên thần"
+    },
+    "chaos": {
+      "name": "Chaos Castle",
+      "map": 17,
+      "minLevel": 20,
+      "minutes": 10,
+      "ticketPrice": 10000,
+      "dailyLimit": 3,
+      "source": "Chaos Castle - thời lượng tham chiếu 10 phút",
+      "rewardZen": 120000,
+      "rewardSoul": 2,
+      "waves": 1,
+      "description": "Hỗn Nguyên Lâu - sinh tồn, hạ lính canh, tối đa 10 phút"
     }
   },
   "daily": [
@@ -185,5 +200,46 @@
       "goal": 1000,
       "zen": 200000
     }
-  ]
+  ],
+  "seasonal": {
+    "rabbit": {
+      "name": "Thỏ Ngọc",
+      "hours": [
+        13,
+        21
+      ],
+      "minute": 50,
+      "durationMinutes": 15,
+      "map": 17,
+      "sourceId": 418,
+      "level": 40,
+      "hp": 18000,
+      "damage": 60,
+      "count": 7,
+      "drop": {
+        "pink": 1,
+        "purple": 1
+      }
+    },
+    "medusa": {
+      "name": "Medusa",
+      "hours": [
+        11,
+        22
+      ],
+      "minute": 15,
+      "durationMinutes": 20,
+      "map": 17,
+      "sourceId": 559,
+      "modelIsFallback": true,
+      "level": 140,
+      "hp": 2500000,
+      "damage": 1500,
+      "count": 1,
+      "drop": {
+        "pink": 2,
+        "purple": 2
+      }
+    }
+  }
 }

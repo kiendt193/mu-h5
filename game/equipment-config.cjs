@@ -51,7 +51,8 @@ function rule(it){
  if(source.definitionId)return TABLE[source.definitionId]||null;
  if(!Object.hasOwn(SOURCE_SLOT,source.slot))return null;
  const classes=source.classes?.length?source.classes.slice():source.classId&&ALL_CLASSES.includes(source.classId)?[source.classId]:ALL_CLASSES.slice();
- if(source.slot==='weapon'&&ELF_MELEE.has(it.weaponType)&&!classes.includes('elf'))classes.push('elf');
+ const meleeType=it.weaponType||((source.appearance||source.key||source.name||'').match(/sword|mace|axe|spear|kiếm|đao|chùy|rìu/i)?.[0]||'').toLowerCase();
+ if(source.slot==='weapon'&&ELF_MELEE.has(meleeType)&&!classes.includes('elf'))classes.push('elf');
  return {definitionId:null,name:source.name,sourceName:source.sourceName||source.name,
    classes,classStages:Object.fromEntries(classes.map(k=>[k,1])),
    requiredLevel:Math.max(1,Number(source.requiredLevel)||1),

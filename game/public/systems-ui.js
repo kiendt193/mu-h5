@@ -12,7 +12,43 @@ function renderUnequipQuick(c){
  (c.riding?'<button type="button" data-dismount="1">♞ Xuống ngựa<small>Giữ nguyên thú cưỡi trong ô</small></button>':'')+
  '</div></section>';
 }
-renderInventory=function(){if(!state)return;const c=state.character,signature=JSON.stringify([c.gear,c.inventory,c.gems,c.materials,c.gold,c.attributes,c.level,c.riding,inventorySelected]);if(renderInventory.signature===signature)return;renderInventory.signature=signature;const all=[...Object.values(c.gear),...c.inventory].filter(i=>i.kind!=="socketSeed90"),selected=all.find(it=>it.id===inventorySelected)||all[0];inventorySelected=selected?.id;const slots=['helm','wing','weapon','armor','shield','glove','pant','boot','mount','ring1','ring2','necklace','pet'];$('#modalBody').innerHTML='<h2>Hành trang <small>LC '+state.stats.battlePower+'</small></h2><div class="inventoryLayout"><div class="paperdoll">'+previewCanvas(state.me)+'<div class="equipmentSlots">'+slots.map(slot=>{const it=c.gear[slot];return '<button class="equipSlot '+slot+' '+(it?.rarity==='excellent'?'excellent':'')+'" '+(it?'data-item="'+escape(it.id)+'"':'disabled')+' title="'+escape(it?.name||slotNames[slot])+'">'+bagIcon(it)+'<small>'+(it&&['weapon','shield'].includes(slot)?(it.slot==='shield'?'Khiên':'Vũ khí')+' '+(it.hand==='both'?'(2 tay)':it.hand==='left'?'(T)':'(P)'):slotNames[slot])+'</small></button>'}).join('')+'</div></div><div class="bagPanel"><div class="bagGrid">'+Array.from({length:40},(_,i)=>{const it=c.inventory.filter(i=>i.kind!=='socketSeed90')[i];return '<button class="bagSlot '+(it?.id===inventorySelected?'selected ':'')+(it?.rarity==='excellent'?'excellent':'')+'" '+(it?'data-item="'+escape(it.id)+'" aria-label="'+escape(it.name)+'"':'disabled aria-label="Ô trống"')+'>'+bagIcon(it)+(it?.enhance?'<small>+'+it.enhance+'</small>':'')+'</button>'}).join('')+'</div><p class="bagMoney">'+c.inventory.length+'/40 ô · '+c.gold.toLocaleString('vi-VN')+' Zen</p><div id="selectedItem">'+(selected?itemView(selected,Object.values(c.gear).some(it=>it.id===selected.id))+(Object.values(c.gear).some(it=>it.id===selected.id)?'<button data-unequip="'+Object.entries(c.gear).find(([key,it])=>it?.id===selected.id)?.[0]+'">Tháo trang bị</button>':'')+'<p class="muted">So với ô đang mặc: LC '+battle(selected)+' / '+battle(c.gear[selected.slot])+'</p>':'Chọn một món đồ để xem chỉ số và thao tác.')+'</div></div></div>'+renderUnequipQuick(c)+'<div class="gemBar">'+Object.entries(c.gems).map(([k,v])=>'<span>'+escape(({pink:'Ngọc Hồng',purple:'Ngọc Tím'})[k]||k)+' <b>'+v+'</b></span>').join('')+'</div><div class="inventoryToolbar"><button id="dictionary">Từ điển item</button><button id="openForge">Cánh & thú cưỡi</button><button id="bagPoints">Bảng điểm</button></div><p class="muted">Auto giữ lại cánh, thú cưỡi và đồ Excellent. Chọn đồ rồi Mặc / Nâng / Bán; trang bị +15 là tối đa.</p>';
+
+/* Visible set bonuses in the real inventory detail panel. */
+function muSetDetail(it,c){
+ if(!it||it.kind!=='gear'||it.rarity==='ancient'||it.ancient)return '';
+ const jewel=['ring1','ring2','necklace'].includes(it.slot);
+ const m=/^(?:7|8|9|10|11):(\d+)$/.exec(String(it.definitionId||''));
+ if(!jewel&&!m)return '';
+ const id=c.classId+(jewel?':accessory':':armor:'+m[1]);
+ const equipped=Object.entries(c.gear||{}).filter(([slot,gear])=>{
+  if(!gear||gear.kind!=='gear'||gear.rarity==='ancient'||gear.ancient)return false;
+  if(jewel)return ['ring1','ring2','necklace'].includes(slot);
+  return ['helm','armor','pant','glove','boot'].includes(slot)&&
+    /^(?:7|8|9|10|11):(\d+)$/.exec(String(gear.definitionId||''))?.[1]===m[1];
+ });
+ const count=equipped.length,excellent=equipped.filter(([,g])=>g.rarity==='excellent').length,total=jewel?3:5;
+ const canonical=state.stats?.excellentSets?.find(group=>group.id===id);
+ const rules=jewel?[
+  [2,'Hai trang sức: HP tối đa +3%',false],[3,'Đủ nhẫn + dây chuyền: Sát thương +3%',false],
+  [2,'Hai trang sức Excellent: Chí mạng +2%',true],[3,'Đủ trang sức Excellent: MP tối đa +4%',true]
+ ]:[
+  [2,'Đồng bộ 2 món: Phòng thủ +3%',false],[3,'Đồng bộ 3 món: HP tối đa +4%',false],
+  [4,'Đồng bộ 4 món: Sát thương +3%',false],[5,'Đủ 5 món: MP tối đa +5%',false],
+  [2,'2 món Excellent: Chí mạng +2%',true],[3,'3 món Excellent: Giảm sát thương +3%',true],
+  [5,'Đủ 5 món Excellent: Sát thương +5%',true]
+ ];
+ const bonuses=canonical?.bonuses?.length?canonical.bonuses.map(b=>({name:b.name,need:b.need,ex:!!b.requiresExcellent,active:!!b.active})):
+  rules.map(([need,name,ex])=>({need,name,ex,active:(ex?excellent:count)>=need}));
+ const heading=canonical?.name||(jewel?'Bộ trang sức':'Bộ '+String(it.name||'').replace(/^(?:Mũ|Áo|Quần|Găng|Giày)\s+/i,''));
+ return '<section class="muSetDetails"><h3>✦ '+escape(heading)+'</h3>'
+   +'<p>Đang mặc <strong>'+count+'/'+total+'</strong> · EX <strong>'+excellent+'/'+total+'</strong></p>'
+   +bonuses.map(b=>'<p class="'+(b.active?'muSetActive':'muSetInactive')+'">'
+     +(b.active?'✦ ĐÃ KÍCH HOẠT: ':'◇ Chưa kích hoạt: ')+escape(b.name)
+     +' <small>('+ (b.ex?excellent:count)+'/'+b.need+(b.ex?' EX':'')+')</small></p>').join('')
+   +'<small>Các dòng đã kích hoạt được tính trong thuộc tính và lực chiến nhân vật.</small></section>';
+}
+
+renderInventory=function(){if(!state)return;const c=state.character,signature=JSON.stringify([c.gear,c.inventory,c.gems,c.materials,c.gold,c.attributes,c.level,c.riding,inventorySelected,state.stats?.excellentSets]);if(renderInventory.signature===signature)return;renderInventory.signature=signature;const all=[...Object.values(c.gear),...c.inventory].filter(i=>i.kind!=="socketSeed90"),selected=all.find(it=>it.id===inventorySelected)||all[0];inventorySelected=selected?.id;const slots=['helm','wing','weapon','armor','shield','glove','pant','boot','mount','ring1','ring2','necklace','pet'];$('#modalBody').innerHTML='<h2>Hành trang <small>LC '+state.stats.battlePower+'</small></h2><div class="inventoryLayout"><div class="paperdoll">'+previewCanvas(state.me)+'<div class="equipmentSlots">'+slots.map(slot=>{const it=c.gear[slot];return '<button class="equipSlot '+slot+' '+(it?.rarity==='excellent'?'excellent':'')+'" '+(it?'data-item="'+escape(it.id)+'"':'disabled')+' title="'+escape(it?.name||slotNames[slot])+'">'+bagIcon(it)+'<small>'+(it&&['weapon','shield'].includes(slot)?(it.slot==='shield'?'Khiên':'Vũ khí')+' '+(it.hand==='both'?'(2 tay)':it.hand==='left'?'(T)':'(P)'):slotNames[slot])+'</small></button>'}).join('')+'</div></div><div class="bagPanel"><div class="bagGrid">'+Array.from({length:40},(_,i)=>{const it=c.inventory.filter(i=>i.kind!=='socketSeed90')[i];return '<button class="bagSlot '+(it?.id===inventorySelected?'selected ':'')+(it?.rarity==='excellent'?'excellent':'')+'" '+(it?'data-item="'+escape(it.id)+'" aria-label="'+escape(it.name)+'"':'disabled aria-label="Ô trống"')+'>'+bagIcon(it)+(it?.enhance?'<small>+'+it.enhance+'</small>':'')+'</button>'}).join('')+'</div><p class="bagMoney">'+c.inventory.length+'/40 ô · '+c.gold.toLocaleString('vi-VN')+' Zen</p><div id="selectedItem">'+(selected?itemView(selected,Object.values(c.gear).some(it=>it.id===selected.id))+muSetDetail(selected,c)+(Object.values(c.gear).some(it=>it.id===selected.id)?'<button data-unequip="'+Object.entries(c.gear).find(([key,it])=>it?.id===selected.id)?.[0]+'">Tháo trang bị</button>':'')+'<p class="muted">So với ô đang mặc: LC '+battle(selected)+' / '+battle(c.gear[selected.slot])+'</p>':'Chọn một món đồ để xem chỉ số và thao tác.')+'</div></div></div>'+renderUnequipQuick(c)+'<div class="gemBar">'+Object.entries(c.gems).map(([k,v])=>'<span>'+escape(({pink:'Ngọc Hồng',purple:'Ngọc Tím'})[k]||k)+' <b>'+v+'</b></span>').join('')+'</div><div class="inventoryToolbar"><button id="dictionary">Từ điển item</button><button id="openForge">Cánh & thú cưỡi</button><button id="bagPoints">Bảng điểm</button></div><p class="muted">Auto giữ lại cánh, thú cưỡi và đồ Excellent. Chọn đồ rồi Mặc / Nâng / Bán; trang bị +15 là tối đa.</p>';
 document.querySelectorAll('[data-item]').forEach(b=>b.onclick=()=>{inventorySelected=b.dataset.item;renderInventory.signature=null;renderInventory()});$('#dictionary').onclick=showDictionary;$('#openForge').onclick=openForge;$('#bagPoints').onclick=()=>openPoints();bindItemActions();};
 const oldOpenPoints=openPoints;
 openPoints=function(itemId){oldOpenPoints(itemId);$('#modalBody').classList.add('pointsBody');const box=document.createElement('div');box.className='pointsPortrait';box.innerHTML=previewCanvas(state.me);$('#modalBody').insertBefore(box,$('#resourceStats'));};

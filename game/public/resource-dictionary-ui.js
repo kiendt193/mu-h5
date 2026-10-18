@@ -154,5 +154,14 @@
   }
   return result;
  };
+ // Reuse this resource guide from the Chaos Forge instead of opening
+ // the older text-only materials encyclopedia.
+ const oldForge=openForge;
+ openForge=function(...args){
+  const result=oldForge(...args);
+  const button=$('#forgeMaterials135');
+  if(button){button.textContent='Tài nguyên';button.onclick=()=>{tab='materials';void open()};}
+  return result;
+ };
  window.MU_RESOURCES={open};
 })();

@@ -46,6 +46,7 @@ function view(c){
  ],materials:c.materials||{},items:items.map(it=>({
  id:it.id,name:it.name,slot:it.slot,kind:it.kind,locked:!!it.locked,
  enhance:it.enhance||0,tier:it.economyTierD||0,rank:it.kind==='pet'?(it.trainingLevelD||0):(it.companionRankD||0),
+ socketCost:15000*((it.socketsD?.length||0)+1)*Math.max(1,(it.enhance||0)+1),reforgeCost:tierCost(it),trainCost:(it.kind==='pet'?20000:it.slot==='wing'?100000:75000)*(((it.kind==='pet'?it.trainingLevelD:it.companionRankD)||0)+1)**2,
  sockets:Array.isArray(it.socketsD)?it.socketsD:[],maxSockets:socketsMax(it.slot),
  allowedGems:socketRules[it.slot]||[],worth:it.price||0
  }))};
@@ -84,15 +85,14 @@ function act(c,b){
   return {kind,success:true,cost,level:it.economyTierD,name:it.name};
  }
  if(kind==='trainD'){
-  if(!isGear||!['wing','mount'].includes(it.slot)&&it.kind!=='pet'&&it.kind!=='gear')throw Error('Vật phẩm không hỗ trợ huấn luyện');
-  if(!['wing','mount'].includes(it.slot)&&it.kind!=='pet')throw Error('Chỉ hỗ trợ pet, cánh và thú cưỡi');
+  if(it.kind!=='pet'&&(!isGear||!['wing','mount'].includes(it.slot)))throw Error('Chỉ hỗ trợ pet, cánh và thú cưỡi');
   const rank=it.kind==='pet'?(it.trainingLevelD||0):(it.companionRankD||0);
   if(rank>=10)throw Error('Đã đạt cấp huấn luyện tối đa');
   const cost=(it.kind==='pet'?20000:it.slot==='wing'?100000:75000)*(rank+1)*(rank+1);
   const gems=it.kind==='pet'?{}:it.slot==='wing'?{soul:1}:{life:1};
   charge(c,cost,gems);
   if(it.kind==='pet'){
-   it.trainingLevelD=rank+1;it.value=Math.max(0,Number(it.value)||0)+1;
+   it.trainingLevelD=rank+1;it.value=Math.max(0,Number(it.value)||0)+1;it.remainingMs=Math.min(24*3600000,Math.max(0,it.remainingMs||0)+2*3600000);it.hp=Number.isFinite(it.maxHp)?it.maxHp:100;
   }else{it.companionRankD=rank+1;sync(it)}
   return {kind,success:true,cost,level:rank+1,name:it.name};
  }

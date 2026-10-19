@@ -512,3 +512,17 @@
  #muFarmWorld .farmWell>span{width:52px;height:52px}
  #muFarmWorld .farmFence{height:14px!important}
 }
+
+
+/* Package D: economy forge panels, sized for desktop and phone. */
+.ecoPanelD{padding:12px;margin:10px 0;border:1px solid #766849;background:linear-gradient(135deg,#131b21ec,#23201bec);border-radius:5px}
+.ecoPanelD h3{margin:0 0 8px;color:#ebcf91}
+.ecoLabel{display:block;font-size:13px;color:#dfcb9e;margin:8px 0}
+.ecoLabel select{display:block;max-width:100%;width:100%;padding:10px;background:#0c1118;color:#f8dfad;border:1px solid #887047;border-radius:4px}
+.ecoDetailD{font-size:12px;line-height:1.65;color:#d1cbba}
+.ecoGridD{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ecoActionD{width:100%;min-height:62px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;padding:9px 11px;text-align:left;color:#f0d9ab;border:1px solid #826844;background:#161d25;white-space:normal}
+.ecoActionD strong{font-size:13px}
+.ecoActionD small{font-size:11px;line-height:1.45;color:#bfb4a0}
+.ecoActionD:disabled{opacity:.43;cursor:not-allowed}
+@media(max-width:640px){.ecoPanelD{padding:9px}.ecoGridD{grid-template-columns:1fr}.ecoActionD{min-height:51px}}

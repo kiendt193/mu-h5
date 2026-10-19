@@ -69,5 +69,68 @@ const oldRenderClassDetail=renderClassDetail;
 renderClassDetail=function(){oldRenderClassDetail();document.querySelectorAll('[data-class]').forEach(b=>{if(!b.querySelector('canvas')){b.querySelector('img')?.remove();b.insertAdjacentHTML('afterbegin',previewCanvas({id:'create-'+b.dataset.class}));}});$('#classDetail').insertAdjacentHTML('afterbegin',previewCanvas({id:'create-'+selectedClass}));};
 function openForge(){if(!state)return;const c=state.character,names=state.crafting.materials;modal('<h2>Lò Chaos · Cánh & thú cưỡi</h2><p>Chiến Mã dành cho Chúa tể từ cấp 1. Cưỡi Fenrir từ cấp 300: tăng tốc di chuyển 20%; sói đen +10% sát thương, xanh +10% phòng thủ, hoàng kim có cả hai. Cánh cần đúng hệ và cấp nhân vật.</p><button id="rideToggle" '+(!c.gear.mount?'disabled':'')+'>'+(c.riding?'Xuống thú cưỡi':'Cưỡi thú đã mặc')+'</button><div class="gemBar">'+Object.entries(c.gems).map(([k,v])=>'<span>'+k+' <b>'+v+'</b></span>').join('')+'</div><details><summary>Nguyên liệu đang có</summary>'+Object.entries(names).map(([k,n])=>'<p>'+escape(n)+': '+(c.materials[k]||0)+'</p>').join('')+'</details><p class="muted">Ngọc và nguyên liệu rơi khi đánh quái. Công thức cánh và nâng màu sói được cân bằng cho bản web; tỉ lệ ba bước tạo sói đỏ theo ảnh bạn gửi. Thất bại vẫn tiêu hao toàn bộ nguyên liệu đã chọn.</p><div class="recipeList">'+state.crafting.recipes.map(r=>{const choices=r.consume?c.inventory.filter(it=>it.kind==='gear'&&it.slot===r.consume.slot&&(it.enhance||0)>=(r.consume.enhance||0)&&(!r.consume.tier||it.wingTier===r.consume.tier)&&(!r.consume.mount||it.mount===r.consume.mount)):[];return '<article class="recipe"><h3>'+escape(r.name)+' <span>'+r.rate+'%</span></h3><small>Cấp '+r.level+' · '+r.gold.toLocaleString('vi-VN')+' Zen</small><p>'+Object.entries(r.gems).map(([k,v])=>v+' '+k).concat(Object.entries(r.materials).map(([k,v])=>v+' '+names[k])).map(escape).join(' + ')+'</p>'+(r.consume?'<label>Tiêu hao '+(slotNames[r.consume.slot]||'trang bị')+(r.consume.tier?' cấp '+r.consume.tier:'')+' '+(r.consume.enhance?'+'+r.consume.enhance+' trở lên':'')+'<select id="material-'+r.id+'"><option value="">Chọn đồ trong túi</option>'+choices.map(it=>'<option value="'+it.id+'">'+escape(it.name)+' +'+(it.enhance||0)+'</option>').join('')+'</select></label>':'')+'<button class="gold" data-craft="'+r.id+'" '+(c.level<r.level?'disabled':'')+'>Chế tạo</button></article>'}).join('')+'</div><p id="forgeResult" role="status"></p>','forge');$('#rideToggle').onclick=async()=>{const r=await action('ride',{enabled:!state.character.riding});if(r)openForge()};document.querySelectorAll('[data-craft]').forEach(b=>b.onclick=async()=>{const recipe=b.dataset.craft,itemId=$('#material-'+recipe)?.value;if(!confirm('Chế tạo theo tỉ lệ đã hiển thị? Thất bại vẫn mất nguyên liệu.'))return;b.disabled=true;const r=await action('craft',{recipe,itemId});if(r){openForge();$('#forgeResult').textContent=(r.craftResult.success?'Thành công: ':'Thất bại: ')+r.craftResult.name;}else b.disabled=false;});}
 const forgeButton=document.createElement('button');forgeButton.id='forge';forgeButton.textContent='✧ Cánh / Sói';forgeButton.onclick=openForge;document.querySelector('.leftcontrols').appendChild(forgeButton);
+/* Package D: every cost and random outcome is checked by the game server. */
+let economySelectedD=null;
+async function openEconomyD(){
+ if(!state)return;
+ let model;try{model=await api('economyD');}catch(e){toast(e.message);return;}
+ const items=model.items||[],gold=state.character.gold,gems=state.character.gems||{};
+ if(!items.some(it=>it.id===economySelectedD))economySelectedD=items[0]?.id||null;
+ const fmt=n=>(Number(n)||0).toLocaleString('vi-VN');
+ const gemNames={bless:'Bless',soul:'Soul',chaos:'Chaos',life:'Life',creation:'Creation'};
+ const choose='<label class="ecoLabel">Chọn vật phẩm trong hành trang / đang mặc<select id="ecoItemD">'
+  +items.map(it=>'<option value="'+escape(it.id)+'" '+(it.id===economySelectedD?'selected':'')+'>'
+   +escape(it.name)+' · '+escape(it.slot)+(it.enhance?' +'+it.enhance:'')+'</option>').join('')+'</select></label>';
+ const selected=items.find(it=>it.id===economySelectedD),can=selected&&!selected.locked;
+ const gemList=selected?.allowedGems?.length?selected.allowedGems:[],
+  choices='<label class="ecoLabel">Ngọc để khảm<select id="ecoGemD">'+gemList.map(k=>'<option value="'+k+'">'+gemNames[k]+' ('+(gems[k]||0)+')</option>').join('')+'</select></label>';
+ const button=(kind,title,details,enabled=true)=>'<button type="button" class="ecoActionD" data-economy-d="'+kind+'" '+(!enabled?'disabled':'')+'>'
+   +'<strong>'+title+'</strong><small>'+details+'</small></button>';
+ const affordable=cost=>gold>=cost;
+ const socket=selected?.kind==='gear'&&gemList.length&&selected.sockets.length<selected.maxSockets;
+ const reforge=selected?.kind==='gear'&&!['wing','mount'].includes(selected.slot)&&selected.tier<3;
+ const train=selected?.kind==='pet'||selected?.kind==='gear'&&['wing','mount'].includes(selected.slot);
+ const rankCost=selected?.trainCost||0;
+ const feed=selected?.kind==='pet';
+ const summary=selected?'<p class="ecoDetailD"><strong>'+escape(selected.name)+'</strong> · Cấp nâng +'+selected.enhance
+  +' · Phẩm '+selected.tier+'/3 · Huấn luyện '+selected.rank+'/10 · Khảm '+selected.sockets.length+'/'+selected.maxSockets
+  +(selected.sockets.length?' ('+selected.sockets.map(k=>gemNames[k]||k).join(', ')+')':'')+'</p>':'<p>Không có vật phẩm.</p>';
+ modal('<h2>⚒ Trang bị & Kinh tế</h2><p>Zen: <strong>'+fmt(gold)+'</strong> · '+Object.entries(gemNames).map(([k,v])=>v+' '+(gems[k]||0)).join(' · ')+'</p>'
+  +'<p class="muted">Cường hóa +1 → +15 trong Hành trang. Cánh và thú cưỡi vẫn chế tạo ở Lò Chaos. Mọi khoản chi được máy chủ xác nhận và lưu trên Neon.</p>'
+  +'<div class="ecoPanelD">'+choose+summary+choices
+  +'<div class="ecoGridD">'
+  +button('socketD','💎 Khảm ngọc',''+fmt(selected?.socketCost||0)+' Zen · 1 viên ngọc',can&&socket&&affordable(selected.socketCost))
+  +button('reforgeD','⚒ Nâng phẩm cấp',''+fmt(selected?.reforgeCost||0)+' Zen + ngọc · Giữ nguyên hình dạng',can&&reforge&&affordable(selected.reforgeCost))
+  +button('trainD','✦ Huấn luyện pet / cánh / thú',''+fmt(rankCost)+' Zen '+(selected?.kind==='pet'?'':selected?.slot==='wing'?'+ 1 Soul':'+ 1 Life'),can&&train&&selected.rank<10&&affordable(rankCost))
+  +button('feedD','♡ Chăm sóc pet','10.000 Zen · Phục hồi HP + thời gian sử dụng',can&&feed&&affordable(10000))
+  +'</div></div>'
+  +'<div class="ecoPanelD"><h3>Chế tạo ngọc</h3><p>5 Bless + 5 Soul + 1 Chaos + 100.000 Zen → 1 Life</p>'
+  +button('jewelFusion','◆ Dung luyện Life','Thành công 100% · Không có tỷ lệ ngẫu nhiên',affordable(100000)&&gems.bless>=5&&gems.soul>=5&&gems.chaos>=1)
+  +'<p class="muted">Nâng phẩm tối đa 3, khảm theo loại trang bị và huấn luyện tối đa 10. Mỗi lần đều tiêu hao Zen để cân bằng kinh tế.</p></div>','economyD');
+ const chooser=$('#ecoItemD');
+ if(chooser)chooser.onchange=()=>{economySelectedD=chooser.value;void openEconomyD()};
+ document.querySelectorAll('[data-economy-d]').forEach(button=>{
+  button.onclick=async()=>{
+   if(button.disabled)return;
+   const kind=button.dataset.economyD;
+   const id=$('#ecoItemD')?.value,gem=$('#ecoGemD')?.value;
+   const label=button.querySelector('strong')?.textContent||'Thao tác';
+   if(!confirm(label+'? Ngọc và Zen đã dùng không được hoàn trả.'))return;
+   button.disabled=true;
+   const response=await action('economyDAct',{kind,id,gem});
+   if(response?.economyResult){
+    const result=response.economyResult;
+    await openEconomyD();
+    toast('✓ '+escape(result.name||'Thành công')+(result.level?' · Cấp '+result.level:'')+' · -'+fmt(result.cost)+' Zen');
+   }else if(button.isConnected)button.disabled=false;
+  };
+ });
+}
+const economyButtonD=document.createElement('button');
+economyButtonD.id='economyDButton';economyButtonD.textContent='⚒ Khảm / Nâng';
+economyButtonD.title='Khảm ngọc, nâng phẩm, huấn luyện pet/cánh/thú cưỡi và tiêu Zen';
+economyButtonD.onclick=()=>void openEconomyD();
+document.querySelector('.leftcontrols')?.appendChild(economyButtonD);
+
 let previewAt=0;
 function framePreviews(time){if(time-previewAt<1/15)return;previewAt=time;const canvases=[...document.querySelectorAll('.characterPreview')].filter(el=>el.getBoundingClientRect().height>0);if(!canvases.length)return;const actors=canvases.map(el=>{const id=el.dataset.preview,c=window.MU_CRAFT_PREVIEWS120?.get(id)||(state?.me.id===id?state.me:rosterData?.characters?.find(c=>c.id===id)||{id,classId:id.startsWith('create-')?id.slice(7):selectedClass,gear:{}});return liveVisualPlayer({...c,hp:1,maxHp:1,action:'idle',facing:Math.PI*3/4});});prepareLiveActors(actors,time);canvases.forEach((el,i)=>{const ct=el.getContext('2d'),p=actors[i];ct.clearRect(0,0,384,384);const grd=ct.createRadialGradient(192,260,5,192,230,160);grd.addColorStop(0,'#b68a3333');grd.addColorStop(1,'#0000');ct.fillStyle=grd;ct.fillRect(0,0,384,384);if(!drawLivePlayer(p,192,p.id==='craft-preview120'?318:360,ct,p.id==='craft-preview120'?340:(p.gear?.wing||p.riding)?440:640)){const im=MU_ART.images['portrait-'+p.classId];if(im)ct.drawImage(im,60,50,264,264);}});}

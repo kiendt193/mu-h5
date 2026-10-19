@@ -46,7 +46,7 @@ function view(c){
  ],materials:c.materials||{},items:items.map(it=>({
  id:it.id,name:it.name,slot:it.slot,kind:it.kind,locked:!!it.locked,
  enhance:it.enhance||0,tier:it.economyTierD||0,rank:it.kind==='pet'?(it.trainingLevelD||0):(it.companionRankD||0),
- socketCost:15000*((it.socketsD?.length||0)+1)*Math.max(1,(it.enhance||0)+1),reforgeCost:tierCost(it),trainCost:(it.kind==='pet'?20000:it.slot==='wing'?100000:75000)*(((it.kind==='pet'?it.trainingLevelD:it.companionRankD)||0)+1)**2,
+ socketCost:15000*((it.socketsD?.length||0)+1)*Math.max(1,(it.enhance||0)+1),reforgeCost:tierCost(it),reforgeGems:[{bless:2,chaos:1},{soul:3,chaos:2},{life:5,creation:2,chaos:3}][it.economyTierD||0]||{},trainCost:(it.kind==='pet'?20000:it.slot==='wing'?100000:75000)*(((it.kind==='pet'?it.trainingLevelD:it.companionRankD)||0)+1)**2,
  sockets:Array.isArray(it.socketsD)?it.socketsD:[],maxSockets:socketsMax(it.slot),
  allowedGems:socketRules[it.slot]||[],worth:it.price||0
  }))};

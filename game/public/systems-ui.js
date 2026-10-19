@@ -100,7 +100,7 @@ async function openEconomyD(){
   +'<div class="ecoPanelD">'+choose+summary+choices
   +'<div class="ecoGridD">'
   +button('socketD','💎 Khảm ngọc',''+fmt(selected?.socketCost||0)+' Zen · 1 viên ngọc',can&&socket&&affordable(selected.socketCost))
-  +button('reforgeD','⚒ Nâng phẩm cấp',''+fmt(selected?.reforgeCost||0)+' Zen + ngọc · Giữ nguyên hình dạng',can&&reforge&&affordable(selected.reforgeCost))
+  +button('reforgeD','⚒ Nâng phẩm cấp',''+fmt(selected?.reforgeCost||0)+' Zen · '+Object.entries(selected?.reforgeGems||{}).map(([k,n])=>n+' '+gemNames[k]).join(' + ')+' · Giữ nguyên ngoại hình',can&&reforge&&affordable(selected.reforgeCost))
   +button('trainD','✦ Huấn luyện pet / cánh / thú',''+fmt(rankCost)+' Zen '+(selected?.kind==='pet'?'':selected?.slot==='wing'?'+ 1 Soul':'+ 1 Life'),can&&train&&selected.rank<10&&affordable(rankCost))
   +button('feedD','♡ Chăm sóc pet','10.000 Zen · Phục hồi HP + thời gian sử dụng',can&&feed&&affordable(10000))
   +'</div></div>'

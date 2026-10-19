@@ -255,3 +255,137 @@
 #modal .muResourceNoDrop{color:#eab58e}
 #modal .muResourceRecipe{font-size:12px}
 @media(max-width:560px){#modal .muResourceLayout{grid-template-columns:130px minmax(0,1fr);gap:5px}#modal .muResourceList button{font-size:11px;padding:5px}#modal .muResourceDetails{padding:7px;font-size:11px}#modal .muResourceDetails h3{font-size:15px}#modal .muResourceMapList{grid-template-columns:1fr}#modal .muResourceItemHero img{height:48px;width:48px}#modal .muResourceTabs button{font-size:11px;padding:7px}}
+
+
+/* Farm 73 - pixel scene V4. Crop JAR sprite frames, don't stretch sprite sheets. */
+#muFarmWorld{background:#102119;color:#f1dfb4;padding:0!important;font-family:inherit;z-index:18000;overflow-y:auto;overscroll-behavior:contain}
+#muFarmWorld .farmWorldPage{width:min(1180px,100%);margin:0 auto;padding:12px 14px 26px;box-sizing:border-box;min-height:100dvh;background:linear-gradient(180deg,#203c30 0,#14291f 65%);font-size:14px}
+#muFarmWorld button{font-family:inherit;touch-action:manipulation;border-radius:8px;min-height:38px}
+#muFarmWorld .farmWorldHeader{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid #b5a477;background:linear-gradient(130deg,#203e31,#0d241c);padding:10px 14px;border-radius:11px;box-shadow:0 3px 18px #07130fa8;margin:0 0 12px}
+#muFarmWorld .farmBrand{display:flex;align-items:center;gap:10px;min-width:0}
+#muFarmWorld .farmBrandGlyph{font-size:38px;color:#d7d78c;text-shadow:0 0 9px #bff49c8a;line-height:1}
+#muFarmWorld .farmBrand small{display:block;font-size:10px;color:#c0d9bd;letter-spacing:1.4px}
+#muFarmWorld .farmBrand strong{display:block;font:700 clamp(18px,2.5vw,27px)/1.3 Georgia,serif;color:#f0dda5}
+#muFarmWorld .farmHeaderRight{display:flex;align-items:center;justify-content:flex-end;gap:7px;flex-wrap:wrap}
+#muFarmWorld .farmZen{background:#112b21;color:#ecd895;padding:7px 10px;border:1px solid #577456;border-radius:6px;white-space:nowrap;font-weight:700}
+#muFarmWorld .farmHeaderRight button{padding:7px 11px;background:#2c4633;border-color:#67825f;color:#f7eac2}
+#muFarmWorld .farmHeaderRight .farmBack{background:#604530;border-color:#c09b60}
+#muFarmWorld .farmLayout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.8fr);gap:12px;align-items:start}
+#muFarmWorld .farmScene{position:relative;overflow:hidden;border:5px ridge #988057;border-radius:16px;min-height:640px;box-sizing:border-box;isolation:isolate;background:
+ radial-gradient(ellipse at 28% 17%,#ffffff22 0,transparent 35%),
+ repeating-linear-gradient(0deg,transparent 0 53px,#163b1720 54px 56px),
+ repeating-linear-gradient(90deg,transparent 0 55px,#173c122a 56px 58px),
+ linear-gradient(125deg,#699650 0%,#4e853d 45%,#396c35 100%);
+ box-shadow:inset 0 0 50px #0c281948,0 5px 18px #050b08b3}
+#muFarmWorld .farmScene:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.23;background:repeating-linear-gradient(32deg,transparent 0 19px,#c6ed7b19 21px 24px,transparent 25px 46px)}
+#muFarmWorld .farmSceneTitle{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:5px;position:relative;z-index:3;background:linear-gradient(90deg,#1d4532dc,#143c28c4);margin:10px;padding:10px 12px;border:1px solid #9db173a3;border-radius:8px;box-shadow:0 2px 4px #142f1f80}
+#muFarmWorld .farmSceneTitle span{color:#fff2bc;font-weight:800;font-size:16px}
+#muFarmWorld .farmSceneTitle small{color:#d9ecc8;font-size:11px}
+#muFarmWorld .farmScenery{height:158px;position:relative;overflow:hidden;margin:0 8px;z-index:1;background:radial-gradient(ellipse at 75% 50%,#d0d69f70 0,#aac7802e 40%,transparent 60%);border-bottom:6px solid #335a36a6}
+#muFarmWorld .farmScenery:after{content:'';position:absolute;left:18%;right:15%;top:48%;height:57px;background:repeating-linear-gradient(65deg,#ad94654b 0 9px,#99845d75 10px 19px);transform:skewX(-18deg);border-radius:50%;opacity:.65}
+#muFarmWorld .farmDecor{position:absolute;display:flex;flex-direction:column;align-items:center;z-index:2;font-size:48px;line-height:1;text-shadow:2px 4px 3px #253c268a}
+#muFarmWorld .farmDecor small{font-size:11px;color:#fef1bf;background:#1b422fe8;padding:5px 8px;border-radius:7px;border:1px solid #ae9e65;text-shadow:none;white-space:nowrap}
+#muFarmWorld .farmBarn{left:6%;top:5%}
+#muFarmWorld .farmBarn>span{font-size:71px}
+#muFarmWorld .farmWell{right:15%;top:26%}
+#muFarmWorld .farmTree{right:0;top:0;font-size:56px}
+#muFarmWorld .farmTree.second{left:38%;right:auto;top:6%;font-size:45px}
+#muFarmWorld .farmFence{left:0;bottom:5px;font-size:32px;letter-spacing:8px;color:#bf9960;white-space:nowrap;opacity:.9;z-index:3}
+#muFarmWorld .farmFieldArea{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:16px 15px 12px;position:relative;z-index:2}
+#muFarmWorld .farmField{position:relative;min-height:132px;max-width:100%;min-width:0;border:3px solid #8c6d45;border-radius:13px;background:
+ repeating-linear-gradient(165deg,#5d3a22 0 15px,#794929 17px 30px,#744323 32px 38px),
+ linear-gradient(#70532b,#57331f);
+ box-shadow:inset 0 0 16px #3e271ec7,0 5px 0 #374d2d,0 7px 8px #21421d9a;
+ color:#fff0b8;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:7px 5px 11px;isolation:isolate;overflow:hidden}
+#muFarmWorld .farmField:before{content:'';position:absolute;inset:5px;border:1px dashed #b28a48a6;border-radius:7px;pointer-events:none}
+#muFarmWorld .farmField.animal{background:repeating-linear-gradient(90deg,#8b7452 0 13px,#7c6748 15px 24px);border-color:#a58b55}
+#muFarmWorld .farmField.selected{outline:3px solid #f5db8d;outline-offset:2px;box-shadow:0 0 18px #fdf0a7b5,inset 0 0 18px #2d241a}
+#muFarmWorld .farmField.ready{border-color:#87f099;box-shadow:0 0 12px #6ad970aa,0 4px 0 #37634a}
+#muFarmWorld .farmFieldNumber{position:absolute;top:4px;left:8px;font-size:11px;color:#dfcaa0;z-index:2}
+#muFarmWorld .farmPlant{display:grid;place-items:center;min-height:65px;max-height:68px;overflow:hidden;filter:drop-shadow(2px 5px 2px #1d2f129e)}
+#muFarmWorld .farmPixel{display:inline-block;vertical-align:middle;flex:0 0 auto;image-rendering:pixelated;background-repeat:no-repeat;max-width:none}
+#muFarmWorld .farmEmoji{font-size:44px;line-height:1}
+#muFarmWorld .farmEmptyIcon{font-size:39px;line-height:1;color:#c7af77;opacity:.7;font-weight:300}
+#muFarmWorld .farmFieldLabel{max-width:100%;font-size:13px;font-weight:800;color:#fff0c4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-shadow:1px 2px 2px #3c241c}
+#muFarmWorld .farmFieldState{font-size:10px;margin:3px 0;line-height:1.3;color:#f0e2b8}
+#muFarmWorld .farmGrowth{height:6px;width:78%;margin:3px 0 0;border-radius:7px;background:#382c21;overflow:hidden}
+#muFarmWorld .farmGrowth>span{display:block;height:100%;background:linear-gradient(90deg,#a5e97a,#3ca85f);border-radius:7px}
+#muFarmWorld .farmFieldAction{margin:12px 12px 9px;padding:12px;min-height:90px;border:2px solid #bba46f;border-radius:11px;background:linear-gradient(120deg,#152f23f0,#223e2fef);display:flex;align-items:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2;box-shadow:0 4px 9px #153322a8}
+#muFarmWorld .farmSelectedIcon{display:grid;place-items:center;min-width:54px;min-height:54px;font-size:30px}
+#muFarmWorld .farmSelectedInfo{display:flex;flex:1 1 125px;flex-direction:column;gap:5px}
+#muFarmWorld .farmSelectedInfo>b{color:#ffecb4;font-size:14px}
+#muFarmWorld .farmSelectedInfo>small{color:#b9dcc5;font-size:11px}
+#muFarmWorld .farmReadyLabel{font-size:11px;color:#b4d5ab}
+#muFarmWorld .farmCareBtns{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#muFarmWorld .farmCareBtns button,#muFarmWorld .farmSceneFooter button{font-size:12px;min-height:35px;padding:6px 10px;background:#31513b;color:#f3e1b0;border-color:#8fa26c}
+#muFarmWorld .farmCareBtns .farmHarvest,#muFarmWorld .farmSceneFooter [data-harvest-all]{background:#6d542d;color:#ffeead;border-color:#e1c077}
+#muFarmWorld .farmSceneFooter{display:flex;gap:9px;align-items:center;justify-content:center;flex-wrap:wrap;padding:5px 12px 15px}
+#muFarmWorld .farmControl{display:flex;flex-direction:column;gap:10px}
+#muFarmWorld .farmShop{border:1px solid #b49e68;border-radius:12px;background:linear-gradient(#203c2b,#11261e);padding:12px;box-shadow:0 4px 11px #07120bc4}
+#muFarmWorld .farmShopTabs{display:flex;gap:6px;border-bottom:1px solid #877952;padding-bottom:11px;margin-bottom:12px}
+#muFarmWorld .farmShopTabs button{flex:1;min-width:0;font-size:11px;padding:7px 4px;border:1px solid #766a4c;background:#172c25;color:#d5cba6}
+#muFarmWorld .farmShopTabs button[aria-current="true"]{background:#365d39;color:#f9edbf;border-color:#bdad6b;box-shadow:inset 0 -2px 0 #ccbe7f}
+#muFarmWorld .farmShopGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#muFarmWorld .farmShopItem{display:flex;align-items:center;text-align:left;gap:9px;padding:9px 7px;min-width:0;background:linear-gradient(120deg,#294d37,#183528);border:1px solid #6a8057}
+#muFarmWorld .farmShopItem:hover{border-color:#ccbb80;background:#325c3f}
+#muFarmWorld .farmShopArt{height:48px;min-width:49px;display:grid;place-items:center;overflow:hidden}
+#muFarmWorld .farmShopArt .farmEmoji{font-size:34px}
+#muFarmWorld .farmShopItem strong,#muFarmWorld .farmShopItem small{display:block;line-height:1.45}
+#muFarmWorld .farmShopItem strong{font-size:12px;color:#f6e4af}
+#muFarmWorld .farmShopItem small{font-size:11px;color:#b1ddab}
+#muFarmWorld .farmTips{display:flex;flex-direction:column;gap:6px;background:#192a20;padding:11px 13px;border:1px solid #647553;border-radius:10px;font-size:12px;color:#d9dfb5}
+#muFarmWorld .farmTips small{font-size:10px;color:#abc5b0}
+#muFarmWorld .farmStockGrid{display:flex;flex-direction:column;gap:6px;max-height:450px;overflow-y:auto}
+#muFarmWorld .farmProduce{display:grid;grid-template-columns:30px 1fr auto;gap:5px;align-items:center;border-bottom:1px solid #416548;padding:5px}
+#muFarmWorld .farmProduce>span{font-size:23px}
+#muFarmWorld .farmProduce>strong{font-size:12px}
+#muFarmWorld .farmProduce>small{font-size:11px}
+#muFarmWorld .farmProduce>button{grid-column:2/-1;margin-left:auto;min-height:30px;font-size:11px;padding:4px 10px}
+#muFarmWorld .farmStockActions{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+#muFarmWorld .farmStockActions>button{font-size:12px;padding:6px 8px}
+#muFarmWorld .farmEmptyStock{font-size:12px;color:#d3c8a3;padding:17px}
+#muFarmWorld .farmError{margin:12px;border:1px solid #dc9c85;background:#542524;padding:12px;border-radius:7px;color:#ffd4c2}
+#muFarmWorld .farmBoot{padding:30px;text-align:center;color:#d7ebbc;font-size:18px}
+#muFarmWorld.busy button{pointer-events:none;opacity:.6}
+#muFarmWorld button:disabled{opacity:.48;cursor:not-allowed}
+@media(max-width:820px){
+ #muFarmWorld .farmWorldPage{padding:6px 6px 25px}
+ #muFarmWorld .farmWorldHeader{padding:7px 9px;gap:6px;flex-wrap:wrap}
+ #muFarmWorld .farmBrandGlyph{font-size:29px}
+ #muFarmWorld .farmBrand strong{font-size:19px}
+ #muFarmWorld .farmBrand small{font-size:9px;letter-spacing:.7px}
+ #muFarmWorld .farmHeaderRight{width:100%;justify-content:space-between}
+ #muFarmWorld .farmHeaderRight button{min-height:33px;padding:5px 9px}
+ #muFarmWorld .farmZen{padding:5px 7px;font-size:12px}
+ #muFarmWorld .farmLayout{grid-template-columns:1fr;gap:9px}
+ #muFarmWorld .farmScene{min-height:0;border-width:4px;border-radius:12px}
+ #muFarmWorld .farmSceneTitle{margin:6px;padding:8px}
+ #muFarmWorld .farmSceneTitle span{font-size:13px}
+ #muFarmWorld .farmSceneTitle small{font-size:10px}
+ #muFarmWorld .farmScenery{height:124px}
+ #muFarmWorld .farmBarn>span{font-size:54px}
+ #muFarmWorld .farmDecor{font-size:35px}
+ #muFarmWorld .farmTree{font-size:48px}
+ #muFarmWorld .farmFieldArea{gap:9px;padding:12px 10px}
+ #muFarmWorld .farmField{min-height:112px;padding:4px 2px 9px}
+ #muFarmWorld .farmPlant{min-height:56px;max-height:57px}
+ #muFarmWorld .farmFieldLabel{font-size:11px}
+ #muFarmWorld .farmFieldState{font-size:9px}
+ #muFarmWorld .farmFieldAction{margin:8px;padding:8px;gap:7px}
+ #muFarmWorld .farmSelectedIcon{min-width:40px;min-height:45px;overflow:hidden}
+ #muFarmWorld .farmSelectedInfo>b{font-size:12px}
+ #muFarmWorld .farmCareBtns button{font-size:11px;padding:5px 7px}
+ #muFarmWorld .farmShop{padding:9px}
+ #muFarmWorld .farmShopGrid{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ #muFarmWorld .farmShopItem{flex-direction:column;text-align:center;padding:7px 3px;gap:2px}
+ #muFarmWorld .farmShopItem strong{font-size:11px}
+ #muFarmWorld .farmShopItem small{font-size:10px}
+ #muFarmWorld .farmShopArt{min-width:40px;height:44px}
+}
+@media(max-width:395px){
+ #muFarmWorld .farmShopGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #muFarmWorld .farmFieldArea{gap:6px;padding:10px 7px}
+ #muFarmWorld .farmField{min-height:105px}
+ #muFarmWorld .farmFieldState{font-size:8px}
+ #muFarmWorld .farmFieldNumber{font-size:9px;left:4px}
+}

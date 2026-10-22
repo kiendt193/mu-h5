@@ -2,7 +2,7 @@
 // Store only fingerprinted public game assets. Account/API responses and the
 // real-time event stream are NEVER cached.
 const CACHE='mu-h5-static-v1';
-const STATIC=/\.(?:webp|png|jpe?g|svg|gif|js|css|json|bin|woff2?|mp3|ogg|wav)$/i;
+const STATIC=/\.[a-z0-9]{1,10}$/i; // all fingerprinted public asset types
 let written=0;
 self.addEventListener('install',event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
@@ -16,7 +16,8 @@ self.addEventListener('fetch',event=>{
  const url=new URL(request.url);
  if(url.origin!==self.location.origin||!url.pathname.startsWith('/mu/'))return;
  if(url.pathname.startsWith('/mu/api/')||url.pathname==='/mu/assets-version.json'||url.pathname==='/mu/sw.js'||url.pathname==='/mu/')return;
- // Media files and Range requests must bypass CacheStorage.
+ // Only public files with an exact fingerprint may be cached.
+ if(!/^[a-f0-9]{24}$/.test(url.searchParams.get('v')||'')||!STATIC.test(url.pathname))return;
  if(request.headers.has('X-MU-Prefetch'))return; // bulk downloader owns its cache write
  // Audio is only stored by the explicit full-download action, never lazily.
  // Cached bytes are served with correct HTTP Range responses for Chrome.
@@ -46,8 +47,6 @@ self.addEventListener('fetch',event=>{
   return;
  }
  if(request.headers.has('range'))return;
- // Fingerprints come from asset-loader's SHA256 manifest, not user input.
- if(!/^[a-f0-9]{24}$/.test(url.searchParams.get('v')||'')||!STATIC.test(url.pathname))return;
  event.respondWith((async()=>{
   const cache=await caches.open(CACHE);
   const stored=await cache.match(request);

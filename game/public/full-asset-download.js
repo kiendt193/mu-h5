@@ -10,8 +10,10 @@
   if(!/^[a-f0-9]{24}$/.test(hash))return null;
   if(!REGEX.test(path)||!path||path.includes('..')||path.startsWith('/'))return null;
   if(/^(?:api\/|index\.html$|sw\.js$)/i.test(path))return null;
-  const u=new URL(path,location.origin+'/mu/');
-  if(u.origin!==location.origin||!u.pathname.startsWith('/mu/'))return null;
+  const local=new URL(path,location.origin+'/mu/');
+  if(local.origin!==location.origin||!local.pathname.startsWith('/mu/'))return null;
+  const cdn=root.MU_CACHE?.cdnOrigin;
+  const u=cdn&&local.pathname.startsWith('/mu/assets/')?new URL(local.pathname,cdn):local;
   u.searchParams.set('v',hash);return u.href;
  };
  const listFiles=manifest=>Object.entries(manifest?.files||{}).map(([name,hash])=>validUrl(name,hash)).filter(Boolean);
@@ -63,7 +65,9 @@
    const timeout=setTimeout(()=>controller.abort(),25000);
    try{
     if(await cache.match(url)){existing++;return;}
-    const response=await fetch(url,{signal:controller.signal,credentials:'same-origin',cache:'force-cache',headers:{'X-MU-Prefetch':'1'}});
+    const external=new URL(url).origin!==location.origin;
+    const response=await fetch(url,{signal:controller.signal,credentials:external?'omit':'same-origin',mode:external?'cors':'same-origin',cache:'force-cache',
+     ...(external?{}:{headers:{'X-MU-Prefetch':'1'}})});
     if(!response.ok||response.type==='opaque')throw Error('HTTP '+response.status);
     const blob=await response.blob();
     if(cancelled)return;

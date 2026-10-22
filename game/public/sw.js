@@ -2,7 +2,7 @@
 // Store only fingerprinted public game assets. Account/API responses and the
 // real-time event stream are NEVER cached.
 const CACHE='mu-h5-static-v1';
-const STATIC=/\.(?:webp|png|jpe?g|svg|gif|js|css|json|woff2?)$/i;
+const STATIC=/\.(?:webp|png|jpe?g|svg|gif|js|css|json|bin|woff2?)$/i;
 let written=0;
 self.addEventListener('install',event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{

@@ -67,12 +67,17 @@
    if(cdnOrigin&&next.startsWith(cdnOrigin+'/mu/assets/')){
     this.crossOrigin='anonymous'; // Required to draw CDN textures in WebGL/canvas.
     if(this instanceof HTMLImageElement){
-     const local=sourceURL(v);
-     this.addEventListener('error',event=>{
-      if(!this.src.startsWith(cdnOrigin+'/mu/assets/'))return;
-      event.stopImmediatePropagation();
-      d.set.call(this,local); // Missing CDN item falls back to Render.
-     },{capture:true,once:true});
+     this.__muCDNAssetFallback=sourceURL(v);
+     if(!this.__muCDNErrorListener){
+      this.__muCDNErrorListener=true;
+      this.addEventListener('error',event=>{
+       if(!this.src.startsWith(cdnOrigin+'/mu/assets/'))return;
+       event.stopImmediatePropagation();
+       const local=this.__muCDNAssetFallback;
+       this.__muCDNAssetFallback='';
+       if(local)d.set.call(this,local);
+      },{capture:true});
+     }
     }
    }
    if(d.get.call(this)!==next)d.set.call(this,next);

@@ -27,7 +27,7 @@
  };
  async function run(){
   if(working)return;
-  const start=lookup('muFullDownload'),stop=lookup('muFullStop');
+  const start=lookup('muFullDownload'),stop=lookup('muFullStop'),clear=lookup('muFullClear');
   const model=root.MU_CACHE;
   if(!model?.files||!model.revision){output('Danh mục tài nguyên chưa sẵn sàng. Tải lại trang và thử lại.');return;}
   if(!('caches' in root)){output('Trình duyệt chưa hỗ trợ lưu bộ tài nguyên bằng CacheStorage.');return;}
@@ -45,10 +45,11 @@
    if(!ok)return;
   }
   working=true;cancelled=false;
-  start.disabled=true;if(stop)stop.disabled=false;
+  start.disabled=true;if(stop)stop.disabled=false;if(clear)clear.disabled=true;
+  let wakeLock=null;try{wakeLock=await navigator.wakeLock?.request?.('screen')}catch{}
   let cache;
   try{cache=await caches.open(CACHE);}
-  catch(e){working=false;start.disabled=false;if(stop)stop.disabled=true;output('Không mở được bộ nhớ của trình duyệt: '+(e?.message||e));return;}
+  catch(e){working=false;start.disabled=false;if(stop)stop.disabled=true;if(clear)clear.disabled=false;try{await wakeLock?.release?.()}catch{}output('Không mở được bộ nhớ của trình duyệt: '+(e?.message||e));return;}
   let cursor=0,finished=0,existing=0,downloaded=0,failed=0,storedBytes=0,stoppedQuota=false;
   const mark=()=>{
    const percent=Math.floor(finished/items.length*100);
@@ -85,7 +86,7 @@
   mark();
   try{await Promise.all(Array.from({length:LIMIT_IN_FLIGHT},worker));}
   finally{
-   working=false;start.disabled=false;if(stop)stop.disabled=true;
+   working=false;start.disabled=false;if(stop)stop.disabled=true;if(clear)clear.disabled=false;try{await wakeLock?.release?.()}catch{}
    if(stoppedQuota)output('Chrome đã hết hạn mức lưu trữ dành cho website. Đã lưu '+downloaded+' tệp mới; có thể tiếp tục khi có thêm dung lượng.');
    else if(cancelled)output('Đã tạm dừng ở '+finished+'/'+items.length+' tệp. Nhấn “Tiếp tục tải” để tiếp tục từ cache cũ.');
    else if(failed)output('Hoàn tất lượt tải: '+(items.length-failed)+'/'+items.length+' tệp có thể sử dụng. Còn '+failed+' lỗi, nhấn tải lại để thử tiếp.');
@@ -105,10 +106,16 @@
   }
  }
  function initialize(){
-  const start=lookup('muFullDownload'),stop=lookup('muFullStop');
+  const start=lookup('muFullDownload'),stop=lookup('muFullStop'),clear=lookup('muFullClear');
   if(!start)return;
   start.addEventListener('click',()=>{void run();});
   if(stop){stop.disabled=true;stop.addEventListener('click',skip);}
+  if(clear)clear.addEventListener('click',async()=>{
+   if(working)return;
+   if(!confirm('Xóa toàn bộ tài nguyên MU đã lưu trong cache trình duyệt? Tài khoản và nhân vật trên Neon không bị ảnh hưởng.'))return;
+   try{await caches.delete(CACHE);output('Đã xóa tài nguyên tải trước. Game sẽ cần tải lại khi vào lần sau.',0);}
+   catch(e){output('Không thể xóa cache: '+(e?.message||e));}
+  });
   if(navigator.storage?.estimate){navigator.storage.estimate().then(s=>{
    if(!working&&s&&Number.isFinite(s.usage))output('Website đang sử dụng khoảng '+fmt(s.usage)+' MB lưu trữ của Chrome. Bấm tải trọn bộ để lưu toàn bộ hình ảnh và bản đồ.');
   }).catch(()=>{});}

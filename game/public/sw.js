@@ -2,7 +2,7 @@
 // Store only fingerprinted public game assets. Account/API responses and the
 // real-time event stream are NEVER cached.
 const CACHE='mu-h5-static-v1';
-const STATIC=/\.(?:webp|png|jpe?g|svg|gif|js|css|json|woff2?)$/i;
+const STATIC=/\.(?:webp|png|jpe?g|svg|gif|js|css|json|bin|woff2?)$/i;
 let written=0;
 self.addEventListener('install',event=>event.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{
@@ -30,16 +30,23 @@ self.addEventListener('fetch',event=>{
   if(stored)return stored;
   const response=await fetch(request);
   if(response.ok&&response.type==='basic'){
+   // Clone synchronously before returning response to the browser;
+   // otherwise its stream may already be consumed when cache.put runs.
+   const copy=response.clone();
    event.waitUntil((async()=>{
     try{
-     await cache.put(request,response.clone());
-     if(++written%80===0){
-      // Bound disk use on mobile. Entries are re-cached as areas are visited.
+     await cache.put(request,copy);
+     if(++written%40===0){
+      // Retain boot scripts for future logins, evict older scenery first.
       const keys=await cache.keys();
-      for(const old of keys.slice(0,Math.max(0,keys.length-400)))await cache.delete(old);
+      let remove=Math.max(0,keys.length-400);
+      for(const old of keys){
+       if(remove<=0)break;
+       if(/\.(?:js|css)(?:\?|$)/i.test(new URL(old.url).pathname))continue;
+       if(await cache.delete(old))remove--;
+      }
      }
     }catch(e){
-     // Browsers may evict CacheStorage when the phone is low on space.
      console.warn('MU cache skipped:',e&&e.name||e);
     }
    })());

@@ -526,3 +526,14 @@
 .ecoActionD small{font-size:11px;line-height:1.45;color:#bfb4a0}
 .ecoActionD:disabled{opacity:.43;cursor:not-allowed}
 @media(max-width:640px){.ecoPanelD{padding:9px}.ecoGridD{grid-template-columns:1fr}.ecoActionD{min-height:51px}}
+
+
+/* Voluntary full-device game cache: accessible and unobtrusive in login/roster */
+.muDownloadPanel{margin:14px 0 6px;padding:12px;border:1px solid #796a4b;border-radius:8px;background:#0d1920c9;text-align:left}
+.muDownloadPanel strong{font-size:13px;color:#e5cd98}
+.muDownloadPanel p,.muDownloadPanel small{display:block;font-size:11px;line-height:1.55;color:#b9c4c0;margin:6px 0}
+.muDownloadPanel progress{display:block;width:100%;height:11px;margin:9px 0;accent-color:#d6b974}
+.muDownloadActions{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:6px}
+.muDownloadActions button{min-height:40px;padding:8px 6px;font-size:11px;white-space:normal;line-height:1.25}
+.muDownloadActions button:disabled{opacity:.5}
+@media(max-width:420px){.muDownloadPanel{padding:9px}.muDownloadActions{grid-template-columns:1fr}.muDownloadActions button{min-height:36px}}

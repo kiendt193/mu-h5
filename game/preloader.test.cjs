@@ -5,7 +5,7 @@ const vm=require('node:vm');
 const fs=require('node:fs');
 const path=require('node:path');
 
-function harness(){
+function harness(saveData=false){
  const source=fs.readFileSync(path.join(__dirname,'public','preloader.js'),'utf8');
  const entries=new Map(),counters={fetches:0,put:0};
  const cache={match:async(key)=>entries.get(key),put:async(key,value)=>{entries.set(key,value);counters.put++}};
@@ -26,7 +26,7 @@ function harness(){
   body:{append:el=>nodes.set(el.id,el)}
  };
  const window={caches};
- const context={window,document,navigator:{userAgent:'Android',connection:{effectiveType:'4g'}},
+ const context={window,document,navigator:{userAgent:'Android',connection:{effectiveType:'4g',saveData}},
   location:{origin:'https://test.example',href:'https://test.example/mu/'},URL,
   caches,Response,AbortController,console,Promise,setTimeout,clearTimeout,
   fetch:async()=>{
@@ -62,9 +62,9 @@ test('first visit downloads game assets; second visit reuses device cache',async
  assert(h.nodes.get('muBootPreload').removed);
 });
 test('data saver does not automatically preload game resources',async()=>{
- const h=harness();
- // Confirm API guards on a test implementation with no scripts.
- const empty=await h.api.prepare({files:{}},v=>v,[]);
- assert.equal(empty.total,0);
+ const h=harness(true);
+ const empty=await h.api.prepare({files:hashes},v=>v,[{dataset:{src:'game.js'}}]);
+ assert.equal(empty.total,5);
+ assert.equal(empty.skipped,true);
  assert.equal(h.counters.fetches,0);
 });

@@ -13,7 +13,7 @@
  }
 }catch(e){document.getElementById('authError').textContent='Không tải được game. Kiểm tra mạng rồi tải lại trang.';return;}
  const versionURL=value=>{try{const u=new URL(value,location.href);if(u.origin!==location.origin||!u.pathname.startsWith('/mu/'))return value;const key=decodeURIComponent(u.pathname.slice(4)),hash=manifest.files[key];if(!hash)return value;u.searchParams.set('v',hash);return u.href;}catch{return value;}};
- window.MU_CACHE={revision:manifest.revision,url:versionURL};
+ window.MU_CACHE={revision:manifest.revision,url:versionURL,files:manifest.files};
  window.fetch=(input,init)=>originalFetch(typeof input==='string'||input instanceof URL?versionURL(input):input,init);
  for(const [proto,key]of [[HTMLImageElement.prototype,'src'],[HTMLMediaElement.prototype,'src']]){const d=Object.getOwnPropertyDescriptor(proto,key);if(d?.set)Object.defineProperty(proto,key,{...d,set(v){const next=versionURL(v);if(d.get.call(this)!==next)d.set.call(this,next);}});}
  const NativeAudio=window.Audio;window.Audio=function(src){const a=new NativeAudio();if(src!==undefined)a.src=src;return a;};window.Audio.prototype=NativeAudio.prototype;

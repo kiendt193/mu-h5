@@ -1,7 +1,17 @@
  'use strict';
 (async()=>{
  const originalFetch=window.fetch.bind(window);
- let manifest;try{const r=await originalFetch('/mu/assets-version.json',{cache:'no-store'});if(!r.ok)throw Error('Không lấy được phiên bản tài nguyên');manifest=await r.json();}catch(e){document.getElementById('authError').textContent='Không tải được game. Kiểm tra mạng rồi tải lại trang.';return;}
+ let manifest;try{
+ let local=null;try{const saved=localStorage.getItem('mu-assets-manifest-v1');if(saved)local=JSON.parse(saved);}catch{}
+ let rev=null;try{const latest=await originalFetch('/mu/assets-revision.json',{cache:'no-store'});if(latest.ok){rev=(await latest.json()).revision;}}catch{}
+ if(rev&&local?.revision===rev&&local.files&&Object.keys(local.files).length>100)manifest=local;
+ if(!manifest){
+  const r=await originalFetch('/mu/assets-version.json',{cache:'no-store'});
+  if(!r.ok)throw Error('Không lấy được phiên bản tài nguyên');
+  manifest=await r.json();
+  try{localStorage.setItem('mu-assets-manifest-v1',JSON.stringify(manifest));}catch{}
+ }
+}catch(e){document.getElementById('authError').textContent='Không tải được game. Kiểm tra mạng rồi tải lại trang.';return;}
  const versionURL=value=>{try{const u=new URL(value,location.href);if(u.origin!==location.origin||!u.pathname.startsWith('/mu/'))return value;const key=decodeURIComponent(u.pathname.slice(4)),hash=manifest.files[key];if(!hash)return value;u.searchParams.set('v',hash);return u.href;}catch{return value;}};
  window.MU_CACHE={revision:manifest.revision,url:versionURL};
  window.fetch=(input,init)=>originalFetch(typeof input==='string'||input instanceof URL?versionURL(input):input,init);

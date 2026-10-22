@@ -5,7 +5,7 @@
  */
 (function(root){
  const STORE='mu-h5-static-v1';
- const MAX_FILES=160, FILE_LIMIT=4*1024*1024, BOOT_LIMIT=32*1024*1024;
+ const MAX_FILES=140, FILE_LIMIT=3*1024*1024, BOOT_LIMIT=/Android|iPhone|iPad/i.test(navigator.userAgent||'')?12*1024*1024:20*1024*1024;
  const TIME_LIMIT=17000, REQUEST_TIMEOUT=6500;
  const sleep=ms=>new Promise(done=>setTimeout(done,ms));
  const normalize=(name,hashes,versionURL)=>{

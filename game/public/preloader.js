@@ -10,7 +10,7 @@
  const sleep=ms=>new Promise(done=>setTimeout(done,ms));
  const normalize=(name,hashes,versionURL)=>{
   const u=new URL(versionURL(name),location.href);
-  if(u.origin!==location.origin||!u.pathname.startsWith('/mu/')||u.pathname.startsWith('/mu/api/'))return null;
+  if((u.origin!==location.origin&&(u.origin!==root.MU_CACHE?.cdnOrigin||!u.pathname.startsWith('/mu/assets/')))||!u.pathname.startsWith('/mu/')||u.pathname.startsWith('/mu/api/'))return null;
   const key=decodeURIComponent(u.pathname.slice(4));
   const hash=hashes[key];
   if(!/^[0-9a-f]{24}$/.test(hash||''))return null;
@@ -81,7 +81,8 @@
    try{
     if(cache&&await cache.match(url)){cached++;return;}
     if(totalBytes>=BOOT_LIMIT||skipped)return;
-    const response=await fetch(url,{cache:'force-cache',signal:controller.signal,credentials:'same-origin'});
+    const external=new URL(url).origin!==location.origin;
+    const response=await fetch(url,{cache:'force-cache',signal:controller.signal,credentials:external?'omit':'same-origin',mode:external?'cors':'same-origin'});
     if(!response.ok||response.type==='opaque')throw Error('HTTP '+response.status);
     const len=Number(response.headers.get('content-length')||0);
     if(len>FILE_LIMIT||totalBytes+len>BOOT_LIMIT)return;

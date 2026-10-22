@@ -2,7 +2,7 @@
 // Voluntary, resumable bulk download of public, fingerprinted game resources.
 // Session, account, characters and SSE/API data are NEVER stored here.
 (function(root){
- const CACHE='mu-h5-static-v1', REGEX=/\.(?:webp|png|jpe?g|gif|svg|json|bin|js|css|woff2?|mp3|ogg|wav)$/i;
+ const CACHE='mu-h5-static-v1', REGEX=/\.[a-z0-9]{1,10}$/i; // include all public binary, image, sound and model resources
  const LIMIT_IN_FLIGHT=4, LARGE_PACK_ESTIMATE=350*1024*1024;
  const lookup=id=>document.getElementById(id);
  let working=false,cancelled=false,controllers=new Set();

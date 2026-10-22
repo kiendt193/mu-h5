@@ -2,7 +2,7 @@
 // Voluntary, resumable bulk download of public, fingerprinted game resources.
 // Session, account, characters and SSE/API data are NEVER stored here.
 (function(root){
- const CACHE='mu-h5-static-v1', REGEX=/\.(?:webp|png|jpe?g|gif|svg|json|bin|js|css|woff2?)$/i;
+ const CACHE='mu-h5-static-v1', REGEX=/\.(?:webp|png|jpe?g|gif|svg|json|bin|js|css|woff2?|mp3|ogg|wav)$/i;
  const LIMIT_IN_FLIGHT=4, LARGE_PACK_ESTIMATE=350*1024*1024;
  const lookup=id=>document.getElementById(id);
  let working=false,cancelled=false,controllers=new Set();
@@ -10,7 +10,7 @@
   if(!/^[a-f0-9]{24}$/.test(hash))return null;
   if(!REGEX.test(path)||!path||path.includes('..')||path.startsWith('/'))return null;
   if(/^(?:api\/|index\.html$|sw\.js$)/i.test(path))return null;
-  const u=new URL('assets'===path?'':path,location.origin+'/mu/');
+  const u=new URL(path,location.origin+'/mu/');
   if(u.origin!==location.origin||!u.pathname.startsWith('/mu/'))return null;
   u.searchParams.set('v',hash);return u.href;
  };
@@ -62,7 +62,7 @@
    const timeout=setTimeout(()=>controller.abort(),25000);
    try{
     if(await cache.match(url)){existing++;return;}
-    const response=await fetch(url,{signal:controller.signal,credentials:'same-origin',cache:'force-cache'});
+    const response=await fetch(url,{signal:controller.signal,credentials:'same-origin',cache:'force-cache',headers:{'X-MU-Prefetch':'1'}});
     if(!response.ok||response.type==='opaque')throw Error('HTTP '+response.status);
     const blob=await response.blob();
     if(cancelled)return;
@@ -89,7 +89,18 @@
    if(stoppedQuota)output('Chrome đã hết hạn mức lưu trữ dành cho website. Đã lưu '+downloaded+' tệp mới; có thể tiếp tục khi có thêm dung lượng.');
    else if(cancelled)output('Đã tạm dừng ở '+finished+'/'+items.length+' tệp. Nhấn “Tiếp tục tải” để tiếp tục từ cache cũ.');
    else if(failed)output('Hoàn tất lượt tải: '+(items.length-failed)+'/'+items.length+' tệp có thể sử dụng. Còn '+failed+' lỗi, nhấn tải lại để thử tiếp.');
-   else output('✓ Đã lưu đủ '+items.length.toLocaleString('vi-VN')+' tài nguyên tĩnh. Lần sau sử dụng dữ liệu trên thiết bị.');
+   else {
+    // Clean outdated hashes only after a complete successful download.
+    try{
+     const active=new Set(items),older=await cache.keys();let cleared=0;
+     for(const req of older){
+      if(!active.has(req.url)&&/^[a-f0-9]{24}$/.test(new URL(req.url).searchParams.get('v')||'')){
+       if(await cache.delete(req))cleared++;
+      }
+     }
+     output('✓ Đã lưu đủ '+items.length.toLocaleString('vi-VN')+' tài nguyên (bao gồm âm thanh). Lần sau dùng cache, '+cleared+' file cũ đã dọn.',100);
+    }catch(e){output('✓ Tải xong '+items.length.toLocaleString('vi-VN')+' tệp, nhưng chưa dọn được cache cũ.');}
+   }
    start.textContent='Tiếp tục tải / Kiểm tra cập nhật';
   }
  }

@@ -47,3 +47,31 @@ test('Service Worker never caches API or unverified CDN and supports versioned a
  assert.match(code,/response\.type==='basic'\|\|response\.type==='cors'/);
  new vm.Script(code,{filename:'sw.js'});
 });
+
+test('Render advertises the confirmed Workers origin by default, with safe disable and override',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'mu-worker-cdn-'));
+ const pub=path.join(temp,'public');
+ const initial=process.env.MU_CDN_ORIGIN;
+ try{
+  fs.mkdirSync(path.join(pub,'assets'),{recursive:true});
+  fs.writeFileSync(path.join(pub,'assets','tiny.webp'),Buffer.from('public file'));
+  fs.writeFileSync(path.join(pub,'game.js'),'game');
+  const handler=createAssets(pub);
+  const get=()=>{
+   let body;
+   handler({method:'GET'}, {writeHead(){},end:v=>body=v},new URL('https://mu-game.example/mu/cdn-config.json'));
+   return JSON.parse(body);
+  };
+  delete process.env.MU_CDN_ORIGIN;
+  assert.equal(get().origin,'https://mu-h5.kiendt193-fpt.workers.dev');
+  process.env.MU_CDN_ORIGIN='';
+  assert.equal(get().origin,'');
+  process.env.MU_CDN_ORIGIN='https://custom.example';
+  assert.equal(get().origin,'https://custom.example');
+  assert.match(get().assetsRevision,/^[a-f0-9]{24}$/);
+ }finally{
+  if(initial===undefined)delete process.env.MU_CDN_ORIGIN;
+  else process.env.MU_CDN_ORIGIN=initial;
+  fs.rmSync(temp,{recursive:true,force:true});
+ }
+});

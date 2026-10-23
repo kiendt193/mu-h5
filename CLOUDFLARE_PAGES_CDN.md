@@ -11,7 +11,25 @@ This deployment is **static game assets only**. It does not host Node.js, accoun
 5. Root directory: **repository root** (leave blank).
 6. Build command: `node game/build-cloudflare-pages.cjs`
 7. Build output directory: `cdn-dist`
-8. Save & deploy. No API tokens, paid upgrade or environment variables are required for this static build.
+8. Build system version: **v3**, Node.js **22.16.0** (root `.node-version` pins this).
+9. Save & deploy. No API tokens, paid upgrade or environment variables are required for this static build.
+
+## Build error troubleshooting
+
+To inspect the exact error: **Workers & Pages → your Pages project → Deployments → View details → Build log**.
+
+| Message or symptom | Resolution |
+| --- | --- |
+| `Cannot find module .../build-cloudflare-pages.cjs` | Root directory is wrong. Leave it empty (Git repository root). Command: `node game/build-cloudflare-pages.cjs`. |
+| `Missing game/public/assets` | Git checkout has no assets or Root directory is wrong. Ensure `game/public/assets` is tracked on `main`. |
+| `node:fs`, `fs.cpSync is not a function` | Set Build system **v3** and Node 22.16.0 (or `NODE_VERSION=22.16.0`). |
+| `20,000 file limit exceeded` | Pages Free cannot hold all files; split assets across Pages/R2, do not purchase a plan without assessing options. |
+| `25 MiB/file limit` | Move the named oversized file to R2, or reduce/compress it. |
+| Build succeeds but deployment fails | Open the upload/deploy portion of the same build log; investigate Pages limits or account errors. |
+
+On a normal build the log prints `[MU-CDN] Found ... public game asset files` and later `[MU-CDN] Build ready`. If those lines are absent, the failure occurs before our script is executed (Git connection, Node toolchain, or build command).
+
+Do **not** select **Workers** to deploy this static CDN. Use **Pages** from the Workers & Pages section.
 
 The build checks Pages Free limits (20,000 files and 25 MiB per individual file). It creates `/mu/assets/*`, `/mu/cdn-check.json`, and CORS/cache headers automatically.
 

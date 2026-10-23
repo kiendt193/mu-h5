@@ -24,14 +24,14 @@ To inspect the exact error: **Workers & Pages → your Pages project → Deploym
 | `Missing game/public/assets` | Git checkout has no assets or Root directory is wrong. Ensure `game/public/assets` is tracked on `main`. |
 | `node:fs`, `fs.cpSync is not a function` | Set Build system **v3** and Node 22.16.0 (or `NODE_VERSION=22.16.0`). |
 | `20,000 file limit exceeded` | Pages Free cannot hold all files; split assets across Pages/R2, do not purchase a plan without assessing options. |
-| `25 MiB/file limit` | Move the named oversized file to R2, or reduce/compress it. |
+| `25 MiB/file limit` | Large JSON files are now automatically GZIP-packed by the build script. If a non-JSON file exceeds 25 MiB, use R2 for that individual file; if JSON is still over 25 MiB after compression, split it or use R2. |
 | Build succeeds but deployment fails | Open the upload/deploy portion of the same build log; investigate Pages limits or account errors. |
 
 On a normal build the log prints `[MU-CDN] Found ... public game asset files` and later `[MU-CDN] Build ready`. If those lines are absent, the failure occurs before our script is executed (Git connection, Node toolchain, or build command).
 
 Do **not** select **Workers** to deploy this static CDN. Use **Pages** from the Workers & Pages section.
 
-The build checks Pages Free limits (20,000 files and 25 MiB per individual file). It creates `/mu/assets/*`, `/mu/cdn-check.json`, and CORS/cache headers automatically.
+The build checks Pages Free limits (20,000 files and 25 MiB per individual file). Oversized **JSON** resources, including `assets/mu05/manifest.json`, are losslessly GZIP-compressed into `.json.mucdn` files below 25 MiB. The game automatically decompresses them; the source JSON remains unchanged in GitHub and on Render. It creates `/mu/assets/*`, `/mu/cdn-check.json`, and CORS/cache headers automatically.
 
 ## Confirm it is live
 

@@ -31,19 +31,24 @@ Open `https://mu-h5.kiendt193-fpt.workers.dev/mu/cdn-check.json`; ensure it retu
 
 This is the exact URL shown in the owner's Cloudflare Workers overview. A green build does not alone prove the JSON and asset routes respond with valid data.
 
-## Activate CDN after verification
+## Activate CDN when Render resumes
 
-After the CDN verification endpoint has returned valid JSON, on Render service `mu-h5-sg` set a **single** environment variable:
+The Render Free service `mu-h5-sg` is currently suspended by monthly usage limits.
+Updating Render's environment while suspended returned `cannot deploy suspended service`.
 
-```
-MU_CDN_ORIGIN=https://mu-h5.kiendt193-fpt.workers.dev
-```
+**No Render environment change is required for this Worker.**
+The backend now advertises `https://mu-h5.kiendt193-fpt.workers.dev` automatically from GitHub `main` when Render deploys the new version.
 
-Do not include `/mu/` or a trailing slash.
+The game queries `/mu/cdn-config.json`, verifies `/mu/cdn-check.json` against the deployed game's exact static asset fingerprint, and **only then** sends `/mu/assets/*` to Cloudflare. If CDN files or revision are wrong, Render serves the original resources instead. `/mu/api/*`, logins, characters, and Neon remain on Render/Neon.
 
-The game queries `/mu/cdn-config.json`, verifies `/mu/cdn-check.json` against the deployed game's exact static asset fingerprint, and only then sends `/mu/assets/*` to Cloudflare. If it cannot verify CDN, it uses Render instead. All `/mu/api/*`, sessions, account data, game server, and Neon database remain on Render/Neon.
+To switch to another CDN: set `MU_CDN_ORIGIN=https://new-domain.example` when Render permits changes.
+To disable CDN: explicitly set `MU_CDN_ORIGIN` to an empty string.
+No Neon data changes are involved.
 
-Render must be available for login; a CDN does not resolve Render Free quota suspension.
+**Before assuming CDN is active**, check these on the Cloudflare Worker:
+- `https://mu-h5.kiendt193-fpt.workers.dev/mu/cdn-check.json` — JSON with `ok:true` and `assetsRevision`.
+- `https://mu-h5.kiendt193-fpt.workers.dev/mu/assets/mu06/maps/manifest.json` — valid map JSON.
+- `https://mu-h5.kiendt193-fpt.workers.dev/mu/assets/mu05/manifest.json.mucdn` — compressed binary, not JSON text.
 
 ## Cache behavior
 
@@ -56,7 +61,7 @@ Render must be available for login; a CDN does not resolve Render Free quota sus
 
 ## Rollback
 
-Remove `MU_CDN_ORIGIN` from Render Environment and deploy. The server automatically serves assets itself again. No Neon backup/restore is required: no player data is changed by this CDN configuration.
+Set `MU_CDN_ORIGIN` to an empty value on Render and deploy. The server automatically serves assets itself again. No Neon backup/restore is required: no player data is changed by this CDN configuration.
 
 Cloudflare Workers Static Assets docs:
 https://developers.cloudflare.com/workers/static-assets/

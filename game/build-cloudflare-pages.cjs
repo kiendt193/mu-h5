@@ -4,6 +4,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
+const zlib=require('node:zlib');
 const {catalog}=require('./asset-cache.cjs');
 const root=path.resolve(__dirname,'public');
 const src=path.join(root,'assets');
@@ -28,6 +29,7 @@ if(assets.length+3>MAX_FILES)throw Error(
  '; move a portion of assets to R2 or reduce the asset count.'
 );
 let bytes=0,largest={name:'',size:0};
+const compressed={};const compressionOutput=new Map();
 for(const [name] of assets){
  const file=path.join(root,name);
  if(!file.startsWith(src+path.sep))throw Error('Invalid asset path: '+name);
@@ -35,15 +37,30 @@ for(const [name] of assets){
  if(!info.isFile()||info.isSymbolicLink())throw Error('Unexpected file type: '+name);
  bytes+=info.size;
  if(info.size>largest.size)largest={name,size:info.size};
- if(info.size>MAX_SIZE)throw Error('Cloudflare Pages 25 MiB/file limit: '+name+' = '+info.size+' bytes. Move oversized file to R2 first.');
+ if(info.size>MAX_SIZE){
+  if(!/\.json$/i.test(name))throw Error('Cloudflare Pages 25 MiB/file limit for non-JSON resource: '+name+' = '+info.size+' bytes. Place it on R2.');
+  // Serve a lossless GZIP variant under a neutral extension so the browser
+  // receives raw gzip bytes instead of Cloudflare auto-decoding a .gz suffix.
+  const packed=zlib.gzipSync(fs.readFileSync(file),{level:9});
+  if(packed.length>MAX_SIZE)throw Error('GZIP could not fit JSON resource into Pages 25 MiB/file limit: '+name+' ('+packed.length+' bytes). Use R2.');
+  const variant=name+'.mucdn';
+  compressed[name]={path:variant,encoding:'gzip',bytes:packed.length};
+  compressionOutput.set(variant,packed);
+  console.log('[MU-CDN] Packed oversized JSON '+name+': '+info.size+' -> '+packed.length+' bytes ('+(100*packed.length/info.size).toFixed(1)+'%).');
+ }
 }
 console.log('[MU-CDN] Preflight passed: '+assets.length+' files, '+(bytes/1048576).toFixed(1)+
  ' MiB; largest '+largest.name+' ('+(largest.size/1048576).toFixed(2)+' MiB).');
 fs.rmSync(out,{recursive:true,force:true});
 fs.mkdirSync(path.dirname(dest),{recursive:true});
 fs.cpSync(src,dest,{recursive:true,force:true,dereference:false});
+for(const [original,info]of Object.entries(compressed)){
+ const full=path.join(out,'mu',original);
+ fs.rmSync(full);
+ fs.writeFileSync(path.join(out,'mu',info.path),compressionOutput.get(info.path));
+}
 const assetsRevision=crypto.createHash('sha256').update(JSON.stringify(assets)).digest('hex').slice(0,24);
-fs.writeFileSync(path.join(out,'mu','cdn-check.json'),JSON.stringify({ok:true,assetsRevision,count:assets.length,bytes}));
+fs.writeFileSync(path.join(out,'mu','cdn-check.json'),JSON.stringify({ok:true,assetsRevision,count:assets.length,bytes,compressed}));
 fs.writeFileSync(path.join(out,'index.html'),'<!doctype html><html lang="vi"><meta charset="utf-8"><title>MU H5 CDN</title><body><h1>MU H5 static game resources</h1><p>Tài nguyên tĩnh; trò chơi và đăng nhập vẫn ở máy chủ riêng.</p></body></html>');
 fs.writeFileSync(path.join(out,'_headers'),[
  '/mu/assets/*',

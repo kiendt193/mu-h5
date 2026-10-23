@@ -14,7 +14,16 @@
   if(local.origin!==location.origin||!local.pathname.startsWith('/mu/'))return null;
   const cdn=root.MU_CACHE?.cdnOrigin;
   const u=cdn&&local.pathname.startsWith('/mu/assets/')?new URL(local.pathname,cdn):local;
-  u.searchParams.set('v',hash);return u.href;
+  u.searchParams.set('v',hash);
+  // For any oversized JSON packed as a .mucdn gzip asset, fetch/cache the
+  // compressed resource. The game's fetch adapter transparently decompresses
+  // it when a model loader requests the original .json.
+  if(root.MU_CACHE?.cdnOrigin&&typeof root.MU_CACHE.url==='function'){
+   const variant=root.MU_CACHE.url(path);
+   if(typeof variant==='string'&&new URL(variant,location.href).pathname.endsWith('.json.mucdn'))
+    return variant;
+  }
+  return u.href;
  };
  const listFiles=manifest=>Object.entries(manifest?.files||{}).map(([name,hash])=>validUrl(name,hash)).filter(Boolean);
  const output=(line,progress)=>{

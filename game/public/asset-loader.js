@@ -14,7 +14,7 @@
 }catch(e){document.getElementById('authError').textContent='Không tải được game. Kiểm tra mạng rồi tải lại trang.';return;}
  // CDN is optional. Activate ONLY after the server-configured origin responds
  // with the exact digest of this release's asset files. Never route API/login.
- let cdnOrigin='';
+ let cdnOrigin='';const cdnCompressed={};
  try{
   const config=await originalFetch('/mu/cdn-config.json',{cache:'no-store'});
   if(config.ok){
@@ -24,7 +24,15 @@
     const response=await originalFetch(origin.origin+'/mu/cdn-check.json',{mode:'cors',credentials:'omit',cache:'no-store'});
     if(response.ok&&response.type==='cors'){
      const check=await response.json();
-     if(check.ok===true&&check.assetsRevision===info.assetsRevision)cdnOrigin=origin.origin;
+     if(check.ok===true&&check.assetsRevision===info.assetsRevision){
+      cdnOrigin=origin.origin;
+      for(const [name,variant] of Object.entries(check.compressed||{})){
+       if(manifest.files[name]&&name.startsWith('assets/')&&/\.json$/i.test(name)&&
+          variant?.encoding==='gzip'&&variant.path===name+'.mucdn'&&
+          Number.isSafeInteger(variant.bytes)&&variant.bytes>0&&variant.bytes<25*1024*1024)
+        cdnCompressed[name]=variant.path;
+      }
+     }
     }
    }
   }
@@ -40,7 +48,9 @@
   try{
    const u=new URL(local);
    if(u.origin===location.origin&&u.pathname.startsWith('/mu/assets/')&&/^[a-f0-9]{24}$/.test(u.searchParams.get('v')||'')){
-    return cdnOrigin+u.pathname+u.search;
+    const name=decodeURIComponent(u.pathname.slice(4));
+    const packed=cdnCompressed[name];
+    return cdnOrigin+(packed?'/mu/'+packed:u.pathname)+u.search;
    }
   }catch{}
   return local;
@@ -56,6 +66,20 @@
   const original=String(input),target=versionURL(original);
   if(!cdnOrigin||!target.startsWith(cdnOrigin+'/mu/assets/'))return originalFetch(target,init);
   const options={...init,mode:'cors',credentials:'omit'};
+  if(new URL(target).pathname.endsWith('.json.mucdn')){
+   // Cloudflare Pages rejects JSON files above 25 MiB. These are stored
+   // losslessly as gzip bytes; reconstruct a standard JSON Response.
+   // If decompression is unsupported, use the original Render asset.
+   try{
+    if(typeof DecompressionStream!=='function')throw Error('No gzip decompressor');
+    const packed=await originalFetch(target,options);
+    if(!packed.ok||!packed.body)throw Error('Compressed asset unavailable');
+    const decompressed=await new Response(
+     packed.body.pipeThrough(new DecompressionStream('gzip'))
+    ).blob();
+    return new Response(decompressed,{status:200,headers:{'Content-Type':'application/json'}});
+   }catch(e){console.warn('MU compressed CDN fallback',e);return originalFetch(sourceURL(original),init);}
+  }
   try{const result=await originalFetch(target,options);if(result.ok)return result;}catch{}
   // Only static asset requests may fall back; accounts and game APIs never leave Render.
   return originalFetch(sourceURL(original),init);

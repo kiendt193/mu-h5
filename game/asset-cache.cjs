@@ -8,7 +8,11 @@ return function(req,res,url){
  if(url.pathname==='/mu/cdn-config.json'){
   let origin='';
   try{
-   const raw=String(process.env.MU_CDN_ORIGIN||'');
+   // Render Free may reject environment updates while suspended.
+   // Default only advertises the owner's Workers domain; the browser
+   // additionally verifies /mu/cdn-check.json against this exact revision.
+   // Set MU_CDN_ORIGIN='' to disable or change it to override the default.
+   const raw=String(process.env.MU_CDN_ORIGIN??'https://mu-h5.kiendt193-fpt.workers.dev');
    if(raw){
     const u=new URL(raw);
     if(u.protocol==='https:'&&!u.username&&!u.password&&u.pathname==='/'&&!u.search&&!u.hash)origin=u.origin;

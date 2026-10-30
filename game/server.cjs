@@ -210,6 +210,20 @@ if(b.action?.startsWith('garden')&&c.map!==73)throw Error('Hãy vào bản đồ
  async function close(){sessions.clear();for(const stream of streams.values())if(!stream.destroyed)stream.write('event: update\ndata: '+JSON.stringify({version:'2.8',loginRequired:true})+'\n\n');clearInterval(timer);await BOT.flush();await save();for(const s of streams.values())s.end();await new Promise(r=>server.close(r));if(dataStore)await dataStore.close()}return{server,close,db,players,mobs,drops,tick,stats,snapshot,adventures:AD,worldPK:PKW};
 }
 if(require.main===module){(async()=>{
+// Safety lock: Render's billing suspension can auto-clear at the new month.
+// Never start this Render game instance against the same Neon JSONB state as
+// the user's VPS unless they explicitly request to reopen Render.
+// This DOES NOT suspend billing/compute on Render; owner suspension in
+// Dashboard is still required to prevent runtime charges and automatic resume.
+if(process.env.RENDER_SERVICE_ID==='srv-db9gfovbtjjs73bl68t0'&&process.env.MU_RENDER_ALLOW_START!=='1'){
+ const pausedServer=http.createServer((req,res)=>{
+  res.writeHead(503,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});
+  res.end(JSON.stringify({ok:false,maintenance:true,reason:'render-manual-lock',message:'Máy chủ Render tạm dừng theo yêu cầu chủ dự án.'}));
+ });
+ pausedServer.listen(Number(process.env.PORT||18082),process.env.HOST||'127.0.0.1',
+  ()=>console.log('MU H5 Render safety lock active; Neon connection and game loop DISABLED.'));
+ return;
+}
 // Once the Singapore service is confirmed, the old Oregon service can
 // redirect browsers without starting a second game loop or writing Neon data.
 if(process.env.MU_REDIRECT_TO){

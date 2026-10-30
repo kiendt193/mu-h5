@@ -1,0 +1,77 @@
+name: Package MU H5 for VPS (Neon data)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/package-mu-h5-vps.yml
+      - scripts/package-vps.py
+      - VPS_INSTALL_NEON.md
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/package-mu-h5-vps.yml
+      - scripts/package-vps.py
+      - VPS_INSTALL_NEON.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout current GitHub game source and all public assets
+        uses: actions/checkout@v4
+
+      - name: Verify Python and create portable VPS package
+        run: |
+          python3 --version
+          python3 scripts/package-vps.py
+
+      - name: Check package content for secrets and required files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile, json
+          path=Path('dist/MU_H5_Full_2.8_VPS_Neon_20261030.zip')
+          with zipfile.ZipFile(path) as z:
+              names=z.namelist()
+              assert len(names)>1000, len(names)
+              assert any(n.endswith('/game/server.cjs') for n in names)
+              assert any(n.endswith('/game/package.json') for n in names)
+              assert any(n.endswith('/game/public/assets/mu06/maps/manifest.json') for n in names)
+              assert not any('/data/' in n or n.endswith('/accounts.json') or '/.env' in n or '/node_modules/' in n for n in names)
+              manifest=json.loads(z.read('MU_H5_VPS_Neon/PACKAGE_INFO.json'))
+              print('Package OK:',len(names),'files;',round(path.stat().st_size/1048576,1),'MiB ZIP')
+              print('Revision:',manifest['revision'])
+          PY
+
+      - name: Upload ready-to-use VPS ZIP to GitHub Actions Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: MU_H5_Full_2.8_VPS_Neon_20261030
+          path: dist/MU_H5_Full_2.8_VPS_Neon_20261030.zip
+          retention-days: 30
+          compression-level: 0
+          if-no-files-found: error
+
+      - name: Publish stable VPS download link in GitHub Releases
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          tag="vps-neon-20261030"
+          file="dist/MU_H5_Full_2.8_VPS_Neon_20261030.zip"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$file" --clobber
+          else
+            gh release create "$tag" "$file" --target "$GITHUB_SHA" \
+              --title "MU H5 Full 2.8 — VPS + Existing Neon (2026-10-30)" \
+              --notes "Ready-to-upload VPS package. Includes Node.js game server and all public assets; excludes accounts, data, credentials and node_modules. Set the EXISTING Neon DATABASE_URL and MU_REQUIRE_DATABASE=1 on the VPS. Never run VPS and Render as simultaneous writers to the same Neon JSONB game state. Read README_VPS_NEON.md in the ZIP."
+          fi
+          gh release view "$tag" --json url,assets --jq '{url: .url, assets: [.assets[].name]}'
